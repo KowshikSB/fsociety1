@@ -50,12 +50,11 @@ async def bam(ctx,user_id=None,args=em):
     except:
       await ctx.channel.send("`Couldn't DM the given user`") 
 ba=["Ask Me If I Care","Dumb Question Ask Another", "Forget About It" , "In Your Dreams" , "Not A Chance" , "Obviously" , "What Do You Think?" ,  "Who Cares?" , "You've Got To Be Kidding","Yeah Right"," You Wish","Absolutely", "Unclear Ask Later","Chances Aren't Good", "Ask KaZE He's Wisest Man here", "Indications Say Yes" , "No Doubt About It","The Stars Say No","You Can Count On It"]
-@client.event
-async def on_message(message):
-  if message.author==client.user:
-    return
-  elif message.content.startswith("^8ball" or "^8b"):
-    await client.send_message(message.channel,random.choice(ba))
+@client.command(name='8ball',aliases=['8b','8B','8Ball','8BALL'])
+async def bb_cmd(self,ctx,arg1):
+  answers=ba
+  emb=discord.Embed(color=0x2f3136 , description ="<:blobhyperthink:774246322194612224> :8ball: {}".format(random.choice(answers)))
+  await ctx.channel.send(Embed=emb)
 
 client.run(os.environ['DISCORD_TOKEN'])
 
