@@ -43,7 +43,7 @@ async def eiball(ctx, arg=None):
  
     
   content=discord.Embed(color=0x2f3136 , description ="<:blobhyperthink:774246322194612224>:8ball: {}".format(random.choice(ba)))
-  await ctx.channel.send(Embed=content)
+  await ctx.send(Embed=content)
 
 @client.command()
 @commands.has_role('+')  
