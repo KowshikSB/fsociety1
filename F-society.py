@@ -22,13 +22,13 @@ async def ping(ctx, arg=None):
   else:
     await ctx.send(f'<:wot:790094440387182604> Pong! `{round(client.latency *1000)}ms`')
 @client.command()
-async def help():
+async def help(ctx, arg=None):
   embed=discord.Embed(title = "The F Society", description= "Help", colour=0x2f3136)
   
   embed.set_footer(text="Dig Bick Energy Gang")
   embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/774143806601822208/778997559313301504/ezgif.com-gif-maker_2.gif')
   embed.add_field(name="Ping",value=":placard: So far I only have the Ping Command ;-; Blame it on <@261742964441612298>",inline=False)
-  await help.say(embed=embed)
+  await ctx.say(embed=embed)
 client.run(os.environ['DISCORD_TOKEN'])
 
 
