@@ -4,6 +4,7 @@ import os
 import discord
 from discord.ext import commands
 import asyncio
+import random
 
 client = commands.Bot(command_prefix = '^')
 client.remove_command("help")
@@ -47,7 +48,15 @@ async def bam(ctx,user_id=None,args=em):
       
       await ctx.send("The User is Bammed <:okDamn:792390256980000788> ")
     except:
-      await ctx.channel.send("`Couldn't DM the given user`")
+      await ctx.channel.send("`Couldn't DM the given user`") 
+ba=["Ask Me If I Care","Dumb Question Ask Another", "Forget About It" , "In Your Dreams" , "Not A Chance" , "Obviously" , "What Do You Think?" ,  "Who Cares?" , "You've Got To Be Kidding","Yeah Right"," You Wish","Absolutely", "Unclear Ask Later","Chances Aren't Good", "Ask KaZE He's Wisest Man here", "Indications Say Yes" , "No Doubt About It","The Stars Say No","You Can Count On It"]
+@client.event
+async def on_message(message):
+  if meesage.author==client.user:
+    return
+  elif message.content.startswith("^8ball" or "^8b"):
+    await client.send_message(message.channel,random.choice(ba))
+
 client.run(os.environ['DISCORD_TOKEN'])
 
 
