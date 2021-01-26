@@ -23,10 +23,10 @@ async def ping(ctx, arg=None):
     await ctx.send(f'<:wot:790094440387182604> Pong! `{round(client.latency *1000)}ms`')
 @client.group(invoke_whithout_command=True)
 async def help(ctx):
-  em = discord.Embed(title = "The F Society" , descritption = "**Help Commands**",color=#2f3136)
+  em = discord.Embed(title = "The F Society" , descritption = "**Help Commands**",thumbnail="https://cdn.discordapp.com/attachments/774143806601822208/778997559313301504/ezgif.com-gif-maker_2.gif",color="#2f3136")
   em.add_field(name="Ping",value="^ping - *So far we got Ping command ;-;* <@261742964441612298> *is Making me more useful* <:angry_flushed:803240935433437194>")
     
-  await ctx.(Embed=em)
+  await ctx.send(Embed = em)
  
 
 client.run(os.environ['DISCORD_TOKEN'])
