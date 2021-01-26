@@ -21,7 +21,7 @@ async def ping(ctx, arg=None):
     await ctx.send(f'<:wot:790094440387182604> Pong! {round(client.latency *1000)}ms')
 @client.event()
 async def on_member_join(member):
-  await ctx.send(f'**Welcome to the F Society** @{member} *Read the* <#774143716042604545> *and get your roles in* <#775269400549916702> <:ShibaHeart:793851831431200808> <@&802760617769041990> ')
+  await member.send(f'**Welcome to the F Society** @{member} *Read the* <#774143716042604545> *and get your roles in* <#775269400549916702> <:ShibaHeart:793851831431200808> <@&802760617769041990> ')
 
 
 client.run(os.environ['DISCORD_TOKEN'])
