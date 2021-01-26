@@ -31,7 +31,7 @@ async def ch_pr():
   while not client.is_closed():
     status=random.choice(statuses)
     await client.change_presence(activity=discord.watching(name=status))
-    await asyncio.sleep(1800)
+    await asyncio.sleep(10)
 client.loop.create_task(ch_pr)
 
 client.run(os.environ['DISCORD_TOKEN'])
