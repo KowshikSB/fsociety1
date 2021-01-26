@@ -40,11 +40,10 @@ em.set_thumbnail(url='https://cdn.discordapp.com/attachments/774143806601822208/
 em.add_field(name="Reason -",value=":placard: You are too cool to get a BAM <:okDamn:792390256980000788> Blame <@261742964441612298> For trolling you! <a:THINK_EXTREME:801464607159091201> ",inline=True)
 @client.command()
 async def eiball(ctx, arg=None):
-  ctx = await ctx.channel.send('<:blobhyperthink:774246322194612224>')
-  await asyncio.sleep(1)
+ 
     
-  content=discord.Embed(color=0x2f3136 , description =":8ball: {}".format(random.choice(ba)))
-  await ctx.channel.edit(Embed=content)
+  content=discord.Embed(color=0x2f3136 , description ="<:blobhyperthink:774246322194612224>:8ball: {}".format(random.choice(ba)))
+  await ctx.channel.send(Embed=content)
 
 @client.command()
 @commands.has_role('+')  
