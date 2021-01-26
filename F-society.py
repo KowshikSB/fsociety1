@@ -14,16 +14,8 @@ async def on_ready():
   await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="The Ded Chat ;-;"))
 #Runs when bot is online and active  
   print("BOT IS READY")
-async def on_message(ctx, arg=None):
-  if ctx.content.startswith('^8ball '):
-    args=ctx.content.split(' ')
-    if len(args)>=2:
     
-      ctx = await ctx.channel.send('<:blobhyperthink:774246322194612224>')
-      await asyncio.sleep(1)
-    
-      content=discord.Embed(color=0x2f3136 , description =":8ball: {}".format(random.choice(ba)))
-      await ctx.channel.edit(Embed=content)
+      
 @client.command()
 async def ping(ctx, arg=None):
   if arg=="Pong":
@@ -33,6 +25,13 @@ async def ping(ctx, arg=None):
 @client.command()
 async def help(ctx, arg=None):
   embed=discord.Embed(title = "The F Society", description= "**HELP**", colour=0x2f3136)
+async def eiball(ctx, arg=None):
+  ctx = await ctx.channel.send('<:blobhyperthink:774246322194612224>')
+  await asyncio.sleep(1)
+    
+  content=discord.Embed(color=0x2f3136 , description =":8ball: {}".format(random.choice(ba)))
+  await ctx.channel.edit(Embed=content)
+
 
   
     
