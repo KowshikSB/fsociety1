@@ -19,7 +19,7 @@ async def on_message(ctx, arg=None):
     args=ctx.content.split(' ')
     if len(args)>=2:
     
-      message = await ctx.channel.send('<:blobhyperthink:774246322194612224>')
+      ctx = await ctx.channel.send('<:blobhyperthink:774246322194612224>')
       await asyncio.sleep(1)
     
       content=discord.Embed(color=0x2f3136 , description =":8ball: {}".format(random.choice(ba)))
