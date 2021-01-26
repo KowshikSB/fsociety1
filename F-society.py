@@ -51,7 +51,7 @@ async def bam(ctx,user_id=None,args=em):
       await ctx.channel.send("`Couldn't DM the given user`") 
 ba=["Ask Me If I Care","Dumb Question Ask Another", "Forget About It" , "In Your Dreams" , "Not A Chance" , "Obviously" , "What Do You Think?" ,  "Who Cares?" , "You've Got To Be Kidding","Yeah Right"," You Wish","Absolutely", "Unclear Ask Later","Chances Aren't Good", "Ask KaZE He's Wisest Man here", "Indications Say Yes" , "No Doubt About It","The Stars Say No","You Can Count On It"]
 @client.command(name='8ball',aliases=['8b','8B','8Ball','8BALL'])
-async def bb_cmd(self,ctx,arg1):
+async def bb_cmd(self,ctx,arg1=None):
   answers=ba
   emb=discord.Embed(color=0x2f3136 , description ="<:blobhyperthink:774246322194612224> :8ball: {}".format(random.choice(answers)))
   await ctx.channel.send(Embed=emb)
