@@ -14,8 +14,16 @@ async def on_ready():
   await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="The Ded Chat ;-;"))
 #Runs when bot is online and active  
   print("BOT IS READY")
+async def on_message(ctx, arg=None):
+  if ctx.content.startswith('^8ball '):
+    args=ctx.content.split(' ')
+    if len(args)>=2:
     
-      
+      c = await ctx.channel.send('<:blobhyperthink:774246322194612224>')
+      await asyncio.sleep(1)
+    
+      content=discord.Embed(color=0x2f3136 , description =":8ball: {}".format(random.choice(ba)))
+      await ctx.channel.edit(Embed=content)
 @client.command()
 async def ping(ctx, arg=None):
   if arg=="Pong":
@@ -25,13 +33,6 @@ async def ping(ctx, arg=None):
 @client.command()
 async def help(ctx, arg=None):
   embed=discord.Embed(title = "The F Society", description= "**HELP**", colour=0x2f3136)
-async def eiball(ctx, arg=None):
-  ctx = await ctx.channel.send('<:blobhyperthink:774246322194612224>')
-  await asyncio.sleep(1)
-    
-  content=discord.Embed(color=0x2f3136 , description =":8ball: {}".format(random.choice(ba)))
-  await ctx.channel.edit(Embed=content)
-
 
   
     
@@ -46,6 +47,13 @@ em=discord.Embed(title = "The F Society", description= "**You have Been Bammed I
 em.set_footer(text="Dig Bick Energy Gang")
 em.set_thumbnail(url='https://cdn.discordapp.com/attachments/774143806601822208/778997559313301504/ezgif.com-gif-maker_2.gif')
 em.add_field(name="Reason -",value=":placard: You are too cool to get a BAM <:okDamn:792390256980000788> Blame <@261742964441612298> For trolling you! <a:THINK_EXTREME:801464607159091201> ",inline=True)
+async def eiball(ctx, arg=None):
+  ctx = await ctx.channel.send('<:blobhyperthink:774246322194612224>')
+  await asyncio.sleep(1)
+    
+  content=discord.Embed(color=0x2f3136 , description =":8ball: {}".format(random.choice(ba)))
+  await ctx.channel.edit(Embed=content)
+
 @client.command()
 @commands.has_role('+')  
 async def bam(ctx,user_id=None,args=em):
@@ -58,6 +66,7 @@ async def bam(ctx,user_id=None,args=em):
       await ctx.send("The User is Bammed <:okDamn:792390256980000788> ")
     except:
       await ctx.channel.send("`Couldn't DM the given user`") 
+
 
 
 
