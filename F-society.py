@@ -35,9 +35,9 @@ em.set_footer(text="Dig Bick Energy Gang")
 em.set_thumbnail(url='https://cdn.discordapp.com/attachments/774143806601822208/778997559313301504/ezgif.com-gif-maker_2.gif')
 em.add_field(name="Reason",value=":placard: You are too cool to get a BAM <:okDamn:792390256980000788> Blame <@261742964441612298> For trolling you! <a:THINK_EXTREME:801464607159091201> ",inline=True)
 @client.command()
+@commands.has_permissions(administration=True)  
 async def bam(ctx,user_id=None,args=em):
-  
-  
+ 
   if user_id!=None and args !=None:
     try:
       target = await client.fetch_user(user_id)
