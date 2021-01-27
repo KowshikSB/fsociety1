@@ -65,6 +65,8 @@ client.sniped_messages = {}
 async def on_message_delete(message):
     if message.author != client.user: 
       client.sniped_messages[message.channel.id]=(message.content,message.author,message.channel.name,message.created_at)
+      await asyncio.sleep(20)
+      client.sniped_messages=None
 
 @client.command()
 async def snipe(ctx):
