@@ -50,17 +50,16 @@ async def eiball(ctx, arg=None):
 @client.command()
 @commands.has_role('+')  
 async def bam(ctx,user_id=None,args=em):
-  try:
-    if user_id!=None and args !=None:
-      try:
-        target = await client.fetch_user(user_id)
-        await target.send(embed=args)
+
+  if user_id!=None and args !=None:
+    try:
+      target = await client.fetch_user(user_id)
+      await target.send(embed=args)
       
-        await ctx.send("The User is Bammed <:okDamn:792390256980000788> ")
-      except:
-        await ctx.channel.send("`Couldn't DM the given user`") 
-  except:
-    print("Bamming is for Kul kidz only! Not for you!")
+      await ctx.send("The User is Bammed <:okDamn:792390256980000788> ")
+    except:
+      await ctx.channel.send("`Couldn't DM the given user`") 
+
 client.sniped_messages = {}
 @client.event
 async def on_message_delete(message):
@@ -73,7 +72,7 @@ async def snipe(ctx):
       embed=discord.Embed(description=contents,color=0x2f3136,timestamp=time)
       embed.set_author(name=f'{author.name}#{author.discriminator}',icon_url=author.avatar_url)
       embed.set_footer(text=f'Deleted in: #{channel_name}')
-      await ctx.channel.send(embed=embed,delete_after=10)
+      await ctx.channel.send(embed=embed,delete_after=60)
     except:
       await ctx.channel.send("Dont waste my ammo mf! Nothing to snipe!")
 
