@@ -78,7 +78,24 @@ async def snipe(ctx):
       await ctx.channel.send(embed=embed,delete_after=60)
     except:
       await ctx.channel.send("<a:potato_rage:788063034701906001> *Dont waste my ammo `;-;` Nothing to snipe!*")
+client.esniped_messages={}
+@client.event
+async def on_message_edit(message):
+    if message.author != client.user: 
+      client.sniped_messages[message.channel.id]=(message.content,message.author,message.channel.name,message.created_at)
+      await asyncio.sleep(20)
+      client.sniped_messages[message.channel.id]=None
 
+@client.command()
+async def editsnipe(ctx,aliases=['esnipe']):
+    try:
+      contents,author,channel_name,time=client.esniped_messages[ctx.channel.id]
+      embed=discord.Embed(description=contents,color=0x2f3136,timestamp=time)
+      embed.set_author(name=f'{author.name}#{author.discriminator}',icon_url=author.avatar_url)
+      embed.set_footer(text=f'Deleted in: #{channel_name}')
+      await ctx.channel.send(embed=embed,delete_after=60)
+    except:
+      await ctx.channel.send("<a:potato_rage:788063034701906001> *Dont waste my ammo `;-;` Nothing to snipe!*")
 
 
   
