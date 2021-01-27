@@ -80,11 +80,11 @@ async def snipe(ctx):
       await ctx.channel.send("<a:potato_rage:788063034701906001> *Dont waste my ammo `;-;` Nothing to snipe!*")
 client.esniped_messages={}
 @client.event
-async def on_message_edit(message):
-    if message.author != client.user: 
-      client.esniped_messages[message.channel.id]=(message.content,message.author,message.channel.name,message.created_at)
+async def on_message_edit(before,after):
+    if after.author != client.user: 
+      client.esniped_messages[after.channel.id]=(after.content,after.author,after.channel.name,after.created_at)
       await asyncio.sleep(20)
-      client.esniped_messages[message.channel.id]=None
+      client.esniped_messages[after].channel.id]=None
 
 @client.command()
 async def editsnipe(ctx):
