@@ -84,7 +84,7 @@ async def on_message_edit(before,after):
     if after.author != client.user: 
       client.esniped_messages[after.channel.id]=(after.content,after.author,after.channel.name,after.created_at)
       await asyncio.sleep(20)
-      client.esniped_messages[after].channel.id]=None
+      client.esniped_messages[after.channel.id]=None
 
 @client.command()
 async def editsnipe(ctx):
