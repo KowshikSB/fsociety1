@@ -77,7 +77,7 @@ async def snipe(ctx):
       embed.set_footer(text=f'Deleted in: #{channel_name}')
       await ctx.channel.send(embed=embed,delete_after=60)
     except:
-      await ctx.channel.send("*Dont waste my ammo <a:potato_rage:788063034701906001>  **Nothing to snipe!**")
+      await ctx.channel.send("<a:potato_rage:788063034701906001> *Dont waste my ammo*  *Nothing to snipe!*")
 
 
 
