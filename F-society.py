@@ -29,9 +29,11 @@ async def help(ctx, arg=None):
     
   embed.set_footer(text="Dig Bick Energy Gang")
   embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/774143806601822208/778997559313301504/ezgif.com-gif-maker_2.gif')
-  embed.add_field(name="• Ping",value=":placard: Poke me... I poke you back with the BOT's Ping!",inline=False)
-  embed.add_field(name="• BAM",value="<a:crown:793089465659949076> Get Bammed <:Shiba_Cool:793772486822068224> ||OWNER Only Command|| ",inline=False)
-  embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-; Blame it on* <@261742964441612298>" , inline=False)
+  embed.add_field(name="• Ping",value=":placard: **^ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
+  embed.add_field(name="• BAM",value="<a:crown:793089465659949076> **^bam** Get Bammed <:Shiba_Cool:793772486822068224> ||Owner Only Command|| ",inline=True)
+  embed.add_field(name="• 8Ball",value=":8ball: **^eiball** Ask me a simple question predicting future I'll give my opinion!",inline=True)
+  embed.add_field(name="• Snipe",value="<:Sniper:803875843507748874> **^snipe** I'll snipe the deleted message cos why not! ;)",inline=True)
+  embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-; Blame it on* <@261742964441612298>" , inline=True)
   await ctx.send(embed=embed)
 
 em=discord.Embed(title = "The F Society", description= "**You have Been Bammed In F Society!**", colour=0x2f3136)
@@ -57,7 +59,21 @@ async def bam(ctx,user_id=None,args=em):
       await ctx.send("The User is Bammed <:okDamn:792390256980000788> ")
     except:
       await ctx.channel.send("`Couldn't DM the given user`") 
+client.sniped_messages = {}
+@client.event
+async def on_message_delete(message):
+  client.sniped_messages[message.channel.id]=(message.content,message.author,message.channel.name,message.created_at)
 
+@client.command()
+async def snipe(ctx):
+  try:
+    contents,author,channel_name,time=client.sniped_messages[ctx.channel.id]
+    embed=discord.Embed(description=contents,color=0x2f3136,timestamp=time)
+    embed.set_author(name=f'{author.name}#{author.discriminator}',icon_url=author.avatar_url)
+    embed.set_footer(text=f'Deleted in: #{channel_name}')
+    await ctx.channel.send(embed=embed,delete_after=10)
+  except:
+    await ctx.channel.send("Couldn't find a message to snipe!")
 
 
 
