@@ -63,7 +63,8 @@ async def bam(ctx,user_id=None,args=em):
 client.sniped_messages = {}
 @client.event
 async def on_message_delete(message):
-  client.sniped_messages[message.channel.id]=(message.content,message.author,message.channel.name,message.created_at)
+    if author.user_id != client.user: 
+      client.sniped_messages[message.channel.id]=(message.content,message.author,message.channel.name,message.created_at)
 
 @client.command()
 async def snipe(ctx):
