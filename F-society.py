@@ -30,7 +30,7 @@ async def help(ctx, arg=None):
   embed.set_footer(text="Dig Bick Energy Gang")
   embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/774143806601822208/778997559313301504/ezgif.com-gif-maker_2.gif')
   embed.add_field(name="• Ping",value=":placard: **^ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
-  embed.add_field(name="• BAM",value="<a:crown:793089465659949076> **^bam** Get Bammed <:Shiba_Cool:793772486822068224> ||Owner Only Command|| ",inline=True)
+  embed.add_field(name="• BAM",value="<a:crown:793089465659949076> **^bam** Get Bammed <:Shiba_Cool:793772486822068224> ||Owner Only Command!|| ",inline=True)
   embed.add_field(name="• 8Ball",value=":8ball: **^eiball** Ask me a simple question predicting future I'll give my opinion!",inline=True)
   embed.add_field(name="• Snipe",value="<:Sniper:803875843507748874> **^snipe** I'll snipe the deleted message cos why not! ;)",inline=True)
   embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-; Blame it on* <@261742964441612298>" , inline=True)
