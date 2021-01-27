@@ -102,7 +102,7 @@ async def editsnipe(ctx):
 @client.command()
 async def avatar(self,ctx,*,user: discord.Member = None):
   if user is None:
-    user=ctx.message.author
+    user=ctx.self.author
   e=discord.Embed(title=user.display_name,color=0x2f3136)
   e.set_thumbnail(url=user.avatar_url)
   e.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
