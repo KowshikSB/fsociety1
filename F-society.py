@@ -33,7 +33,9 @@ async def help(ctx, arg=None):
   embed.add_field(name="• BAM",value="<a:crown:793089465659949076> **^bam** Get Bammed! :P *Owner Abuse Only* <:Shiba_Cool:793772486822068224> ",inline=True)
   embed.add_field(name="• 8Ball",value=":8ball: **^eiball** Ask me a simple question predicting future I'll give my opinion!",inline=True)
   embed.add_field(name="• Snipe",value="<:Sniper:803875843507748874> **^snipe** I'll snipe the deleted message cos why not! ;)",inline=True)
-  embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-; Blame it on* <@261742964441612298>" , inline=True)
+  embed.add_field(name="• Edit Snipe",value="<:Target:803960603541635072> **^editsnipe** I'll snipe the edit message cos idk ask <@&261742964441612298> ;)",inline=True)
+  
+  embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-; Blame it on* <@261742964441612298>" , inline=False)
   await ctx.send(embed=embed)
 
 em=discord.Embed(title = "The F Society", description= "**You have Been Bammed In F Society!**", colour=0x2f3136)
