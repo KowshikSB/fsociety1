@@ -87,7 +87,7 @@ async def on_message_edit(before,after):
       client.esniped_messages[before.channel.id]=None
 
 @client.command()
-async def editsnipe(ctx,Aliases=['esnipe']):
+async def editsnipe(ctx):
     try:
       contents,author,channel_name,time=client.esniped_messages[ctx.channel.id]
       embed=discord.Embed(description=contents,color=0x2f3136,timestamp=time)
