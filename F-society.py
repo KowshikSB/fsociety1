@@ -99,6 +99,14 @@ async def editsnipe(ctx):
       await ctx.channel.send(embed=embed,delete_after=60)
     except:
       await ctx.channel.send("<a:potato_rage:788063034701906001> *Dont waste my ammo `;-;` Nothing to snipe!*")
+@client.command()
+async def avatar(self,ctx,*,user: discord.Member = None):
+  if user is None:
+    user=ctx.message.author
+  e=discord.Embed(title=user.display_name,color=0x2f3136)
+  e.set_thumbnail(url=user.avatar_url)
+  e.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
+  await ctx.send(embed=e)
 
 
   
