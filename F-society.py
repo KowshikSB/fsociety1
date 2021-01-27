@@ -20,7 +20,7 @@ async def ping(ctx, arg=None):
   if arg=="Pong":
     await ctx.send("Sexy job you just ponged yourself <a:shiba_Sexy_wink:794199806833590302> ")
   else:
-    await ctx.send(f'<:wot:790094440387182604> Pong! `{round(client.latency *1000)}ms`')
+    await ctx.send(f'<:DarkHypesquad:803977958108692570> Pong! `{round(client.latency *1000)}ms`')
 @client.command()
 async def help(ctx, arg=None):
   embed=discord.Embed(title = "The F Society", description= "**HELP**", colour=0x2f3136)
