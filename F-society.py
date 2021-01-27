@@ -68,7 +68,6 @@ async def on_message_delete(message):
 
 @client.command()
 async def snipe(ctx):
-  if author.id!=774248018802114591:
     try:
       contents,author,channel_name,time=client.sniped_messages[ctx.channel.id]
       embed=discord.Embed(description=contents,color=0x2f3136,timestamp=time)
@@ -76,9 +75,8 @@ async def snipe(ctx):
       embed.set_footer(text=f'Deleted in: #{channel_name}')
       await ctx.channel.send(embed=embed,delete_after=10)
     except:
-      await ctx.channel.send("Dont waste my ammo! Nothing to snipe!")
-  else:
-    print("There is nothing to snipe mf don't waste my ammo!")
+      await ctx.channel.send("Dont waste my ammo mf! Nothing to snipe!")
+
 
 
   
