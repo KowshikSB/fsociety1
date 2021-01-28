@@ -4,7 +4,7 @@ from discord.ext import commands
 import asyncio
 import random
 
-client = commands.Bot(command_prefix = 'f ')
+client = commands.Bot(command_prefix = ['f ','<@774248018802114591>']
 client.remove_command("help")
 
 
