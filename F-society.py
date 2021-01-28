@@ -25,7 +25,6 @@ async def ping(ctx, arg=None):
 async def help(ctx, arg=None):
   embed=discord.Embed(title = "The F Society", description= "**HELP**", colour=0x2f3136)
 
-  
     
   embed.set_footer(text="Dig Bick Energy Gang")
   embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/774143806601822208/778997559313301504/ezgif.com-gif-maker_2.gif')
@@ -109,7 +108,10 @@ async def avatar(ctx,avamember : discord.Member=None):
   em.set_image(url=userAvatarUrl) 
     
   await ctx.send(embed=em) 
-
+@client.event
+async def get_prefix(bot, message):
+    extras = await prefixes_for(message.guild) 
+    return commands.when_mentioned_or(*extras)(bot, message)
 
 
 
