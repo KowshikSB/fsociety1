@@ -3,11 +3,6 @@ import discord
 from discord.ext import commands
 import asyncio
 import random
-import PIL
-from PIL import image
-from io import BytesIO
- 
- 
 
 client = commands.Bot(command_prefix =commands.when_mentioned_or('f '))
 client.remove_command("help")
@@ -112,9 +107,7 @@ async def avatar(ctx ,avamember : discord.Member=None):
   userAvatarUrl = avamember.avatar_url
   em = discord.Embed(title=f"Avatar of {avamember}", color=0x2f3136)
   em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
-  img = Image.open(BytesIO(userAvatarUrl))
-  img=img.resize(128,128)
-  em.set_image(url=img) 
+  em.set_image(url=userAvatarUrl) 
     
   await ctx.send(embed=em) 
 @client.command()
