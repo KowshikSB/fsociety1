@@ -100,7 +100,7 @@ async def editsnipe(ctx):
     except:
       await ctx.channel.send("<a:potato_rage:788063034701906001> *Dont waste my ammo `;-;` Nothing to snipe!*")
 @client.command()
-async def avatar(self, ctx, *,  avamember : discord.Member=None):
+async def avatar(ctx,avamember : discord.Member=None):
   if avamember is None:
     avamember=ctx.messageauthor 
   userAvatarUrl = avamember.avatar_url
