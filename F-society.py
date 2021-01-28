@@ -122,7 +122,7 @@ async def on_member_join(Member):
 @client.command()
 async def set_welcome_channel(ctx,channel_name=None):
   if channel_name != None:
-    for channel in ctx.guild.channls:
+    for channel in ctx.guild.channels:
       if channel.name == channel_name:
         botdata.welcome_channel=channel
         await ctx.channel.send(f'Welcoming Channel has been set to:{channel.name}')
