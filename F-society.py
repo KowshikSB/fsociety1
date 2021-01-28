@@ -103,6 +103,8 @@ async def editsnipe(ctx):
 async def avatar(ctx,avamember : discord.Member=None):
   if avamember is None:
     avamember=ctx.message.author 
+    avamember.height=100
+    avamember.width=100
   userAvatarUrl = avamember.avatar_url
   em = discord.Embed(title=f"Avatar of {avamember}", color=0x2f3136)
   em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
