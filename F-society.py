@@ -116,7 +116,7 @@ botdata = Botdata()
 @client.event
 async def on_member_join(member):
   if botdata.welcome_channel != None:
-    await botdata.welcome_channel.send(f'**Welcome to the F Society**!{member.mention} *Read the* <#774143716042604545> *and get your roles in* <#775269400549916702>  :ShibaHeart: <@&802760617769041990>')
+    await botdata.welcome_channel.send(f'**Welcome to the F Society**! {member.mention} *Read the* <#774143716042604545> *and get your roles in* <#775269400549916702>  :ShibaHeart: <@&802760617769041990>')
   else:
     print("Welcome Channel was not set")
 @client.command()
