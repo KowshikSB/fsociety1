@@ -110,16 +110,7 @@ async def avatar(ctx,avamember : discord.Member=None):
     
   await ctx.send(embed=em) 
 
-intents= discord.Intents.default()
-intents.members=True
-bot= discord.Client(intents=intents)
 
-@bot.event
-async def on_member_join(member):
-  guild = client.get_guild(725302478823751702)
-  channel= guild.get_channel(774155081922773022)
-  await channel.send(f'**Welcome to the F Society**!{member.mention} *Read the* <#774143716042604545> *and get your roles in* <#775269400549916702>  :ShibaHeart: <@&802760617769041990>')
-  
 
 
   
