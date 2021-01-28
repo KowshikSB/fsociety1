@@ -4,7 +4,7 @@ from discord.ext import commands
 import asyncio
 import random
 
-client = commands.Bot(command_prefix = ['f ',{Bot.mention}])
+client = commands.Bot(command_prefix =commands.when_mentioned_or('f '))
 client.remove_command("help")
 
 
