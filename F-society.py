@@ -105,9 +105,10 @@ async def avatar(ctx ,avamember : discord.Member=None):
     avamember=ctx.message.author 
     
   userAvatarUrl = avamember.avatar_url
-  em = discord.Embed(title=f"Avatar of {avamember}", color=0x2f3136,height=50,width=50)
+  em = discord.Embed(title=f"Avatar of {avamember}", color=0x2f3136)
   em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
-  em.set_image(url=userAvatarUrl) 
+  image=userAvatarUrl.resize(128,128)
+  em.set_image(url=image) 
     
   await ctx.send(embed=em) 
 @client.command()
