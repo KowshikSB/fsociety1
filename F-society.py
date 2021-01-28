@@ -109,9 +109,12 @@ async def avatar(ctx,avamember : discord.Member=None):
   em.set_image(url=userAvatarUrl) 
     
   await ctx.send(embed=em) 
-
-
-
+@client.command()
+async def prefix(ctx):
+    em=discord.Embed(description="<:bot_dev:804257409388249098> Prefix for this Guild - `f ` & <@&774248018802114591>",color=0x2f3136)
+    em.set_author(name='The F Society',icon_url="https://cdn.discordapp.com/attachments/774143806601822208/778997559313301504/ezgif.com-gif-maker_2.gif")
+    em.set_footer(text="Do f help to get more info on the bot.")
+    await ctx.send(embed=em)
   
 
 client.run(os.environ['DISCORD_TOKEN'])
