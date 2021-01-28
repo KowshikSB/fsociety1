@@ -98,7 +98,7 @@ async def editsnipe(ctx):
       embed.set_footer(text=f'Edited: #{channel_name}')
       await ctx.channel.send(embed=embed,delete_after=60)
     except:
-      await ctx.channel.send("<a:potato_rage:788063034701906001> *Dont waste my ammo `;-;` Nothing to snipe!*")
+      await ctx.channel.send("<a:potato_rage:788063034701906001> *Dont waste my ammo `;-;` Nothing to snipe!*",delete_after=10)
 @client.command()
 async def avatar(ctx ,avamember : discord.Member=None):
   if avamember is None:
