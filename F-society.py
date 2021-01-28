@@ -34,7 +34,7 @@ async def help(ctx, arg=None):
   embed.add_field(name="• 8Ball",value=":8ball: **^eiball** Ask me a simple question predicting future I'll give my opinion!",inline=True)
   embed.add_field(name="• Snipe",value="<:Sniper:803875843507748874> **^snipe** I'll snipe the deleted message cos why not! ;)",inline=True)
   embed.add_field(name="• Edit Snipe",value="<:Target:803960603541635072> **^editsnipe** I'll snipe the edit message cos idk ask <@261742964441612298> ;)",inline=True)
-  
+  embed.add_field(name="• Avatar",value="<a:Chat:804180442626261014> **^avatar** Gets the avatar of the person!",inline=True)
   embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-; Blame it on* <@261742964441612298>" , inline=False)
   await ctx.send(embed=embed)
 
