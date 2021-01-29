@@ -28,7 +28,7 @@ async def help(ctx, arg=None):
 
     
   embed.set_footer(text="Dig Bick Energy Gang")
-  embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/774143806601822208/778997559313301504/ezgif.com-gif-maker_2.gif')
+  embed.set_thumbnail(url=ctx.guild.icon_url)
   embed.add_field(name="• Ping",value=":placard: **f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
   embed.add_field(name="• BAM",value="<a:crown:793089465659949076> **f bam** Get Bammed! :P *Owner Abuse Only* <:Shiba_Cool:793772486822068224> ",inline=True)
   embed.add_field(name="• 8Ball",value=":8ball: **f eiball** Ask me a simple question predicting future I'll give my opinion!",inline=True)
@@ -38,11 +38,7 @@ async def help(ctx, arg=None):
   embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;" , inline=False)
   await ctx.send(embed=embed)
 
-em=discord.Embed(title = "The F Society", description= "**You have Been Bammed In F Society!**", colour=0x2f3136)
-em.set_footer(text="Dig Bick Energy Gang")
-icon=Guild.icon_url
-em.set_thumbnail(url=icon)
-em.add_field(name="Reason -",value=":placard: You are too cool to get a BAM <:okDamn:792390256980000788> Blame <@261742964441612298> For trolling you! <a:THINK_EXTREME:801464607159091201> ",inline=True)
+
 @client.command()
 async def eiball(ctx, arg=None):
  
@@ -53,8 +49,13 @@ async def eiball(ctx, arg=None):
   
 @client.command()
 @commands.has_role('+')  
-async def bam(ctx,user_id=None,args=em):
-
+async def bam(ctx,user_id=None,args=None):
+  em=discord.Embed(title = "The F Society", description= "**You have Been Bammed In F Society!**", colour=0x2f3136)
+  em.set_footer(text="Dig Bick Energy Gang")
+  icon=ctx.guild.icon_url
+  em.set_thumbnail(url=icon)
+  em.add_field(name="Reason -",value=":placard: You are too cool to get a BAM <:okDamn:792390256980000788> Blame <@261742964441612298> For trolling you! <a:THINK_EXTREME:801464607159091201> ",inline=True)
+  args=em
   if user_id!=None and args !=None:
     try:
       target = await client.fetch_user(user_id)
