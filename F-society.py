@@ -67,7 +67,7 @@ async def bam(ctx,user_id=None,args=None):
       except:
         await ctx.channel.send("`Couldn't DM the given user`") 
   else:
-    print("You can't Bam noob!")
+    await ctx.send("You can't Bam noob!")
 
 client.sniped_messages = {}
 @client.event
