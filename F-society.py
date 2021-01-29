@@ -49,7 +49,7 @@ async def eiball(ctx, arg=None):
   await msg.add_reaction("<:wot:790094440387182604>") #\U0001f3b1
   
 @client.command()
-@commands.has_role('+')  
+@commands.is_owner()
 async def bam(ctx,user_id=None,args=None):
   em=discord.Embed(title = ctx.guild.name, description= "**You have Been Bammed In {}!**".format(ctx.guild.name), colour=0x2f3136)
   em.set_footer(text="Dig Bick Energy Gang")
