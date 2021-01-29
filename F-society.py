@@ -40,7 +40,7 @@ async def help(ctx, arg=None):
 
 em=discord.Embed(title = "The F Society", description= "**You have Been Bammed In F Society!**", colour=0x2f3136)
 em.set_footer(text="Dig Bick Energy Gang")
-icon=guild.icon_url
+icon=Guild.icon_url
 em.set_thumbnail(url=icon)
 em.add_field(name="Reason -",value=":placard: You are too cool to get a BAM <:okDamn:792390256980000788> Blame <@261742964441612298> For trolling you! <a:THINK_EXTREME:801464607159091201> ",inline=True)
 @client.command()
