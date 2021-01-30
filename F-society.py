@@ -118,7 +118,7 @@ async def avatar(ctx ,avamember : discord.Member=None):
   await ctx.send(embed=em) 
 @client.command()
 async def prefix(ctx):
-    em=discord.Embed(description="<:bot_dev:804257409388249098> Prefix for this Guild - {} & <@774248018802114591>".format(command_prefix),color=0x2f3136)
+    em=discord.Embed(description="<:bot_dev:804257409388249098> Prefix for this Guild - `f_` & <@774248018802114591>"),color=0x2f3136)
     em.set_author(name=ctx.guild.name,icon_url=ctx.guild.icon_url)
     em.set_footer(text="Do f help to get more info on the bot.")
     await ctx.send(embed=em)
