@@ -157,8 +157,8 @@ async def kiss(ctx ,avamember : discord.Member=None):
 async def howgay(ctx, member: discord.Member=None):
   x=random.randint(1,100)
   if member is None:
-    member=ctx.message.author 
-  em = discord.Embed(title="Gay Rate",description=f'{member} are {x} % Gay',color=0x2f3136)
+    member=ctx.message.author.name
+  em = discord.Embed(title="Gay Rate",description=f'{member.name} are {x} % Gay',color=0x2f3136)
   
    
     
