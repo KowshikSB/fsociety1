@@ -136,6 +136,7 @@ async def hug(ctx ,avamember : discord.Member=None):
   em.set_author(name=f"{ctx.author.name} hugs {avamember}", url=ctx.author.avatar_url)
   em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
   em.set_image(url=random.choice(hugss)) 
+  await ctx.send(embed=em)
     
 
 client.run(os.environ['DISCORD_TOKEN'])
