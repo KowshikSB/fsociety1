@@ -186,6 +186,23 @@ async def howhorny(ctx, member: discord.Member=None):
   
    
     
+    await ctx.send(embed=em)
+
+async def simprate(ctx, member: discord.Member=None):
+  x=random.randint(1,100)
+  if member is None:
+    member=ctx.message.author.name
+    em = discord.Embed(title="Simp Rate",description=f'<a:simp:775732672793411605> You are {x} % Simp',color=0x2f3136)
+  
+   
+    
+    await ctx.send(embed=em)
+  else:
+
+    em = discord.Embed(title="Simp Rate",description=f'<a:simp:775732672793411605> {member.name} is {x} % Simp',color=0x2f3136)
+  
+   
+    
     await ctx.send(embed=em) 
   
   
