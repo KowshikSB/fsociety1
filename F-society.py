@@ -165,7 +165,7 @@ async def howgay(ctx, member: discord.Member=None):
     await ctx.send(embed=em)
   else:
 
-    em = discord.Embed(title="Gay Rate",description=f'<a:BIGGAY:805831470634762291> {member.name} are {x} % Gay',color=0x2f3136)
+    em = discord.Embed(title="Gay Rate",description=f'<a:BIGGAY:805831470634762291> {member.name} is {x} % Gay',color=0x2f3136)
   
    
     
