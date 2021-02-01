@@ -3,7 +3,7 @@ import discord
 from discord.ext import commands
 import asyncio
 import random
-import hugs
+import hugs.py
 
 client = commands.Bot(command_prefix =commands.when_mentioned_or('f '))
 client.remove_command("help")
