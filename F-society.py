@@ -188,7 +188,7 @@ async def howhorny(ctx, member: discord.Member=None):
     
     await ctx.send(embed=em)
 @client.command()
-async def simprate(ctx, member: discord.Member=None):
+async def howsimp(ctx, member: discord.Member=None):
   x=random.randint(1,100)
   if member is None:
     member=ctx.message.author.name
