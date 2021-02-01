@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 import asyncio
 import random
+import hugs
 
 client = commands.Bot(command_prefix =commands.when_mentioned_or('f '))
 client.remove_command("help")
@@ -122,7 +123,20 @@ async def prefix(ctx):
     em.set_author(name=ctx.guild.name,icon_url=ctx.guild.icon_url)
     em.set_footer(text="Do f help to get more info on the bot.")
     await ctx.send(embed=em)
+hugss=['https://media.tenor.com/images/8f44c083c55620c02f59c6bea378dca4/tenor.gif','https://media.tenor.com/images/6083ba11631dd577bcc271268d010832/tenor.gif','https://media.tenor.com/images/77ea5be350828ec04edcbe4865285a77/tenor.gif'
+'https://media.tenor.com/images/ca682cecd6bff521e400f984502f370c/tenor.gif','https://media.tenor.com/images/35fc88f417892fad929380ad78c796b9/tenor.gif''https://media.tenor.com/images/73f2117d26096fbd804c739af0c06257/tenor.gif','https://media.tenor.com/images/6d1a742c873d58af4c492903c79af623/tenor.gif','https://media.tenor.com/images/6d1a742c873d58af4c492903c79af623/tenor.gif','https://media.tenor.com/images/ca1663b2092426c2d42c4c14be91cc69/tenor.gif','https://media.tenor.com/images/f1bf91d3870ed8b26367afd1b91ada9c/tenor.gif','https://media.tenor.com/images/886cb8ce1db5f0f35195c3ecf2b2fa85/tenor.gif','https://media.tenor.com/images/630087a5adbad295ea23f2042756f4df/tenor.gif']
+kiss=['https://c.tenor.com/eSoJ4EYmTB8AAAAj/mochi-peach.gif','https://media.tenor.com/images/84fd99f1cd47a7eae6a088e5d61be0bb/tenor.gif','https://media.tenor.com/images/10f91627a6e10bcf59fae82e3a6a15a6/tenor.gif','https://media.tenor.com/images/fd65261a2c840100bd3dadd83b27f65d/tenor.gif','https://media.tenor.com/images/54f853724e8a339d894d78f8901627ba/tenor.gif','https://media.tenor.com/images/727aa9d43c7aacdaca10104cd0e6d365/tenor.gif','https://media.tenor.com/images/1827e670140cfc47c9d1571e92e2aa87/tenor.gif,https://media.tenor.com/images/68d59bb29d7d8f7895ce385869989852/tenor.gif','https://media.tenor.com/images/b020758888323338c874c549cbca5681/tenor.gif']
+@client.command()
+async def hug(ctx ,avamember : discord.Member=None):
+  if avamember is None:
+    print("<a:rage_smash:799276770091859968> *You need to mention a person*")
+    
   
+  em = discord.Embed(color=0xfefec8)
+  em.set_author(name=f"{ctx.author.name} hugs {avamember}", url=ctx.author.avatar_url)
+  em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
+  em.set_image(url=random.choice(hugss)) 
+    
 
 client.run(os.environ['DISCORD_TOKEN'])
 
