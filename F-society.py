@@ -5,7 +5,7 @@ import asyncio
 import random
 
 
-client = commands.Bot(command_prefix =commands.when_mentioned_or('f '))
+client = commands.Bot(command_prefix =commands.when_mentioned_or('f ','F'))
 client.remove_command("help")
 command_prefix =commands.when_mentioned_or('f ')
 
