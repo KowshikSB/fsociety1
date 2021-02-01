@@ -37,7 +37,7 @@ async def help(ctx, arg=None):
   embed.add_field(name="• Utility",value="<a:MochaAngry:803227613669490719> Commands that'll be useful like snipes , editsnipes , 8ball",inline=True)
   embed.add_field(name="• Fun",value="<a:sleepingcat:799691148628852776> Fun Commands that is actually fun<:wot:790094440387182604>",inline=True)
   embed.add_field(name="• Reaction", value="<:EXTRASHY:788441412872962059> Non Simping Chill Reaction commands maybe ? the ones that are not cringy ofc",inline=True)
-  embed.set_footer(text="Dig Bick Energy Gang | To get more information into the command do `f help_<command>` ")
+  embed.set_footer(text="Dig Bick Energy Gang | To get more information into the command do f help_<command> ")
   embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
   await ctx.send(embed=embed)
 
