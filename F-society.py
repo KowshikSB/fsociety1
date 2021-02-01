@@ -25,7 +25,7 @@ async def ping(ctx, arg=None):
     await ctx.send(f'<:BugHunter:803977931528994836> Pong! `{round(client.latency *1000)}ms`')
 @client.command()
 async def help(ctx, arg=None):
-  embed=discord.Embed(title = ctx.guild.name, description= "**HELP**", colour=0x2f3136)
+  embed=discord.Embed(title = "The F Society", description="**HELP**", colour=0x2f3136)
 
 
     
@@ -131,12 +131,13 @@ async def hug(ctx ,avamember : discord.Member=None):
   if avamember is None:
     print("<a:rage_smash:799276770091859968> *You need to mention a person*")
     
-  
-  em = discord.Embed(color=0xfefec8)
-  em.set_author(name=f"{ctx.author.name} hugs {avamember}", url=ctx.author.avatar_url)
-  em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
-  em.set_image(url=random.choice(hugss)) 
-  await ctx.send(embed=em)
+  else:
+
+    em = discord.Embed(color=0xfefec8)
+    em.set_author(name=f"{ctx.author.name} hugs {avamember.name}", url=ctx.author.avatar_url)
+    em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
+    em.set_image(url=random.choice(hugss)) 
+    await ctx.send(embed=em)
     
 
 client.run(os.environ['DISCORD_TOKEN'])
