@@ -77,7 +77,7 @@ client.sniped_messages = {}
 async def on_message_delete(message):
     if message.author != client.user: 
       client.sniped_messages[message.channel.id]=(message.content,message.author,message.channel.name,message.created_at)
-      await asyncio.sleep(20)
+      await asyncio.sleep(40)
       client.sniped_messages[message.channel.id]=None
 
 @client.command()
@@ -95,7 +95,7 @@ client.esniped_messages={}
 async def on_message_edit(before,after):
     if after.author != client.user: 
       client.esniped_messages[before.channel.id]=(before.content,before.author,before.channel.name,before.created_at)
-      await asyncio.sleep(20)
+      await asyncio.sleep(40)
       client.esniped_messages[before.channel.id]=None
 
 @client.command()
