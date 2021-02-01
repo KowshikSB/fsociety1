@@ -170,6 +170,23 @@ async def howgay(ctx, member: discord.Member=None):
    
     
     await ctx.send(embed=em) 
+@client.command()
+async def howhorny(ctx, member: discord.Member=None):
+  x=random.randint(1,100)
+  if member is None:
+    member=ctx.message.author.name
+    em = discord.Embed(title="Horny JAIL",description=f'<:hmmm:790829841679253525> You are {x} % Horny',color=0x2f3136)
+  
+   
+    
+    await ctx.send(embed=em)
+  else:
+
+    em = discord.Embed(title="Horny JAIL",description=f'<:hmmm:790829841679253525> {member.name} is {x} % Horny',color=0x2f3136)
+  
+   
+    
+    await ctx.send(embed=em) 
   
   
   
