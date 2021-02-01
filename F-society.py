@@ -137,7 +137,7 @@ async def hug(ctx ,avamember : discord.Member=None):
 
     em = discord.Embed(color=0xfefec8)
     em.set_author(name=f"{ctx.author.name} hugs {avamember.name}", icon_url=ctx.author.avatar_url)
-    em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
+    em.set_footer(text='What a simp')
     em.set_image(url=random.choice(hugss)) 
     await ctx.send(embed=em)
 @client.command()
@@ -149,11 +149,24 @@ async def kiss(ctx ,avamember : discord.Member=None):
 
       em = discord.Embed(color=0xfefec8)
       em.set_author(name=f"{ctx.author.name} kisses {avamember.name}", icon_url=ctx.author.avatar_url)
-      em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
+      em.set_footer(text='What a simp smh')
       em.set_image(url=random.choice(kisses)) 
       await ctx.send(embed=em)
     
-
+@client.command()
+async def howgay(ctx, member: discord.Member=None):
+  x=random.randint(1,100)
+  if member is None:
+    member=ctx.message.author 
+  em = discord.Embed(title="Gay Rate",description=f'you are {x} % Gay',color=0x2f3136)
+  em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
+   
+    
+  await ctx.send(embed=em) 
+  
+  
+  
+  
     
 
 
