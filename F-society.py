@@ -158,11 +158,18 @@ async def howgay(ctx, member: discord.Member=None):
   x=random.randint(1,100)
   if member is None:
     member=ctx.message.author.name
-  em = discord.Embed(title="Gay Rate",description=f'{member.name} are {x} % Gay',color=0x2f3136)
+    em = discord.Embed(title="Gay Rate",description=f'You are {x} % Gay',color=0x2f3136)
   
    
     
-  await ctx.send(embed=em) 
+    await ctx.send(embed=em)
+  else:
+
+    em = discord.Embed(title="Gay Rate",description=f'{member.name} are {x} % Gay',color=0x2f3136)
+  
+   
+    
+    await ctx.send(embed=em) 
   
   
   
