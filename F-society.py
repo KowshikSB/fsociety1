@@ -187,7 +187,6 @@ async def howhorny(ctx, member: discord.Member=None):
    
     
     await ctx.send(embed=em)
-
 async def simprate(ctx, member: discord.Member=None):
   x=random.randint(1,100)
   if member is None:
