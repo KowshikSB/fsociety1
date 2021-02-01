@@ -129,6 +129,7 @@ async def prefix(ctx):
     em.set_author(name=ctx.guild.name,icon_url=ctx.guild.icon_url)
     em.set_footer(text="Do f help to get more info on the bot.")
     await ctx.send(embed=em)
+@client.command()
 async def hug(ctx ,avamember : discord.Member=None):
   if avamember is None:
     await ctx.send("<a:rage_smash:799276770091859968> *You need to mention a person*")
@@ -139,6 +140,7 @@ async def hug(ctx ,avamember : discord.Member=None):
     em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
     em.set_image(url=random.choice(hugss)) 
     await ctx.send(embed=em)
+@client.command()
 async def kiss(ctx ,avamember : discord.Member=None):
     if avamember is None:
       await ctx.send("<a:rage_smash:799276770091859968> *You need to mention a person*")
