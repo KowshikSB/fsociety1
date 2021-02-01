@@ -37,6 +37,8 @@ async def help(ctx, arg=None):
   embed.add_field(name="• Snipe",value="<:Sniper:803875843507748874> **f snipe** I'll snipe the deleted message cos why not! ;)",inline=True)
   embed.add_field(name="• Edit Snipe",value="<:Target:803960603541635072> **f editsnipe** I'll snipe the edit message cos idk ask ;)",inline=True)
   embed.add_field(name="• Avatar",value="<a:Chat:804180442626261014> **f avatar** Gets the avatar of the person!",inline=True)
+  embed.add_field(name="• Hug", value="<:EXTRASHY:788441412872962059> hugs platonically :D",inline=True)
+  embed.add_field(name="• Kiss", value="<:oh:774246120846917633> kisses platonically :3",inline=True)
   embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
   await ctx.send(embed=embed)
 
