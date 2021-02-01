@@ -30,7 +30,7 @@ async def help(ctx, arg=None):
 
     
   embed.set_footer(text="Dig Bick Energy Gang")
-  embed.set_thumbnail(url=ctx.guild.icon_url)
+  
   embed.add_field(name="• Ping",value=":placard: **f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
   embed.add_field(name="• BAM",value="<a:crown:793089465659949076> **f bam** Get Bammed! :P *Owner Abuse Only* <:Shiba_Cool:793772486822068224> ",inline=True)
   embed.add_field(name="• 8Ball",value=":8ball: **f eiball** Ask me a simple question predicting future I'll give my opinion!",inline=True)
@@ -59,7 +59,7 @@ async def bam(ctx,user_id=None,args=None):
     em.set_footer(text="Dig Bick Energy Gang")
     icon=ctx.guild.icon_url
     em.set_thumbnail(url=icon)
-    em.add_field(name="Reason -",value=":placard: You are too cool to get a BAM <:okDamn:792390256980000788> Blame <@261742964441612298> For trolling you! <a:THINK_EXTREME:801464607159091201> ",inline=True)
+    em.add_field(name="Reason -",value=f":placard: You are too cool to get a BAM <:okDamn:792390256980000788> Blame <@{ctx.guild.owner_id} For trolling you! <a:THINK_EXTREME:801464607159091201> ",inline=True)
     args=em
     if user_id!=None and args !=None:
       try:
