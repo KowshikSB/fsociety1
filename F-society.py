@@ -69,12 +69,12 @@ async def help(ctx, arg=None):
     await ctx.send(embed=embed)
   elif arg in ["reaction","Reaction","REACTION"]:
     embed=discord.Embed(title="Reaction Commands",color=0x2f3136)
-    embed.add_field(name="• Bonk", value="<a:animebonk:755081396795736135> **f bonk** Bonksss",inline=True)
+    embed.add_field(name="• Bonk", value="<:wot:790094440387182604> **f bonk** Bonksss",inline=True)
     embed.add_field(name="• Punch", value="<:pepe_peeping:790829664230309888> **f punch** Punches with some beeef",inline=True)
     embed.add_field(name="• Hug", value="<:EXTRASHY:788441412872962059> **f hug** hugs platonically :D",inline=True)
     embed.add_field(name="• Kiss", value="<:oh:774246120846917633> **f kiss** kisses platonically :3",inline=True)
     embed.add_field(name="• Kill", value="<a:MochaAngry:803227613669490719> **f kill** kills with some swag",inline=True)
-    embed.add_field(name="• slap", value="<:Shiba_thinking:793772530485297172>> **f slaps** Slaps with some force!",inline=True)
+    embed.add_field(name="• slap", value="<:Shiba_thinking:793772530485297172> **f slaps** Slaps with some force!",inline=True)
     
     
     
