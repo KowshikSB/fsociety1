@@ -309,7 +309,7 @@ async def punch(ctx ,avamember : discord.Member=None):
 @client.command()
 async def invite(ctx):
   x="https://discord.com/oauth2/authorize?client_id=774248018802114591&scope=bot&permissions=1614146624"
-  embed=discord.Embed(title = "The F Society", description="<:AlienSign:797352295779270666> *The Bot's* [Invite Link]({})".format(x), colour=0x2f3136)
+  embed=discord.Embed(title = "The F Society", description="<:AlienSign:797352295779270666> [Invite Link]({})".format(x), colour=0x2f3136)
   embed.set_thumbnail(url="https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024")
   await ctx.send(embed=embed)
   
