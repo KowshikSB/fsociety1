@@ -25,21 +25,35 @@ async def ping(ctx, arg=None):
     await ctx.send(f'<:BugHunter:803977931528994836> Pong! `{round(client.latency *1000)}ms`')
 @client.command()
 async def help(ctx, arg=None):
-  embed=discord.Embed(title = "The F Society", description="**HELP**", colour=0x2f3136)
+  arg=arg.lower()
+  if arg is None:
+    embed=discord.Embed(title = "The F Society", description="**HELP**", colour=0x2f3136)
 
 
     
   
   
-  embed.add_field(name="• Ping",value=":placard: **f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
-  embed.add_field(name="• Info",value="<a:Chat:804180442626261014> Info Commands like Avatar,Ping and much more coming soon!",inline=True)
+    embed.add_field(name="• Ping",value=":placard: **f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
+    embed.add_field(name="• Info",value="<a:Chat:804180442626261014> Info Commands like Avatar,Ping and much more coming soon!",inline=True)
   
-  embed.add_field(name="• Utility",value="<a:MochaAngry:803227613669490719> Commands that'll be useful like snipes , editsnipes , 8ball",inline=True)
-  embed.add_field(name="• Fun",value="<a:sleepingcat:799691148628852776> Fun Commands that is actually fun<:wot:790094440387182604>",inline=True)
-  embed.add_field(name="• Reaction", value="<:EXTRASHY:788441412872962059> Non Simping Chill Reaction commands maybe ? the ones that are not cringy ofc",inline=True)
-  embed.set_footer(text="Dig Bick Energy Gang | To get more information into the command do f help_<command> ")
-  embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
-  await ctx.send(embed=embed)
+    embed.add_field(name="• Utility",value="<a:MochaAngry:803227613669490719> Commands that'll be useful like snipes , editsnipes , 8ball",inline=True)
+    embed.add_field(name="• Fun",value="<a:sleepingcat:799691148628852776> Fun Commands that is actually fun<:wot:790094440387182604>",inline=True)
+    embed.add_field(name="• Reaction", value="<:EXTRASHY:788441412872962059> Non Simping Chill Reaction commands maybe ? the ones that are not cringy ofc",inline=True)
+    embed.set_footer(text="Dig Bick Energy Gang | To get more information into the command do f help_<command> ")
+    embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
+    await ctx.send(embed=embed)
+  elif arg=="fun":
+    em=discord.Embed(title="Fun Commands",color=0x2f3136)
+    em.add_field(name="• Simprate",value="**f howsimp** <a:simp:775732672793411605> Gives your simp rate!")
+    em.add_field(name="• Gayrate",value="**f howgay** <a:BIGGAY:805831470634762291> Gives your simp rate!")
+    em.add_field(name="• Hornyrate",value="**f howgay** <:hmmm:790829841679253525>  Gives your simp rate!")
+    em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
+
+    await ctx.send(embed=em)
+
+  
+
+
 
 
 @client.command()
