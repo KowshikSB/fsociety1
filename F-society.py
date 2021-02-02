@@ -54,6 +54,7 @@ async def help(ctx, arg=None):
     em=discord.Embed(title="Info Commands",color=0x2f3136)
     em.add_field(name="• Avatar",value="<a:Chat:804180442626261014> **f avatar** Gets the avatar of the person!",inline=True)
     em.add_field(name="• Ping",value=":placard: **f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
+    em.add_field(name="• Support",value=":placard: **f support** Bot's Support Server + Chill Server Link!",inline=True)
     em.add_field(name="Coming Soon",value="In Progress")
     em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
 
