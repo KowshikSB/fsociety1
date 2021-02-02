@@ -43,9 +43,9 @@ async def help(ctx, arg=None):
     await ctx.send(embed=embed)
   elif arg in ["fun","FUN","Fun"]:
     em=discord.Embed(title="Fun Commands",color=0x2f3136)
-    em.add_field(name="• Simprate",value="**f howsimp** <a:simp:775732672793411605> Gives your simp rate!")
-    em.add_field(name="• Gayrate",value="**f howgay** <a:BIGGAY:805831470634762291> Gives your simp rate!")
-    em.add_field(name="• Hornyrate",value="**f howgay** <:hmmm:790829841679253525>  Gives your simp rate!")
+    em.add_field(name="• Simprate",value="**f howsimp** <a:simp:775732672793411605> Gives your Simp rate!")
+    em.add_field(name="• Gayrate",value="**f howgay** <a:BIGGAY:805831470634762291> Gives your Gay rate!")
+    em.add_field(name="• Hornyrate",value="**f howhorny** <:hmmm:790829841679253525>  Gives your Horny rate!")
     em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
 
     await ctx.send(embed=em)
