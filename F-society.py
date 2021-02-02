@@ -40,6 +40,7 @@ async def help(ctx, arg=None):
     embed.add_field(name="• Reaction", value="<:EXTRASHY:788441412872962059> Non Simping Chill Reaction commands maybe ? the ones that are not cringy ofc",inline=True)
     embed.set_footer(text="Dig Bick Energy Gang | To get more information into the command do f help <command> ")
     embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
+    embed.add_field(name="F Society",value="[Support Server](https://discord.gg/z6pywufM9M)" , inline=False)
     await ctx.send(embed=embed)
   elif arg in ["fun","FUN","Fun"]:
     em=discord.Embed(title="Fun Commands",color=0x2f3136)
