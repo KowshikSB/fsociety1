@@ -65,6 +65,14 @@ async def help(ctx, arg=None):
     embed.add_field(name="• Edit Snipe",value="<:Target:803960603541635072> **f editsnipe** I'll snipe the edit message cos idk ask ;)",inline=True)
     embed.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
     await ctx.send(embed=embed)
+  elif arg in ["reaction","Reaction","REACTION"]:
+    embed=discord.Embed(title="Reaction Commands",color=0x2f3136)
+    embed.add_field(name="• Hug", value="<:EXTRASHY:788441412872962059> **f hug** hugs platonically :D",inline=True)
+    embed.add_field(name="• Kiss", value="<:oh:774246120846917633> **f kiss** kisses platonically :3",inline=True)
+    embed.add_field(name="Coming Soon",value="In Progress")
+    await ctx.send(embed=embed)
+  
+
 
   
 
