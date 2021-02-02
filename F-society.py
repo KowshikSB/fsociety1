@@ -41,7 +41,7 @@ async def help(ctx, arg=None):
     embed.set_footer(text="Dig Bick Energy Gang | To get more information into the command do f help_<command> ")
     embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
     await ctx.send(embed=embed)
-  elif arg=="fun":
+  elif arg in ["fun","FUN","Fun"]:
     em=discord.Embed(title="Fun Commands",color=0x2f3136)
     em.add_field(name="• Simprate",value="**f howsimp** <a:simp:775732672793411605> Gives your simp rate!")
     em.add_field(name="• Gayrate",value="**f howgay** <a:BIGGAY:805831470634762291> Gives your simp rate!")
@@ -49,6 +49,22 @@ async def help(ctx, arg=None):
     em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
 
     await ctx.send(embed=em)
+  elif arg in ['info','INFO','Info']:
+    em=discord.Embed(title="Info Commands",color=0x2f3136)
+    em.add_field(name="• Avatar",value="<a:Chat:804180442626261014> **f avatar** Gets the avatar of the person!",inline=True)
+    em.add_field(name="• Ping",value=":placard: **f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
+    em.add_field(name="Coming Soon",value="In Progress")
+    em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
+
+    await ctx.send(embed=em)
+  elif arg in ["utility","Utility","UTILITY"]:
+    embed=discord.Embed(title="Utility Commands",color=0x2f3136)
+    embed.add_field(name="• BAM",value="<a:crown:793089465659949076> **f bam** Get Bammed! :P *Owner Abuse Only* <:Shiba_Cool:793772486822068224> ",inline=True)
+    embed.add_field(name="• 8Ball",value=":8ball: **f eiball** Ask me a simple question predicting future I'll give my opinion!",inline=True)
+    embed.add_field(name="• Snipe",value="<:Sniper:803875843507748874> **f snipe** I'll snipe the deleted message cos why not! ;)",inline=True)
+    embed.add_field(name="• Edit Snipe",value="<:Target:803960603541635072> **f editsnipe** I'll snipe the edit message cos idk ask ;)",inline=True)
+    embed.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
+    await ctx.send(embed=embed)
 
   
 
