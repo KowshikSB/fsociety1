@@ -72,7 +72,11 @@ async def help(ctx, arg=None):
     embed.add_field(name="• Kiss", value="<:oh:774246120846917633> **f kiss** kisses platonically :3",inline=True)
     embed.add_field(name="Coming Soon",value="In Progress")
     await ctx.send(embed=embed)
+@client.command()
+async def support(ctx):
+  await ctx.send("The Bot's Support Server + Chill server - https://discord.gg/2tpP5RzWuX")
   
+
 
 
   
