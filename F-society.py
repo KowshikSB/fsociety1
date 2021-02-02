@@ -53,6 +53,9 @@ async def help(ctx, arg=None):
   elif arg in ['info','INFO','Info']:
     em=discord.Embed(title="Info Commands",color=0x2f3136)
     em.add_field(name="• Avatar",value="<a:Chat:804180442626261014> **f avatar** Gets the avatar of the person!",inline=True)
+    em.add_field(name="• Credits",value="<a:Chat:804180442626261014> **f credits** Gets the credits of making the bot",inline=True)
+    em.add_field(name="• Invite",value="<a:Chat:804180442626261014> **f invite** Gets the invite link of the bot",inline=True)
+    em.add_field(name="• Links",value="<a:Chat:804180442626261014> **f links** Gets all the links related to the bot",inline=True)
     em.add_field(name="• Ping",value=":placard: **f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
     em.add_field(name="• Support",value=":placard: **f support** Bot's Support Server + Chill Server Link!",inline=True)
     em.add_field(name="Coming Soon",value="In Progress")
@@ -325,6 +328,7 @@ async def credits(ctx):
   e=discord.Embed(title="The F Society",color=0x2f3136)
   e.add_field(name="<:bot_dev:804257409388249098>",value="Creator - **KaZE#5043**",inline=False)
   e.add_field(name=":art: Avatar ",value="RMV",inline=False)
+  e.set_thumbnail(url="https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024")
   e.set_footer(text="F SOCIETY")
   await ctx.send(embed=e)
   
