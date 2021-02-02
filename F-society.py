@@ -44,7 +44,7 @@ async def help(ctx, arg=None):
   elif arg in ["fun","FUN","Fun"]:
     em=discord.Embed(title="Fun Commands",color=0x2f3136)
     em.add_field(name="• Simprate",value="**f howsimp** <a:simp:775732672793411605> Gives your Simp rate!")
-    em.add_field(name="• Gayrate",value="**f howgay** <a:BIGGAY:805831470634762291> Gives your Gay rate!")
+    em.add_field(name="• Gayrate",value="**f howgay** <a:disco_cat:799691432553873419> Gives your Gay rate!")
     em.add_field(name="• Hornyrate",value="**f howhorny** <:hmmm:790829841679253525>  Gives your Horny rate!")
     em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
 
@@ -194,14 +194,14 @@ async def howgay(ctx, member: discord.Member=None):
   x=random.randint(1,100)
   if member is None:
     member=ctx.message.author.name
-    em = discord.Embed(title="Gay Rate",description=f'<a:BIGGAY:805831470634762291> You are {x} % Gay',color=0x2f3136)
+    em = discord.Embed(title="Gay Rate",description=f'<a:disco_cat:799691432553873419> You are {x} % Gay',color=0x2f3136)
   
    
     
     await ctx.send(embed=em)
   else:
 
-    em = discord.Embed(title="Gay Rate",description=f'<a:BIGGAY:805831470634762291> {member.name} is {x} % Gay',color=0x2f3136)
+    em = discord.Embed(title="Gay Rate",description=f'<a:disco_cat:799691432553873419> {member.name} is {x} % Gay',color=0x2f3136)
   
    
     
@@ -211,14 +211,14 @@ async def howhorny(ctx, member: discord.Member=None):
   x=random.randint(1,100)
   if member is None:
     member=ctx.message.author.name
-    em = discord.Embed(title="Horny JAIL",description=f'<:hmmm:790829841679253525> You are {x} % Horny',color=0x2f3136)
+    em = discord.Embed(title="Horny JAIL Says...",description=f'<:hmmm:790829841679253525> You are {x} % Horny',color=0x2f3136)
   
    
     
     await ctx.send(embed=em)
   else:
 
-    em = discord.Embed(title="Horny JAIL",description=f'<:hmmm:790829841679253525> {member.name} is {x} % Horny',color=0x2f3136)
+    em = discord.Embed(title="Horny JAIL Says...",description=f'<:hmmm:790829841679253525> {member.name} is {x} % Horny',color=0x2f3136)
   
    
     
