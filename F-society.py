@@ -74,7 +74,7 @@ async def help(ctx, arg=None):
     await ctx.send(embed=embed)
 @client.command()
 async def support(ctx):
-  await ctx.send("The Bot's Support Server + Chill server - https://discord.gg/2tpP5RzWuX")
+  await ctx.send("The Bot's Support Server + Chill server  https://discord.gg/2tpP5RzWuX")
   
 
 
