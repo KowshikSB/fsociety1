@@ -25,7 +25,6 @@ async def ping(ctx, arg=None):
     await ctx.send(f'<:BugHunter:803977931528994836> Pong! `{round(client.latency *1000)}ms`')
 @client.command()
 async def help(ctx, arg=None):
-  arg=arg.lower()
   if arg is None:
     embed=discord.Embed(title = "The F Society", description="**HELP**", colour=0x2f3136)
 
