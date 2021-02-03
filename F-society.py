@@ -338,12 +338,13 @@ async def stats(ctx):
   dpyversion=discord.__version__
   servercount=len(client.guilds)
   membercount=len(set(client.get_all_members()))
-  embed=discord.Embed(title="The F Society",description="BOT STATS",colour=0x2f3136)
-  embed.add_field(name=" ",value=f"<:BugHunter:803977931528994836> Ping - {round(client.latency *1000)}ms")
-  embed.add_field(name=" ",value=f" <a:Chat:804180442626261014>Server Count - {servercount} Servers")
-  embed.add_field(name=" ",value=f'<:AlienSign:797352295779270666> Member Count- {membercount} Members')
-  embed.add_field(name=" ",value=f':placard: Discord Version - {dpyversion}')
-  embed.add_field(name=" ",value=f'<:DarkHypesquad:803977958108692570> Language - Python [discord.py]')
+  x=f'''<:BugHunter:803977931528994836> Ping - {round(client.latency *1000)}ms
+  <a:Chat:804180442626261014>Server Count - {servercount} Servers
+  <:AlienSign:797352295779270666> Member Count- {membercount} Members
+  :placard: Discord Version - {dpyversion}'
+  <:DarkHypesquad:803977958108692570> Language - Python [discord.py]'''
+  embed=discord.Embed(title="The F Society",description=f"BOT STATS /n {x}",colour=0x2f3136)
+  
   embed.set_thumbnail(url="https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024")
   await ctx.send(embed=embed)
 
