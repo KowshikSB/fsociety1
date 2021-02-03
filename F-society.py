@@ -4,6 +4,7 @@ from discord.ext import commands
 import asyncio
 import random
 import platform
+from discord import Intents
 
 
 client = commands.Bot(command_prefix =commands.when_mentioned_or('f ','F '))
@@ -336,11 +337,13 @@ async def credits(ctx):
   
 @client.command()
 async def stats(ctx):
+  intents=Intents.all()
+  intents.members=True
   dpyversion=discord.__version__
   servercount=len(client.guilds)
   pythonversion=platform.python_revision()
-  c=client.guilds
-  membercount=len(set(c.get_all_members()))
+  client.fetch_guilds
+  membercount=len(set(client.get_all_members()))
   x=f'''**BOT STATS**
   <:BugHunter:803977931528994836> Ping - {round(client.latency *1000)}ms
 
