@@ -37,7 +37,7 @@ async def help(ctx, arg=None):
   
     embed.add_field(name="• Utility",value="<a:MochaAngry:803227613669490719> Commands that'll be useful like snipes , editsnipes , 8ball",inline=True)
     embed.add_field(name="• Fun",value="<a:sleepingcat:799691148628852776> Fun Commands that is actually fun<:wot:790094440387182604>",inline=True)
-    embed.add_field(name="• Reaction", value="<:EXTRASHY:788441412872962059> Non Simping Chill Reaction commands maybe ? the ones that are not cringy ofc",inline=True)
+    embed.add_field(name="• Reaction", value="<:SimpPills:774216550932545568> Non Simping Chill Reaction commands maybe ? the ones that are not cringy ofc",inline=True)
     embed.set_footer(text="Dig Bick Energy Gang | To get more information into the command do f help <command> ")
     embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
     embed.add_field(name="F Society",value="[Support Server](https://discord.gg/2tpP5RzWuX)" , inline=False)
@@ -58,6 +58,7 @@ async def help(ctx, arg=None):
     em.add_field(name="• Links",value="<a:Chat:804180442626261014> **f links** Gets all the links related to the bot",inline=True)
     em.add_field(name="• Ping",value=":placard: **f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
     em.add_field(name="• Support",value=":placard: **f support** Bot's Support Server + Chill Server Link!",inline=True)
+    em.add_field(name="• Stats",value=":placard: **f stats** Gives the stats of the bot!",inline=True)
     em.add_field(name="Coming Soon",value="In Progress")
     em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
 
@@ -332,7 +333,22 @@ async def credits(ctx):
   e.set_footer(text="F SOCIETY")
   await ctx.send(embed=e)
   
-    
+@client.command()
+async def stats(ctx):
+  dpyversion=discord.__version__
+  servercount=len(client.guilds)
+  membercount=len(set(client.get_all_members()))
+  embed=discord.Embed(title="The F Society",description="BOT STATS",colour=0x2f3136)
+  embed.add_field(name=" ",value=f"<:BugHunter:803977931528994836> Ping - {round(client.latency *1000)}ms")
+  embed.add_field(name=" ",value=f" <a:Chat:804180442626261014>Server Count - {servercount} Servers")
+  embed.add_field(name=" ",value=f'<:AlienSign:797352295779270666> Member Count- {membercount} Members')
+  embed.add_field(name=" ",value=f':placard: Discord Version - {dpyversion}')
+  embed.add_field(name=" ",value=f'<:DarkHypesquad:803977958108692570> Language - Python [discord.py]')
+  embed.set_thumbnail(url="https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024")
+  await ctx.send(embed=embed)
+
+
+
 
 
 
