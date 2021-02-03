@@ -5,6 +5,9 @@ import asyncio
 import random
 import platform
 from discord import Intents
+from PIL import Image
+import requests
+from io import BytesIO
 
 
 
@@ -90,6 +93,35 @@ async def help(ctx, arg=None):
 @client.command()
 async def support(ctx):
   await ctx.send("The Bot's Support Server + Chill server  https://discord.gg/2tpP5RzWuX")
+
+@client.command()
+async def createemoji(ctx, object, *, name):
+	guild = ctx.guild
+	if ctx.author.guild_permissions.manage_emojis:
+		r = requests.get(object)
+		img = Image.open(BytesIO(r.content), mode='r')
+		try:
+			img.seek(1)
+
+		except EOFError:
+			is_animated = False
+
+		else:
+			is_animated = True
+
+		if is_animated == True:
+			b = BytesIO()
+			img.save(b, format='GIF')
+			b_value = b.getvalue()
+			emoji = await guild.create_custom_emoji(image=b_value, name=name)
+			await ctx.send(f'Successfully created emoji: <:{name}:{emoji.id}>')
+
+		elif is_animated == False:
+			b = BytesIO()
+			img.save(b, format='PNG')
+			b_value = b.getvalue()
+			emoji = await guild.create_custom_emoji(image=b_value, name=name)
+			await ctx.send(f'Successfully created emoji: <:{name}:{emoji.id}>')
   
 
 
