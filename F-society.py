@@ -184,8 +184,10 @@ kisses=['https://c.tenor.com/eSoJ4EYmTB8AAAAj/mochi-peach.gif','https://media.te
 punchh=['https://cdn.discordapp.com/attachments/774164648093810718/806163162579730502/tenor_3.gif',"https://media.tenor.com/images/9c14d2d5dd918471954e5946166f3632/tenor.gif",'https://media.tenor.com/images/7eb5ede6402a3fb97ab9fccc81640c2c/tenor.gif','https://media.tenor.com/images/8a79543998d6878be573aab94ae86456/tenor.gif','https://media.tenor.com/images/5b668436338971d42469d7348a5340e5/tenor.gif','https://media.tenor.com/images/697ef4b275b5d9de5215a37b1e7f96da/tenor.gif','https://media.tenor.com/images/5cdcbff8c5bce802d7b65baa711f12f4/tenor.gif']
 boopp=['https://media.tenor.com/images/c46116b9116e1baa24e96fa6c5a78818/tenor.gif','https://media.tenor.com/images/a02506bf918679cd3a4658dd09632341/tenor.gif','https://media.tenor.com/images/d07762ab2f5fc5d1d43525d2b3db7de8/tenor.gif','https://media.tenor.com/images/8bf3b4bec5055537dda92d86d16ea5bd/tenor.gif','https://media.tenor.com/images/2ff785b647ef22f7110b3b2599e4c847/tenor.gif','https://media.tenor.com/images/ff69974ac6a5ffa9a4ab8a59a522d04e/tenor.gif',]
 slapp=['https://media.tenor.com/images/734d628ba871022bc9ae142035b969b5/tenor.gif','https://media.tenor.com/images/63c3441f0f14a753d74252a7c0247afa/tenor.gif','https://media.tenor.com/images/49b0ce2032f6134c31e1313cb078fe5a/tenor.gif','https://media.tenor.com/images/47a6be1fbc1c40c3a55c0e2c8b725603/tenor.gif','https://media.tenor.com/images/c366bb3a5d7820139646d8cdce96f7a8/tenor.gif','https://media.tenor.com/images/c5651d89a0d457a89f45b80f29ceeadb/tenor.gif','https://media.tenor.com/images/a14be99841c909a43d24b220ffebaa37/tenor.gif','https://media.tenor.com/images/a5e7b8842285b117a05a35552f586b6e/tenor.gif','https://media.tenor.com/images/53b846f3cc11c7c5fe358fc6d458901d/tenor.gif','https://media.tenor.com/images/1d8edce282f3e36abc6b730357d3cea2/tenor.gif','https://media.tenor.com/images/3f9e6d5315b421c11cff659cd4a7a25e/tenor.gif']
-killl=['https://media.tenor.com/images/0df66def2ac730f8417a8dfa41dc7b91/tenor.gif','https://media.tenor.com/images/b713799e73ffe51c0268947e7708c39c/tenor.gif','https://media.tenor.com/images/f2815deb4991c4153a50801a7c95ac2c/tenor.gif','https://media.tenor.com/images/2f81a18eaa675aab3a0032df7bd65ac8/tenor.gif','https://media.tenor.com/images/6192dbf540b3a5f2e5fb8b972d2856a4/tenor.gif']
+killl=['https://media.tenor.com/images/0df66def2ac730f8417a8dfa41dc7b91/tenor.gif','https://media.tenor.com/images/4b210bcaafec30d386d43f0ae577fb93/tenor.gif','https://media.tenor.com/images/b713799e73ffe51c0268947e7708c39c/tenor.gif','https://media.tenor.com/images/f2815deb4991c4153a50801a7c95ac2c/tenor.gif','https://media.tenor.com/images/2f81a18eaa675aab3a0032df7bd65ac8/tenor.gif','https://media.tenor.com/images/6192dbf540b3a5f2e5fb8b972d2856a4/tenor.gif']
 bonkk=['https://media.tenor.com/images/e1abfac2a360a1c32052135e358e092f/tenor.gif','https://media.tenor.com/images/d1108955c4fbf68fe97d41d17f3afbd2/tenor.gif','https://media.tenor.com/images/c493113cf83bb30905640b487e7ed035/tenor.gif','https://media.tenor.com/images/47698b115e4185036e95111f81baab45/tenor.gif','https://media.tenor.com/images/79c666d38d5494bad25c5c023c0bbc44/tenor.gif']
+patt=['https://media.tenor.com/images/69fb17b3eafe27df334f9f873473d531/tenor.gif','https://media.tenor.com/images/21c1228517cafcd13dff38e2253b4713/tenor.gif','https://media.tenor.com/images/19c555af496d14808aa5d9bd8277c937/tenor.gif','https://media.tenor.com/images/fa9ad7f4ecfad744aec37241cce2cecc/tenor.gif','https://media.tenor.com/images/1d37a873edfeb81a1f5403f4a3bfa185/tenor.gif','https://media.tenor.com/images/dc61bf036b96b9a321943493c55ad8a4/tenor.gif']
+
 @client.command()
 async def prefix(ctx):
     em=discord.Embed(description="<:bot_dev:804257409388249098> Prefix for the <@774248018802114591>  - `f ` & <@774248018802114591>",color=0x2f3136)
@@ -279,6 +281,18 @@ async def kill(ctx ,avamember : discord.Member=None):
       em.set_author(name=f"{ctx.author.name} kills {avamember.name}", icon_url=ctx.author.avatar_url)
       em.set_footer(text='I-')
       em.set_image(url=random.choice(killl)) 
+      await ctx.send(embed=em)
+@client.command()
+async def pat(ctx ,avamember : discord.Member=None):
+    if avamember is None:
+      await ctx.send("<a:rage_smash:799276770091859968> *You need to mention a person*")
+    
+    else:
+
+      em = discord.Embed(color=0xfefec8)
+      em.set_author(name=f"{ctx.author.name} pats {avamember.name}", icon_url=ctx.author.avatar_url)
+      em.set_footer(text='I-')
+      em.set_image(url=random.choice(patt)) 
       await ctx.send(embed=em)
   
 @client.command()
