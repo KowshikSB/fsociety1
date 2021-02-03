@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 import asyncio
 import random
+import platform
 
 
 client = commands.Bot(command_prefix =commands.when_mentioned_or('f ','F '))
@@ -337,13 +338,18 @@ async def credits(ctx):
 async def stats(ctx):
   dpyversion=discord.__version__
   servercount=len(client.guilds)
+  pythonversion=platform.python_revision
   membercount=len(set(client.get_all_members()))
-  x=f'''<:BugHunter:803977931528994836> Ping - {round(client.latency *1000)}ms
+  x=f'''**BOT STATS**
+  <:BugHunter:803977931528994836> Ping - {round(client.latency *1000)}ms
+
   <a:Chat:804180442626261014>Server Count - {servercount} Servers
+
   <:AlienSign:797352295779270666> Member Count- {membercount} Members
-  :placard: Discord Version - {dpyversion}'
-  <:DarkHypesquad:803977958108692570> Language - Python [discord.py]'''
-  embed=discord.Embed(title="The F Society",description=f"BOT STATS /n {x}",colour=0x2f3136)
+
+  :placard: Discord.py - {dpyversion}'
+  <:DarkHypesquad:803977958108692570> Language - Python {pythonversion}'''
+  embed=discord.Embed(title="The F Society",description=x,colour=0x2f3136)
   
   embed.set_thumbnail(url="https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024")
   await ctx.send(embed=embed)
