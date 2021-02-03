@@ -5,7 +5,8 @@ import asyncio
 import random
 import platform
 from discord import Intents
-
+intents=Intents.all()
+intents.members=True
 
 client = commands.Bot(command_prefix =commands.when_mentioned_or('f ','F '),intents=Intents)
 client.remove_command("help")
