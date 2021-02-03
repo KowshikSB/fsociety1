@@ -7,8 +7,9 @@ import platform
 from discord import Intents
 
 
-client = commands.Bot(command_prefix =commands.when_mentioned_or('f ','F '))
+client = commands.Bot(command_prefix =commands.when_mentioned_or('f ','F '),intents=Intents)
 client.remove_command("help")
+
 command_prefix =commands.when_mentioned_or('f ')
 
 
@@ -337,8 +338,7 @@ async def credits(ctx):
   
 @client.command()
 async def stats(ctx):
-  intents=Intents.all()
-  intents.members=True
+  
   dpyversion=discord.__version__
   servercount=len(client.guilds)
   pythonversion=platform.python_revision()
