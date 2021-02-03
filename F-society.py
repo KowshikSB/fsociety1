@@ -83,9 +83,9 @@ async def help(ctx, arg=None):
     embed.add_field(name="• Kiss", value="<:oh:774246120846917633> **f kiss** kisses platonically :3",inline=True)
     embed.add_field(name="• Kill", value="<a:MochaAngry:803227613669490719> **f kill** kills with some swag",inline=True)
     embed.add_field(name="• slap", value="<:Shiba_thinking:793772530485297172> **f slaps** Slaps with some force!",inline=True)
-    
-    
-    
+    await ctx.send(embed=embed)
+  else:
+    embed=discord.Embed(title="Error!",description="Couldn't find the Command. The Command Does not exist",color=0x2f3136)
     await ctx.send(embed=embed)
 @client.command()
 async def support(ctx):
