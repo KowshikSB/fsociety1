@@ -349,9 +349,8 @@ async def stats(ctx):
 
   <a:Chat:804180442626261014>Server Count - {servercount} Servers
 
-  <:AlienSign:797352295779270666> Member Count- {membercount} Members
+  :placard: Discord.py - {dpyversion}
 
-  :placard: Discord.py - {dpyversion}'
   <:DarkHypesquad:803977958108692570> Language - Python {pythonversion}'''
   embed=discord.Embed(title="The F Society",description=x,colour=0x2f3136)
   
