@@ -343,7 +343,7 @@ async def stats(ctx):
   servercount=len(client.guilds)
   pythonversion=platform.python_revision()
   client.fetch_guilds
-  membercount={len(set(client.get_all_members()))}
+  membercount=len(set(client.get_all_members()))
   x=f'''**BOT STATS**
   <:BugHunter:803977931528994836> Ping - {round(client.latency *1000)}ms
 
