@@ -84,6 +84,7 @@ async def help(ctx, arg=None):
     embed.add_field(name="• Kiss", value="<:oh:774246120846917633> **f kiss** kisses platonically :3",inline=True)
     embed.add_field(name="• Kill", value="<a:MochaAngry:803227613669490719> **f kill** kills with some swag",inline=True)
     embed.add_field(name="• slap", value="<:Shiba_thinking:793772530485297172> **f slaps** Slaps with some force!",inline=True)
+    embed.add_field(name="• Pat", value="<:sed:776635427372924958> **f pats** Patsss ",inline=True)
     await ctx.send(embed=embed)
   else:
     embed=discord.Embed(title="Error!",description="Couldn't find the Command. The Command Does not exist",color=0x2f3136)
@@ -291,7 +292,7 @@ async def pat(ctx ,avamember : discord.Member=None):
 
       em = discord.Embed(color=0xfefec8)
       em.set_author(name=f"{ctx.author.name} pats {avamember.name}", icon_url=ctx.author.avatar_url)
-      em.set_footer(text='I-')
+      
       em.set_image(url=random.choice(patt)) 
       await ctx.send(embed=em)
   
