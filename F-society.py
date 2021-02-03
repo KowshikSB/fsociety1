@@ -5,9 +5,7 @@ import asyncio
 import random
 import platform
 from discord import Intents
-from PIL import Image
-import requests
-from io import BytesIO
+
 
 
 
