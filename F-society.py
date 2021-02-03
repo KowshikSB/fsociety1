@@ -54,10 +54,10 @@ async def help(ctx, arg=None):
     await ctx.send(embed=em)
   elif arg in ['info','INFO','Info']:
     em=discord.Embed(title="Info Commands",color=0x2f3136)
-    em.add_field(name="• Avatar",value="<a:Chat:804180442626261014> **f avatar** Gets the avatar of the person!",inline=True)
-    em.add_field(name="• Credits",value="<a:Chat:804180442626261014> **f credits** Gets the credits of making the bot",inline=True)
-    em.add_field(name="• Invite",value="<a:Chat:804180442626261014> **f invite** Gets the invite link of the bot",inline=True)
-    em.add_field(name="• Links",value="<a:Chat:804180442626261014> **f links** Gets all the links related to the bot",inline=True)
+    em.add_field(name="• Avatar",value=":placard: **f avatar** Gets the avatar of the person!",inline=True)
+    em.add_field(name="• Credits",value=":placard: **f credits** Gets the credits of making the bot",inline=True)
+    em.add_field(name="• Invite",value=":placard: **f invite** Gets the invite link of the bot",inline=True)
+    em.add_field(name="• Links",value=":placard: **f links** Gets all the links related to the bot",inline=True)
     em.add_field(name="• Ping",value=":placard: **f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
     em.add_field(name="• Support",value=":placard: **f support** Bot's Support Server + Chill Server Link!",inline=True)
     em.add_field(name="• Stats",value=":placard: **f stats** Gives the stats of the bot!",inline=True)
@@ -343,11 +343,13 @@ async def stats(ctx):
   servercount=len(client.guilds)
   pythonversion=platform.python_revision()
   client.fetch_guilds
-  membercount=len(set(client.get_all_members()))
+  membercount={len(set(client.get_all_members()))}
   x=f'''**BOT STATS**
   <:BugHunter:803977931528994836> Ping - {round(client.latency *1000)}ms
 
   <a:Chat:804180442626261014>Server Count - {servercount} Servers
+  
+  <:AlienSign:797352295779270666> Member Count - {membercount} Members
 
   :placard: Discord.py - {dpyversion}
 
