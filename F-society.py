@@ -349,7 +349,11 @@ async def links(ctx):
 @client.command()
 async def credits(ctx):
   e=discord.Embed(title="The F Society",color=0x2f3136)
-  e.add_field(name="<:bot_dev:804257409388249098> BOT DEV",value="Creator - **KaZE#5043**",inline=False)
+  x='''Creator - **KaZE#5043**
+  Developer - **Davy#0666**'''
+
+  e.add_field(name="<:bot_dev:804257409388249098> BOT DEV",value=f"{x}",inline=False)
+  
   e.add_field(name=":art: Avatar ",value="Artist - **RMV**",inline=False)
   e.set_thumbnail(url="https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024")
   e.set_footer(text="F SOCIETY")
