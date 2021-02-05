@@ -244,15 +244,30 @@ async def pp(ctx, member: discord.Member=None):
   c=y+"="*x+d
   if member is None:
     member=ctx.message.author.name
-    z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size....
-    is {c}''')
-    em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
-    await ctx.send(embed=em)
+    if c <=5:
+      z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size..
+      is **{c}** <:smolpp:781375654527893560> ''')
+      em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
+      await ctx.send(embed=em)
+    else:
+      z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size..
+      **{c}** <:BigPP:781375681463713842> ''')
+      em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
+      await ctx.send(embed=em)
   else:
-    z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size....
-    is {c}''')
-    em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
-    await ctx.send(embed=em)
+    if c<=5:
+      z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size..
+      **{c}** <:smolpp:781375654527893560> ''')
+      em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
+      await ctx.send(embed=em)
+
+    else:
+      
+      z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size..
+      **{c}** <:BigPP:781375681463713842> ''')
+      em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
+      await ctx.send(embed=em)
+
 
 @client.command()
 async def howhorny(ctx, member: discord.Member=None):
