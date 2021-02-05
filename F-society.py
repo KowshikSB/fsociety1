@@ -261,7 +261,7 @@ async def pp(ctx, member: discord.Member=None):
       
   else:
     if x<=10:
-      z=(f''' Your PP Size..
+      z=(f''' {member}'s PP Size..
       **{c}** ''')
       em=discord.Embed(title="<:pepe_peeping:790829664230309888> Peepee Sizer",description=f'{z}',color=0x2f3136)
       await ctx.send(embed=em)
@@ -269,7 +269,7 @@ async def pp(ctx, member: discord.Member=None):
 
     else:
       
-      z=(f''' Your PP Size..
+      z=(f'''{member}'s Your PP Size..
       **{c}** ''')
       em=discord.Embed(title="<:pepe_peeping:790829664230309888> Peepee Sizer",description=f'{z}',color=0x2f3136)
       await ctx.send(embed=em)
