@@ -238,28 +238,28 @@ async def howgay(ctx, member: discord.Member=None):
     await ctx.send(embed=em) 
 @client.command()
 async def pp(ctx, member: discord.Member=None):
-  x=random.randint(1,10)
+  x=random.randint(1,20)
   y="8"
   d="D"
   c=y+"="*x+d
   if member is None:
     member=ctx.message.author.name
-    if x <=5:
-      z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size..
+    if x <=10:
+      z=(f''' Your PP Size..
       is **{c}** ''')
       em=discord.Embed(title="<:pepe_peeping:790829664230309888> Peepee Sizer",description=f'{z}',color=0x2f3136)
       await ctx.send(embed=em)
       await ctx.send("<:smolpp:781375654527893560>")
     else:
-      z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size..
+      z=(f''' Your PP Size..
       **{c}**  ''')
       em=discord.Embed(title="<:pepe_peeping:790829664230309888> Peepee Sizer",description=f'{z}',color=0x2f3136)
       await ctx.send(embed=em)
       await ctx.send("<:BigPP:781375681463713842>")
       
   else:
-    if x<=5:
-      z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size..
+    if x<=10:
+      z=(f''' Your PP Size..
       **{c}** ''')
       em=discord.Embed(title="<:pepe_peeping:790829664230309888> Peepee Sizer",description=f'{z}',color=0x2f3136)
       await ctx.send(embed=em)
@@ -267,7 +267,7 @@ async def pp(ctx, member: discord.Member=None):
 
     else:
       
-      z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size..
+      z=(f''' Your PP Size..
       **{c}** ''')
       em=discord.Embed(title="<:pepe_peeping:790829664230309888> Peepee Sizer",description=f'{z}',color=0x2f3136)
       await ctx.send(embed=em)
