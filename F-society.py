@@ -421,6 +421,12 @@ async def stats(ctx):
   
   embed.set_thumbnail(url="https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024")
   await ctx.send(embed=embed)
+@client.command()
+async def membercount(ctx):
+  x=ctx.guild.member_count
+  em=discord.Embed(title=ctx.guild.name,description=f"Member Count - {x}",color=0x2f3136)
+  em.set_thumbnail(url=ctx.guild.icon_url)
+  await ctx.send(embed=em)
 
 
 
