@@ -247,13 +247,13 @@ async def pp(ctx, member: discord.Member=None):
     if x <=5:
       z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size..
       is **{c}** ''')
-      em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
+      em=discord.Embed(title="<:pepe_peeping:790829664230309888> Peepee Sizer",description=f'{z}',color=0x2f3136)
       await ctx.send(embed=em)
       await ctx.send("<:smolpp:781375654527893560>")
     else:
       z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size..
       **{c}**  ''')
-      em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
+      em=discord.Embed(title="<:pepe_peeping:790829664230309888> Peepee Sizer",description=f'{z}',color=0x2f3136)
       await ctx.send(embed=em)
       await ctx.send("<:BigPP:781375681463713842>")
       
@@ -261,7 +261,7 @@ async def pp(ctx, member: discord.Member=None):
     if x<=5:
       z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size..
       **{c}** ''')
-      em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
+      em=discord.Embed(title="<:pepe_peeping:790829664230309888> Peepee Sizer",description=f'{z}',color=0x2f3136)
       await ctx.send(embed=em)
       await ctx.send("<:smolpp:781375654527893560>")
 
@@ -269,7 +269,7 @@ async def pp(ctx, member: discord.Member=None):
       
       z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size..
       **{c}** ''')
-      em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
+      em=discord.Embed(title="<:pepe_peeping:790829664230309888> Peepee Sizer",description=f'{z}',color=0x2f3136)
       await ctx.send(embed=em)
       await ctx.send("<:BigPP:781375681463713842>")
 
