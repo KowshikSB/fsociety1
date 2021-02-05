@@ -52,6 +52,8 @@ async def help(ctx, arg=None):
     em.add_field(name="• Simprate",value="**f howsimp** <a:simp:775732672793411605> Gives your Simp rate!")
     em.add_field(name="• Gayrate",value="**f howgay** <a:disco_cat:799691432553873419> Gives your Gay rate!")
     em.add_field(name="• Hornyrate",value="**f howhorny** <:hmmm:790829841679253525>  Gives your Horny rate!")
+    em.add_field(name="• PP",value="**f pp** <:pepe_peeping:790829664230309888>  Gives your PP Size even tho its smol! EZ")
+    
     em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
 
     await ctx.send(embed=em)
