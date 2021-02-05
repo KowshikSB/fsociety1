@@ -237,6 +237,24 @@ async def howgay(ctx, member: discord.Member=None):
     
     await ctx.send(embed=em) 
 @client.command()
+async def pp(ctx, member: discord.Member=None):
+  x=random.randint(1,10)
+  y="8"
+  d="D"
+  c=y+"="*x+d
+  if member is None:
+    member=ctx.message.author.name
+    z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size....
+    is {c}''')
+    em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
+    await ctx.send(embed=em)
+  else:
+    z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size....
+    is {c}''')
+    em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
+    await ctx.send(embed=em)
+
+@client.command()
 async def howhorny(ctx, member: discord.Member=None):
   x=random.randint(1,100)
   if member is None:
@@ -381,6 +399,7 @@ async def stats(ctx):
   
   embed.set_thumbnail(url="https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024")
   await ctx.send(embed=embed)
+
 
 
 
