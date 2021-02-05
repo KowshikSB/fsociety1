@@ -424,8 +424,8 @@ async def stats(ctx):
 @client.command()
 async def membercount(ctx):
   x=ctx.guild.member_count
-  em=discord.Embed(title=ctx.guild.name,description=f"Member Count - {x}",color=0x2f3136)
-  em.set_thumbnail(url=ctx.guild.icon_url)
+  em=discord.Embed(title=ctx.guild.name,description=f"**Member Count** - {x}",color=0x2f3136)
+  em.set_footer(text="DIG BICK ENERGY GANG")
   await ctx.send(embed=em)
 
 
