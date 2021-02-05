@@ -171,7 +171,7 @@ async def editsnipe(ctx):
     except:
       await ctx.channel.send("<a:potato_rage:788063034701906001> *Dont waste my ammo `;-;` Nothing to snipe!*",delete_after=10)
 @client.command()
-async def avatar(ctx ,avamember : discord.Member=None):
+async def avatar(ctx ,avamember : discord.Member=None,aliases=['av','Avatar']):
   if avamember is None:
     avamember=ctx.message.author 
     
@@ -425,6 +425,7 @@ async def stats(ctx):
 async def membercount(ctx):
   x=ctx.guild.member_count
   em=discord.Embed(title=ctx.guild.name,description=f"**Member Count** - {x}",color=0xfefec8)
+  em.set_thumbnail(url=ctx.guild.icon_url)
   em.set_footer(text="Dig Bick Energy")
   await ctx.send(embed=em)
 
