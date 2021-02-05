@@ -244,7 +244,7 @@ async def pp(ctx, member: discord.Member=None):
   c=y+"="*x+d
   if member is None:
     member=ctx.message.author.name
-    if c <=5:
+    if x <=5:
       z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size..
       is **{c}** <:smolpp:781375654527893560> ''')
       em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
@@ -255,7 +255,7 @@ async def pp(ctx, member: discord.Member=None):
       em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
       await ctx.send(embed=em)
   else:
-    if c<=5:
+    if x<=5:
       z=(f'''<:Shiba_OhShit:793851878512656394> Your PP Size..
       **{c}** <:smolpp:781375654527893560> ''')
       em=discord.Embed(title="Peepee Sizer",description=f'{z}',color=0x2f3136)
