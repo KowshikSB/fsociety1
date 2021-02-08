@@ -96,7 +96,12 @@ async def support(ctx):
   await ctx.send("The Bot's Support Server + Chill server  https://discord.gg/2tpP5RzWuX")
 
 
-  
+@client.event
+async def on_member_join(member):
+  guild=client.get_guild(725302478823751702)
+  channel=guild.get_channel(774155081922773022)
+  await channel.send(f'**Welcome to the F Society!** {member.mention} *Read the* <#774143716042604545> *and get your roles in* <#775269400549916702> :ShibaHeart: <@&802760617769041990>')
+
 
 
 
