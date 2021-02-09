@@ -98,10 +98,21 @@ async def support(ctx):
 
 @client.event
 async def on_member_join(member):
+
+  
   if member.guild.id==725302478823751702:
+    x='''<a:crown:793089465659949076> *Head over to <#774143716042604545> for Basic Server Rules to Chill*
+<a:crown:793089465659949076>  *Get roles in* <#775269400549916702>
+<a:crown:793089465659949076> Talk in <#774155081922773022>  ;-;'''
+    
+    em=discord.Embed(title="WELCOME TO F Society!",description=x,color=0x2f3136)
+    em.set_author(name=f'{member.name}#{member.discriminator}',icon_url=member.avatar_url)
+    em.set_thumbnail(url=member.guild.icon_url)
+    em.set_footer(text="Keep Chilling")
     guild=client.get_guild(725302478823751702)
     channel=guild.get_channel(774155081922773022)
-    await channel.send(f'**Welcome to the F Society!** {member.mention} *Read the* <#774143716042604545> *and get your roles in* <#775269400549916702> <:ShibaHeart:793851831431200808> <@&802760617769041990>')
+    await channel.send(f'<:Shiba_thinking:793772530485297172> {member.mention} <@&802760617769041990>',embed=em)
+
 
 
 
