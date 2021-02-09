@@ -267,30 +267,30 @@ async def pp(ctx, member: discord.Member=None):
       z=(f''' Your PP Size..
       is **{c}** ''')
       em=discord.Embed(title="<:pepe_peeping:790829664230309888> Peepee Sizer",description=f'{z}',color=0x2f3136)
-      await ctx.send(embed=em)
-      await ctx.send("<:smolpp:781375654527893560>")
+      await ctx.send("<:smolpp:781375654527893560>",embed=em)
+      
     else:
       z=(f''' Your PP Size..
       **{c}**  ''')
       em=discord.Embed(title="<:pepe_peeping:790829664230309888> Peepee Sizer",description=f'{z}',color=0x2f3136)
-      await ctx.send(embed=em)
-      await ctx.send("<:BigPP:781375681463713842>")
+      await ctx.send("<:BigPP:781375681463713842>",embed=em)
+      
       
   else:
     if x<=10:
       z=(f''' {member.name}'s PP Size..
       **{c}** ''')
       em=discord.Embed(title="<:pepe_peeping:790829664230309888> Peepee Sizer",description=f'{z}',color=0x2f3136)
-      await ctx.send(embed=em)
-      await ctx.send("<:smolpp:781375654527893560>")
+      await ctx.send("<:smolpp:781375654527893560>",embed=em)
+      
 
     else:
       
       z=(f'''{member.name}'s Your PP Size..
       **{c}** ''')
       em=discord.Embed(title="<:pepe_peeping:790829664230309888> Peepee Sizer",description=f'{z}',color=0x2f3136)
-      await ctx.send(embed=em)
-      await ctx.send("<:BigPP:781375681463713842>")
+      await ctx.send("<:BigPP:781375681463713842>",embed=em)
+      
 
 
 @client.command()
