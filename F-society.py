@@ -108,7 +108,7 @@ async def on_member_join(member):
     em=discord.Embed(title="WELCOME TO F Society!",description=x,color=0x2f3136)
     em.set_author(name=f'{member.name}#{member.discriminator}',icon_url=member.avatar_url)
     em.set_thumbnail(url=member.guild.icon_url)
-    em.set_footer(text="Keep Chilling")
+    em.set_footer(text="K E E P C H I L L I N G")
     guild=client.get_guild(725302478823751702)
     channel=guild.get_channel(774155081922773022)
     await channel.send(f'<:Shiba_thinking:793772530485297172> {member.mention} <@&802760617769041990>',embed=em)
