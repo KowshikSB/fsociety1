@@ -136,7 +136,7 @@ async def bam(ctx,user_id=None,args=None):
   if ctx.author.id==ctx.guild.owner_id:
     
       if user_id!=None and args !=None:
-        if ctx.guild.get_member(user_id) is not None:
+        if ctx.guild.get_member(user_id)!= None:
           em=discord.Embed(title = ctx.guild.name, description= "**You have Been Bammed In {}!**".format(ctx.guild.name), colour=0x2f3136)
           em.set_footer(text="Dig Bick Energy Gang")
           icon=ctx.guild.icon_url
