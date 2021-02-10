@@ -131,7 +131,7 @@ async def eiball(ctx, arg=None):
   await msg.add_reaction("<:wot:790094440387182604>") #\U0001f3b1
   
 @client.command()
-@comamnds.is_owner()
+@comamnd.is_owner()
 async def bam(ctx,user_id=None,args=None):
   if ctx.author.id==ctx.guild.owner_id:
     
