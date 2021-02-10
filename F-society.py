@@ -153,7 +153,7 @@ async def bam(ctx,user_id=None,args=None):
         else:
           await ctx.send("The User is Not in the Guild")
       else:
-        await ctx.sent("You need to give the user id")
+        await ctx.send("You need to give the user id")
   else:
     await ctx.send("You can't Bam noob!")
 
