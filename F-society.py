@@ -131,29 +131,29 @@ async def eiball(ctx, arg=None):
   await msg.add_reaction("<:wot:790094440387182604>") #\U0001f3b1
   
 @client.command()
-
+@comamnds.is_owner()
 async def bam(ctx,user_id=None,args=None):
   if ctx.author.id==ctx.guild.owner_id:
     
-      if user_id!=None and args !=None:
-        if ctx.guild.get_member(user_id)!= None:
-          em=discord.Embed(title = ctx.guild.name, description= "**You have Been Bammed In {}!**".format(ctx.guild.name), colour=0x2f3136)
-          em.set_footer(text="Dig Bick Energy Gang")
-          icon=ctx.guild.icon_url
-          em.set_thumbnail(url=icon)
-          em.add_field(name="Reason -",value=f":placard: You are too cool to get a BAM <:okDamn:792390256980000788> Blame <@{ctx.guild.owner_id}> For trolling you! <a:THINK_EXTREME:801464607159091201> ",inline=True)
-          args=em
-          try:
-            target = await client.fetch_user(user_id)
-            await target.send(embed=args)
-      
-            await ctx.send("The User is Bammed <:okDamn:792390256980000788> ")
-          except:
-            await ctx.channel.send("`Couldn't DM the given user`") 
-        else:
-          await ctx.send("The User is Not in the Guild")
+    if user_id!=None and args !=None:
+      if ctx.guild.get_member(user_id)!= None:
+        em=discord.Embed(title = ctx.guild.name, description= "**You have Been Bammed In {}!**".format(ctx.guild.name), colour=0x2f3136)
+        em.set_footer(text="Dig Bick Energy Gang")
+        icon=ctx.guild.icon_url
+        em.set_thumbnail(url=icon)
+        em.add_field(name="Reason -",value=f":placard: You are too cool to get a BAM <:okDamn:792390256980000788> Blame <@{ctx.guild.owner_id}> For trolling you! <a:THINK_EXTREME:801464607159091201> ",inline=True)
+        args=em
+        try:
+          target = await client.fetch_user(user_id)
+          await target.send(embed=args)
+     
+          await ctx.send("The User is Bammed <:okDamn:792390256980000788> ")
+        except:
+          await ctx.channel.send("`Couldn't DM the given user`") 
       else:
-        await ctx.send("You need to give the user id")
+        await ctx.send("The User is Not in the Guild")
+    else:
+      await ctx.send("You need to give the user id")
   else:
     await ctx.send("You can't Bam noob!")
 
