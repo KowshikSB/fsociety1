@@ -133,6 +133,7 @@ async def eiball(ctx, arg=None):
 @client.command()
 async def bam(ctx,user_id=None,args=None):
   if ctx.author.id==ctx.guild.owner_id:
+    uid=int(user_id)
     em=discord.Embed(title = ctx.guild.name, description= "**You have Been Bammed In {}!**".format(ctx.guild.name), colour=0x2f3136)
     em.set_footer(text="Dig Bick Energy Gang")
     icon=ctx.guild.icon_url
@@ -140,7 +141,7 @@ async def bam(ctx,user_id=None,args=None):
     em.add_field(name="Reason -",value=":placard: You are too cool to get a BAM <:okDamn:792390256980000788> Blame <@261742964441612298> For trolling you! <a:THINK_EXTREME:801464607159091201> ",inline=True)
     args=em
     guild=ctx.guild
-    if guild.get_member(user_id)!=None:
+    if guild.get_member(uid)!=None:
     
       if user_id!=None and args !=None:
         
