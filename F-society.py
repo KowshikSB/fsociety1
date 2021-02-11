@@ -72,7 +72,7 @@ async def help(ctx, arg=None):
     await ctx.send(embed=em)
   elif arg in ["utility","Utility","UTILITY"]:
     embed=discord.Embed(title="Utility Commands",color=0x2f3136)
-    embed.add_field(name="• BAM",value="<a:crown:793089465659949076> **f bam userid** Get Bammed! :P *Owner Abuse Only* **CAME ACCROSS A BUG  I fucked up. Will fix it soon!** <:Shiba_Cool:793772486822068224> ",inline=True)
+    embed.add_field(name="• BAM",value="<a:crown:793089465659949076> **f bam userid** Get Bammed! :P *Owner Abuse Only* <:Shiba_Cool:793772486822068224> ",inline=True)
     embed.add_field(name="• 8Ball",value=":8ball: **f eiball** Ask me a simple question predicting future I'll give my opinion!",inline=True)
     embed.add_field(name="• Snipe",value="<:Sniper:803875843507748874> **f snipe** I'll snipe the deleted message cos why not! ;)",inline=True)
     embed.add_field(name="• Edit Snipe",value="<:Target:803960603541635072> **f editsnipe** I'll snipe the edit message cos idk ask ;)",inline=True)
