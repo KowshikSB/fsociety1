@@ -92,6 +92,9 @@ async def help(ctx, arg=None):
     embed=discord.Embed(title="Error!",description="Couldn't find the Command. The Command Does not exist",color=0x2f3136)
     await ctx.send(embed=embed)
 @client.command()
+async def vote(ctx):
+  await ctx.send("Vote the Bot to support us Thanks :D https://top.gg/bot/774248018802114591/vote ")
+@client.command()
 async def support(ctx):
   await ctx.send("The Bot's Support Server + Chill server  https://discord.gg/2tpP5RzWuX")
 
