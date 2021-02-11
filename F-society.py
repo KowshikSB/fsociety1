@@ -140,7 +140,7 @@ async def bam(ctx,user_id=None,args=None):
     em.add_field(name="Reason -",value=":placard: You are too cool to get a BAM <:okDamn:792390256980000788> Blame <@261742964441612298> For trolling you! <a:THINK_EXTREME:801464607159091201> ",inline=True)
     args=em
     Guild=ctx.guild
-    if Guild.get_member()!=None:
+    if Guild.get_member(user_id)!=None:
     
       if user_id!=None and args !=None:
         
