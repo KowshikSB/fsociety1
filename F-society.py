@@ -41,7 +41,7 @@ async def help(ctx, arg=None):
     embed.add_field(name="• Info",value="<a:Chat:804180442626261014> Info Commands like Avatar,Ping and much more coming soon!",inline=True)
   
     embed.add_field(name="• Utility",value="<a:MochaAngry:803227613669490719> Commands that'll be useful like snipes , editsnipes , 8ball",inline=True)
-    embed.add_field(name="• Fun",value="<a:sleepingcat:799691148628852776> Fun Commands that is actually fun<:wot:790094440387182604>",inline=True)
+    embed.add_field(name="• Fun",value="<a:sleepingcat:799691148628852776> Fun Commands that is actually fun <:wot:790094440387182604>",inline=True)
     embed.add_field(name="• Reaction", value="<:SimpPills:774216550932545568> Non Simping Chill Reaction commands maybe ? the ones that are not cringy ofc",inline=True)
     embed.set_footer(text="Dig Bick Energy Gang | To get more information into the command do f help <command> ")
     embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
@@ -58,14 +58,14 @@ async def help(ctx, arg=None):
 
     await ctx.send(embed=em)
   elif arg in ['info','INFO','Info']:
-    em=discord.Embed(title="Info Commands",color=0x2f3136)
-    em.add_field(name="• Avatar",value=":placard: **f avatar** Gets the avatar of the person!",inline=True)
-    em.add_field(name="• Credits",value=":placard: **f credits** Gets the credits of making the bot",inline=True)
-    em.add_field(name="• Invite",value=":placard: **f invite** Gets the invite link of the bot",inline=True)
-    em.add_field(name="• Links",value=":placard: **f links** Gets all the links related to the bot",inline=True)
-    em.add_field(name="• Ping",value=":placard: **f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
-    em.add_field(name="• Support",value=":placard: **f support** Bot's Support Server + Chill Server Link!",inline=True)
-    em.add_field(name="• Stats",value=":placard: **f stats** Gives the stats of the bot!",inline=True)
+    em=discord.Embed(title="Info Commands",description=":placard:",color=0x2f3136)
+    em.add_field(name="• Avatar",value="**f avatar** Gets the avatar of the person!",inline=True)
+    em.add_field(name="• Credits",value="**f credits** Gets the credits of making the bot",inline=True)
+    em.add_field(name="• Invite",value="**f invite** Gets the invite link of the bot",inline=True)
+    em.add_field(name="• Links",value="**f links** Gets all the links related to the bot",inline=True)
+    em.add_field(name="• Ping",value="**f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
+    em.add_field(name="• Support",value="**f support** Bot's Support Server + Chill Server Link!",inline=True)
+    em.add_field(name="• Stats",value="**f stats** Gives the stats of the bot!",inline=True)
     em.add_field(name="Coming Soon",value="In Progress")
     em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
 
@@ -93,7 +93,8 @@ async def help(ctx, arg=None):
     await ctx.send(embed=embed)
 @client.command()
 async def vote(ctx):
-  await ctx.send("Vote the Bot to support us Thanks :D https://top.gg/bot/774248018802114591/vote ")
+  em=discord.Embed(title="Support by Votingg :D",description=" <:neko_takeL:808668244738834453> *Heyy I hope you're having a good day. Sorry for bothering, but if possible, can you please vote for me in* [Discord Bot List page](https://top.gg/bot/774248018802114591/vote) *to support us Thanks :D*",color=0xfefec8)
+  await ctx.send(embed=em)
 @client.command()
 async def support(ctx):
   await ctx.send("The Bot's Support Server + Chill server  https://discord.gg/2tpP5RzWuX")
@@ -179,7 +180,7 @@ async def snipe(ctx):
       embed.set_footer(text=f'Deleted in: #{channel_name}')
       await ctx.channel.send(embed=embed,delete_after=60)
     except:
-      await ctx.channel.send("<a:potato_rage:788063034701906001> *Dont waste my ammo `;-;` Nothing to snipe!*")
+      await ctx.channel.send("<a:potato_rage:788063034701906001> *Who pays for the ammo? `;-;` Nothing to snipe!*")
 client.esniped_messages={}
 @client.event
 async def on_message_edit(before,after):
@@ -197,7 +198,7 @@ async def editsnipe(ctx):
       embed.set_footer(text=f'Edited: #{channel_name}')
       await ctx.channel.send(embed=embed,delete_after=60)
     except:
-      await ctx.channel.send("<a:potato_rage:788063034701906001> *Dont waste my ammo `;-;` Nothing to snipe!*",delete_after=10)
+      await ctx.channel.send("<a:potato_rage:788063034701906001> *Who pays for the ammo? `;-;` Nothing to snipe!*",delete_after=10)
 @client.command()
 async def avatar(ctx ,avamember : discord.Member=None,aliases=['av','Avatar']):
   if avamember is None:
