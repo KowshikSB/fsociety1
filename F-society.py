@@ -31,7 +31,7 @@ async def ping(ctx, arg=None):
 @client.command()
 async def help(ctx, arg=None):
   if arg is None:
-    embed=discord.Embed(title = "The F Society", description="**HELP**", colour=0x2f3136)
+    embed=discord.Embed(title = "The F Society", description="**HELP**", colour=0xfefec8)
 
 
     
@@ -48,7 +48,7 @@ async def help(ctx, arg=None):
     embed.add_field(name="F Society",value="[Support Server](https://discord.gg/2tpP5RzWuX)" , inline=False)
     await ctx.send(embed=embed)
   elif arg in ["fun","FUN","Fun"]:
-    em=discord.Embed(title="Fun Commands",color=0x2f3136)
+    em=discord.Embed(title="Fun Commands",color=0xfefec8)
     em.add_field(name="• Simprate",value="**f howsimp** <a:simp:775732672793411605> Gives your Simp rate!")
     em.add_field(name="• Gayrate",value="**f howgay** <a:disco_cat:799691432553873419> Gives your Gay rate!")
     em.add_field(name="• Hornyrate",value="**f howhorny** <:hmmm:790829841679253525>  Gives your Horny rate!")
@@ -58,7 +58,7 @@ async def help(ctx, arg=None):
 
     await ctx.send(embed=em)
   elif arg in ['info','INFO','Info']:
-    em=discord.Embed(title="Info Commands",description=":placard:",color=0x2f3136)
+    em=discord.Embed(title="Info Commands",description=":placard:",color=0xfefec8)
     em.add_field(name="• Avatar",value="**f avatar** Gets the avatar of the person!",inline=True)
     em.add_field(name="• Credits",value="**f credits** Gets the credits of making the bot",inline=True)
     em.add_field(name="• Invite",value="**f invite** Gets the invite link of the bot",inline=True)
@@ -71,7 +71,7 @@ async def help(ctx, arg=None):
 
     await ctx.send(embed=em)
   elif arg in ["utility","Utility","UTILITY"]:
-    embed=discord.Embed(title="Utility Commands",color=0x2f3136)
+    embed=discord.Embed(title="Utility Commands",color=0xfefec8)
     embed.add_field(name="• BAM",value="<a:crown:793089465659949076> **f bam userid** Get Bammed! :P *Owner Abuse Only* <:Shiba_Cool:793772486822068224> ",inline=True)
     embed.add_field(name="• 8Ball",value=":8ball: **f eiball** Ask me a simple question predicting future I'll give my opinion!",inline=True)
     embed.add_field(name="• Snipe",value="<:Sniper:803875843507748874> **f snipe** I'll snipe the deleted message cos why not! ;)",inline=True)
@@ -79,7 +79,7 @@ async def help(ctx, arg=None):
     embed.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
     await ctx.send(embed=embed)
   elif arg in ["reaction","Reaction","REACTION"]:
-    embed=discord.Embed(title="Reaction Commands",color=0x2f3136)
+    embed=discord.Embed(title="Reaction Commands",color=0xfefec8)
     embed.add_field(name="• Bonk", value="<:wot:790094440387182604> **f bonk** Bonksss",inline=True)
     embed.add_field(name="• Punch", value="<:pepe_peeping:790829664230309888> **f punch** Punches with some beeef",inline=True)
     embed.add_field(name="• Hug", value="<:EXTRASHY:788441412872962059> **f hug** hugs platonically :D",inline=True)
@@ -89,7 +89,7 @@ async def help(ctx, arg=None):
     embed.add_field(name="• Pat", value="<:sed:776635427372924958> **f pats** Patsss ",inline=True)
     await ctx.send(embed=embed)
   else:
-    embed=discord.Embed(title="Error!",description="Couldn't find the Command. The Command Does not exist",color=0x2f3136)
+    embed=discord.Embed(title="Error!",description="Couldn't find the Command. The Command Does not exist",color=0xfefec8)
     await ctx.send(embed=embed)
 @client.command()
 async def vote(ctx):
