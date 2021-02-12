@@ -142,7 +142,7 @@ async def bam(ctx,user_id=None,args=None):
     em.set_footer(text="Dig Bick Energy Gang")
     icon=ctx.guild.icon_url
     em.set_thumbnail(url=icon)
-    em.add_field(name="Reason -",value=":placard: You are too cool to get a BAM <:okDamn:792390256980000788> Blame <@261742964441612298> For trolling you! <a:THINK_EXTREME:801464607159091201> ",inline=True)
+    em.add_field(name="Reason -",value=f":placard: You are too cool to get a BAM <:okDamn:792390256980000788> Blame <@{ctx.guild.owner_id}> For trolling you! <a:THINK_EXTREME:801464607159091201> ",inline=True)
     args=em
     guild=ctx.guild
     if guild.get_member(uid)!=None:
