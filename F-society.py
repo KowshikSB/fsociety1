@@ -75,7 +75,7 @@ async def help(ctx, arg=None):
     embed.add_field(name="• BAM",value="<a:crown:793089465659949076> **f bam userid** Get Bammed! :P *Owner Abuse Only* <:Shiba_Cool:793772486822068224> ",inline=True)
     embed.add_field(name="• 8Ball",value=":8ball: **f eiball** Ask me a simple question predicting future I'll give my opinion!",inline=True)
     embed.add_field(name="• Snipe",value="<:Sniper:803875843507748874> **f snipe** I'll snipe the deleted message cos why not! ;)",inline=True)
-    embed.add_field(name="• Edit Snipe",value="<:Target:803960603541635072> **f editsnipe** I'll snipe the edit message cos idk ask ;)",inline=True)
+    embed.add_field(name="• Edit Snipe",value="<:Target:803960603541635072> **f editsnipe** I'll snipe the edit message cos idk `;-;` ",inline=True)
     embed.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
     await ctx.send(embed=embed)
   elif arg in ["reaction","Reaction","REACTION"]:
