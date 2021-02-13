@@ -18,7 +18,7 @@ command_prefix =commands.when_mentioned_or('f ')
 
 @client.event
 async def on_ready():
-  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="The Ded Chat ;-;"))
+  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="f help"))
 #Runs when bot is online and active  
   print("BOT IS READY")
 
