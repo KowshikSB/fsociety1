@@ -19,28 +19,32 @@ command_prefix =commands.when_mentioned_or('f ')
 
 
 @client.event
-async def on_ready():
-  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="The Ded Chat ;-;"))
-  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="f help"))
-  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="You"))
-  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="f vote"))
-  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="F Society"))
-  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name=f"on {len(client.guilds)}"))
-  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.playing, name="With your mama"))
-  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.listening, name="to SIMPS"))
-#Runs when bot is online and active  
-  print("BOT IS READY")
-async def ch_pr():
-  await client.wait_until_ready()
-  statuses=["The Ded Chat ;-;","f help",'f vote','F Society',"With your mama","with SIMPS",]
-  s=['watching','listening','Game']
-  while not client.is_closed():
-    status=random.choice(statuses)
-    
-    await client.change_presence(status=discord.Status.idle,activity=discord.random.choice(s)(name=status))
+async def status():
+  while True:
+    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="The Ded Chat ;-;"))
+    await asyncio.sleep(10)
+    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="f help"))
+    await asyncio.sleep(10)
+    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="You"))
+    await asyncio.sleep(10)
+    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="f vote"))
+    await asyncio.sleep(10)
+    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="F Society"))
+    await asyncio.sleep(10)
+    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name=f"on {len(client.guilds)} Servers"))
+    await asyncio.sleep(10)
+    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.Game(name="With your mama")))
+    await asyncio.sleep(10)
+    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.listening, name="to SIMPS"))
     await asyncio.sleep(10)
 
-client.loop.create_task(ch_pr())
+@client.event
+async def on_ready():
+
+  print("BOT IS READY")
+
+
+client.loop.create_task(status())
 
 
 
