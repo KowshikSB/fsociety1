@@ -18,7 +18,7 @@ command_prefix =commands.when_mentioned_or('f ')
 
 
 
-@client.event
+
 async def status():
   while True:
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="The Ded Chat ;-;"))
