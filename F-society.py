@@ -21,23 +21,23 @@ command_prefix =commands.when_mentioned_or('f ')
 
 async def status():
   while True:
-    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="The Ded Chat ;-;"))
-    await asyncio.sleep(1800)
-    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="f help"))
-    await asyncio.sleep(1800)
+    
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.Game(name="With your mama")))
     await asyncio.sleep(1800)
-    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="You"))
+    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="The Ded Chat ;-;"))
+    await asyncio.sleep(3600)
+    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="f help"))
     await asyncio.sleep(1800)
+    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="You"))
+    await asyncio.sleep(3600)
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="f vote"))
     await asyncio.sleep(1800)
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="F Society"))
-    await asyncio.sleep(1800)
+    await asyncio.sleep(3600)
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name=f"on {len(client.guilds)} Servers"))
     await asyncio.sleep(1800)
-    
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.listening, name="to SIMPS"))
-    await asyncio.sleep(1800)
+    await asyncio.sleep(3600)
 
 @client.event
 async def on_ready():
