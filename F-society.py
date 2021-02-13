@@ -44,7 +44,7 @@ async def on_ready():
   print("BOT IS READY")
 
 
-client.loop.create_task(status())
+  client.loop.create_task(status())
 
 
 
