@@ -33,26 +33,14 @@ async def on_ready():
 async def ch_pr():
   await client.wait_until_ready()
   statuses=["The Ded Chat ;-;","f help",'f vote','F Society',"With your mama","with SIMPS",]
-  s=['watching','listening','playing']
+  s=['watching','listening','Game']
   while not client.is_closed():
     status=random.choice(statuses)
     
-    await client.change_presence(activity=discord.Game(name=status))
+    await client.change_presence(status=discord.Status.idle,activity=discord.random.choice(s)(name=status))
     await asyncio.sleep(10)
-  await asyncio.sleep(60)
-async def ch_watch():
-  await client.wait_until_ready()
-  statuses=["The Ded Chat ;-;","f help",'f vote','F Society',f"{len(client.guilds)}","the SIMPS",]
-  s=['watching','listening','playing']
-  while not client.is_closed():
-    status=random.choice(statuses)
-    
-    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.listening, name=status))
-    await asyncio.sleep(20)
-  await asyncio.sleep(60)
-a=random.choice(ch_pr(),ch_watch())
-y=client.loop.create_task(a)
-client.loop.create_task(y)
+
+client.loop.create_task(ch_pr())
 
 
 
