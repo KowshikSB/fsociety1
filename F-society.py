@@ -35,8 +35,8 @@ async def ch_pr():
   s=['watching','listening','playing']
   while not client.is_closed():
     status=random.choice(statuses)
-    x=random.choice(s)
-    await client.change_presence(activity=discord.x(name=status))
+    
+    await client.change_presence(activity=discord.random.choice(s)(name=status))
     await asyncio.sleep(10)
 client.loop.create_task(ch_pr())
 
