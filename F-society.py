@@ -1,5 +1,6 @@
 import os
 import discord
+from discord.enums import Status
 from discord.ext import commands
 import asyncio
 import random
@@ -18,9 +19,29 @@ command_prefix =commands.when_mentioned_or('f ')
 
 @client.event
 async def on_ready():
+  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="The Ded Chat ;-;"))
   await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="f help"))
+  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="You"))
+  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="f vote"))
+  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="F Society"))
+  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name=f"on {len(client.guilds)}"))
+  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.playing, name="With your mama"))
+  await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.listening, name="to SIMPS"))
 #Runs when bot is online and active  
   print("BOT IS READY")
+async def ch_pr():
+  await client.wait_until_ready()
+  statuses=["The Ded Chat ;-;","f help",'f vote','F Society',"With your mama","to SIMPS",]
+  s=['watching','listening','playing']
+  while not client.is_closed():
+    status=random.choice(statuses)
+    x=random.choice(s)
+    await client.change_presence(activity=discord.x(name=status))
+    await asyncio.sleep(10)
+client.loop.create_task(ch_pr())
+
+
+
 
 @client.command()
 async def ping(ctx, arg=None):
