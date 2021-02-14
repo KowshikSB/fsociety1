@@ -21,7 +21,8 @@ command_prefix =commands.when_mentioned_or('f ')
 
 async def status():
   while True:
-    
+    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name=f"on {len(client.guilds)} Servers"))
+    await asyncio.sleep(1800)
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.playing , name="With your mama"))
     await asyncio.sleep(1800)
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="The Ded Chat ;-;"))
@@ -34,9 +35,8 @@ async def status():
     await asyncio.sleep(1800)
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="F Society"))
     await asyncio.sleep(1800)
-    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name=f"on {len(client.guilds)} Servers"))
-    await asyncio.sleep(1800)
-    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.listening, name="to SIMPS"))
+    
+    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.listening, name="SIMPS"))
     await asyncio.sleep(1800)
 
 @client.event
