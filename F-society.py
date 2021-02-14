@@ -121,7 +121,7 @@ async def help(ctx, arg=None):
     await ctx.send(embed=embed)
 @client.command()
 async def vote(ctx):
-  em=discord.Embed(title="Support by Votingg :D",description=" <:neko_takeL:808668244738834453> *Heyy I hope you're having a good day. Sorry for bothering, but if possible, can you please vote for me in* [Discord Bot List page](https://top.gg/bot/774248018802114591/vote) *to support us Thanks :D*",color=0xfefec8)
+  em=discord.Embed(title="Support by Votingg :D",description=" <:neko_takeL:808668244738834453> *Heyy I hope you're having a good day. Sorry for bothering, but if possible, can you please vote for me in* [Top.gg](https://top.gg/bot/774248018802114591/vote)[Bots for Discord](https://botsfordiscord.com/bot/774248018802114591/vote) *to support us Thanks :D We can vote every 12 hours!*",color=0xfefec8)
   await ctx.send(embed=em)
 @client.command()
 async def support(ctx):
@@ -441,7 +441,7 @@ async def links(ctx):
   x="https://discord.com/oauth2/authorize?client_id=774248018802114591&scope=bot&permissions=1614146624"
   embed=discord.Embed(title = "The F Society", colour=0x2f3136)
   embed.add_field(name="Bot Invite Link",value="<a:Chat:804180442626261014> [Invite Link]({})".format(x),inline=False)
-  embed.add_field(name="Bot's Vote Link",value="<a:Chat:804180442626261014> [Discord Bot list](https://top.gg/bot/774248018802114591/vote)",inline=False)
+  embed.add_field(name="Bot's Vote Link",value="<a:Chat:804180442626261014> [Top.gg](https://top.gg/bot/774248018802114591/vote)[Bots for Discord](https://botsfordiscord.com/bot/774248018802114591/vote)",inline=False)
   embed.add_field(name="F Society Link",value="<a:Chat:804180442626261014> [Support Server](https://discord.gg/2tpP5RzWuX)",inline=False)
   embed.set_thumbnail(url="https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024")
   await ctx.send(embed=embed)
