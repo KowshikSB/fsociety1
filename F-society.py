@@ -135,6 +135,7 @@ async def on_member_join(member):
   if member.guild.id==725302478823751702:
     x='''<a:crown:793089465659949076> *Head over to <#774143716042604545> for Basic Server Rules to Chill*
 <a:crown:793089465659949076>  *Get roles in* <#775269400549916702>
+<a:crown:793089465659949076> *Tell us little about yourself!* <#810394496264699924>
 <a:crown:793089465659949076> Talk in <#774155081922773022>  ;-;'''
     
     em=discord.Embed(title="WELCOME TO F Society!",description=x,color=0x2f3136)
