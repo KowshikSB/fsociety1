@@ -121,7 +121,7 @@ async def help(ctx, arg=None):
     await ctx.send(embed=embed)
 @client.command()
 async def vote(ctx):
-  em=discord.Embed(title="Support by Votingg :D",description=" <:neko_takeL:808668244738834453> *Heyy I hope you're having a good day. Sorry for bothering, but if possible, can you please vote for me in* [Top.gg](https://top.gg/bot/774248018802114591/vote),  [Bots for Discord](https://botsfordiscord.com/bot/774248018802114591/vote) *to support us Thanks :D We can vote every 12 hours!*",color=0xfefec8)
+  em=discord.Embed(title="Support by Votingg :D",description=" <:neko_takeL:808668244738834453> *Heyy I hope you're having a good day. But yesss if you guys want to support us  vote for me in* [Top.gg](https://top.gg/bot/774248018802114591/vote) *to support us Thanks :D We can vote every 12 hours!*",color=0xfefec8)
   await ctx.send(embed=em)
 @client.command()
 async def support(ctx):
