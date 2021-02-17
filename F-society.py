@@ -261,7 +261,7 @@ async def hug(ctx ,avamember : discord.Member=None):
     await ctx.send("<a:rage_smash:799276770091859968> *You need to mention a person*")
   else:
 
-    em = discord.Embed(color=0x9b9f7)
+    em = discord.Embed(color=0xfefec8)
     em.set_author(name=f"{ctx.author.name} hugs {avamember.name}", icon_url=ctx.author.avatar_url)
     em.set_footer(text='What a simp')
     em.set_image(url=random.choice(hugss)) 
@@ -273,7 +273,7 @@ async def kiss(ctx ,avamember : discord.Member=None):
     
     else:
 
-      em = discord.Embed(color=0x9b9f7)
+      em = discord.Embed(color=0xfefec8)
       em.set_author(name=f"{ctx.author.name} kisses {avamember.name}", icon_url=ctx.author.avatar_url)
       em.set_footer(text='What a simp smh')
       em.set_image(url=random.choice(kisses)) 
@@ -376,7 +376,7 @@ async def kill(ctx ,avamember : discord.Member=None):
     
     else:
 
-      em = discord.Embed(color=0x9b9f7)
+      em = discord.Embed(color=0xfefec8)
       em.set_author(name=f"{ctx.author.name} kills {avamember.name}", icon_url=ctx.author.avatar_url)
       em.set_footer(text='I-')
       em.set_image(url=random.choice(killl)) 
@@ -388,7 +388,7 @@ async def pat(ctx ,avamember : discord.Member=None):
     
     else:
 
-      em = discord.Embed(color=0x9b9f7)
+      em = discord.Embed(color=0xfefec8)
       em.set_author(name=f"{ctx.author.name} pats {avamember.name}", icon_url=ctx.author.avatar_url)
       
       em.set_image(url=random.choice(patt)) 
@@ -401,7 +401,7 @@ async def slap(ctx ,avamember : discord.Member=None):
     
     else:
 
-      em = discord.Embed(color=0x9b9f7)
+      em = discord.Embed(color=0xfefec8)
       em.set_author(name=f"{ctx.author.name} slaps {avamember.name}", icon_url=ctx.author.avatar_url)
       em.set_footer(text='Good slap ngl')
       em.set_image(url=random.choice(slapp)) 
@@ -413,7 +413,7 @@ async def bonk(ctx ,avamember : discord.Member=None):
     
     else:
 
-      em = discord.Embed(color=0x9b9f7)
+      em = discord.Embed(color=0xfefec8)
       em.set_author(name=f"{ctx.author.name} bonks {avamember.name}", icon_url=ctx.author.avatar_url)
       em.set_footer(text=';-;')
       em.set_image(url=random.choice(bonkk)) 
@@ -425,7 +425,7 @@ async def punch(ctx ,avamember : discord.Member=None):
     
     else:
 
-      em = discord.Embed(color=0x9b9f7)
+      em = discord.Embed(color=0xfefec8)
       em.set_author(name=f"{ctx.author.name} punches {avamember.name}", icon_url=ctx.author.avatar_url)
       em.set_footer(text='We got some beef here!')
       em.set_image(url=random.choice(punchh)) 
