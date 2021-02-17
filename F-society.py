@@ -21,13 +21,13 @@ command_prefix =commands.when_mentioned_or('f ')
 
 async def status():
   while True:
-    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name=f"{len(client.guilds)} Servers"))
+    await client.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.watching, name=f"{len(client.guilds)} Servers"))
     await asyncio.sleep(1800)
-    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.playing , name="With your mama"))
+    await client.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.playing , name="With your mama"))
     await asyncio.sleep(1800)
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="The Ded Chat ;-;"))
     await asyncio.sleep(1800)
-    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="f help"))
+    await client.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name="f help"))
     await asyncio.sleep(1800)
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="You"))
     await asyncio.sleep(1800)
@@ -36,7 +36,7 @@ async def status():
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="F Society"))
     await asyncio.sleep(1800)
     
-    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.listening, name="SIMPS"))
+    await client.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.listening, name="SIMPS"))
     await asyncio.sleep(1800)
 
 @client.event
