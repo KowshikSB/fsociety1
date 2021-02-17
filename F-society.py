@@ -93,6 +93,7 @@ async def help(ctx, arg=None):
     em.add_field(name="• Links",value="**f links** Gets all the links related to the bot",inline=True)
     em.add_field(name="• Ping",value="**f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
     em.add_field(name="• Support",value="**f support** Bot's Support Server + Chill Server Link!",inline=True)
+    em.add_field(name="• MemberCount",value="**f membercount** Gives the membercount of the server",inline=True)
     em.add_field(name="• Stats",value="**f stats** Gives the stats of the bot!",inline=True)
     em.add_field(name="Coming Soon",value="In Progress")
     em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
