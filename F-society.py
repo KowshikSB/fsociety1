@@ -494,7 +494,7 @@ async def membercount(ctx):
 
 
 
-@commands.command()
+@client.command()
 async def suggest(ctx,suggestion):
   if suggestion!=None:
     if ctx.guild_id==725302478823751702:
