@@ -492,31 +492,30 @@ async def membercount(ctx):
 
 
 
-class suggestions(commands.Cog):
-    def __init__(self, bot):
-        self.bot = bot
 
-    @commands.command(description = 'Add a suggestion for this community!')
-    async def suggest(self, ctx, *,suggestion):
-      if ctx.guild_id==725302478823751702:
 
-        
-        
-        await ctx.add_reaction("<a:tickup:774207637184839680>")
-        channel = 778960593393549333
+@commands.command()
+async def suggest(ctx,suggestion):
+  if suggestion!=None:
+    if ctx.guild_id==725302478823751702:
 
-        suggestEmbed = discord.Embed(colour =0xfefec8)
-        suggestEmbed.set_thumbnail(url=ctx.guild.icon_url)
-        suggestEmbed.set_author(name=f'Suggested by {ctx.message.author}', icon_url = f'{ctx.author.avatar_url}')
-        suggestEmbed.add_field(name = 'New suggestion!', value = f'{suggestion}')
+      
+      
+      await ctx.add_reaction("<a:tickup:774207637184839680>")
+      channel = 778960593393549333
 
-        x=await channel.send(embed=suggestEmbed)
-        await x.add_reaction("<a:yes:774149959846068244>")
-        await x.add_reaction("<:u_idk:794589039483289620>")
-        await x.add_reaction("<a:no:774149903878062091>")
+      suggestEmbed = discord.Embed(colour =0xfefec8)
+      suggestEmbed.set_thumbnail(url=ctx.guild.icon_url)
+      suggestEmbed.set_author(name=f'Suggested by {ctx.message.author}', icon_url = f'{ctx.author.avatar_url}')
+      suggestEmbed.add_field(name = 'New suggestion!', value = f'{suggestion}')
 
-def setup(bot):
-    bot.add_cog(suggestions(bot))
+      x=await channel.send(embed=suggestEmbed)
+      await x.add_reaction("<a:yes:774149959846068244>")
+      await x.add_reaction("<:u_idk:794589039483289620>")
+      await x.add_reaction("<a:no:774149903878062091>")
+  else:
+    await ctx.send("Give a suggestion to suggest")
+
 
 
 
