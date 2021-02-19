@@ -504,7 +504,7 @@ async def suggest(ctx,s):
       await ctx.message.add_reaction("<a:tickup:774207637184839680>")
       guild=client.get_guild(725302478823751702)
       channel=guild.get_channel(778960593393549333)
-      suggestion=ctx.message[9::]
+      suggestion=ctx[9::]
 
       suggestEmbed = discord.Embed(colour =0x2f3136)
       suggestEmbed.set_thumbnail(url=ctx.guild.icon_url)
