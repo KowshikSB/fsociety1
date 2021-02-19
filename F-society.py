@@ -496,13 +496,15 @@ async def membercount(ctx):
 
 @client.command()
 async def suggest(ctx,suggestion):
-  if suggestion!=None:
-    if ctx.guild.id==725302478823751702:
-
+  
+  if ctx.guild.id==725302478823751702:
+    if suggestion!=None:
       
       
       await ctx.message.add_reaction("<a:tickup:774207637184839680>")
-      channel = 778960593393549333
+      guild=client.get_guild(725302478823751702)
+      channel=guild.get_channel(778960593393549333)
+      
 
       suggestEmbed = discord.Embed(colour =0xfefec8)
       suggestEmbed.set_thumbnail(url=ctx.guild.icon_url)
@@ -513,8 +515,8 @@ async def suggest(ctx,suggestion):
       await x.add_reaction("<a:yes:774149959846068244>")
       await x.add_reaction("<:u_idk:794589039483289620>")
       await x.add_reaction("<a:no:774149903878062091>")
-  else:
-    await ctx.send("Give a suggestion to suggest")
+    else:
+      await ctx.send("Give a suggestion to suggest")
 
 
 
