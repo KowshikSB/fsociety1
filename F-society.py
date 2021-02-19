@@ -43,7 +43,9 @@ async def status():
 async def on_ready():
 
   print("BOT IS READY")
-
+#FE6450-Red
+#4C73FE-Blue
+#FEE064-Yellow
 
   client.loop.create_task(status())
 
@@ -146,7 +148,6 @@ async def on_member_join(member):
     guild=client.get_guild(725302478823751702)
     channel=guild.get_channel(774155081922773022)
     await channel.send(f'<:Shiba_thinking:793772530485297172> {member.mention} <@&802760617769041990>',embed=em)
-
 
 
 
@@ -489,6 +490,33 @@ async def membercount(ctx):
   em.set_footer(text="Dig Bick Energy")
   await ctx.send(embed=em)
 
+
+
+class suggestions(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+
+    @commands.command(description = 'Add a suggestion for this community!')
+    async def suggest(self, ctx, *,suggestion):
+      if ctx.guild_id==725302478823751702:
+
+        
+        
+        await ctx.add_reaction("<a:tickup:774207637184839680>")
+        channel = 778960593393549333
+
+        suggestEmbed = discord.Embed(colour =0xfefec8)
+        suggestEmbed.set_thumbnail(url=ctx.guild.icon_url)
+        suggestEmbed.set_author(name=f'Suggested by {ctx.message.author}', icon_url = f'{ctx.author.avatar_url}')
+        suggestEmbed.add_field(name = 'New suggestion!', value = f'{suggestion}')
+
+        x=await channel.send(embed=suggestEmbed)
+        await x.add_reaction("<a:yes:774149959846068244>")
+        await x.add_reaction("<:u_idk:794589039483289620>")
+        await x.add_reaction("<a:no:774149903878062091>")
+
+def setup(bot):
+    bot.add_cog(suggestions(bot))
 
 
 
