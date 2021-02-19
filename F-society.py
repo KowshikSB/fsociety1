@@ -500,8 +500,8 @@ async def suggest(ctx,suggestion):
     if ctx.guild.id==725302478823751702:
 
       
-      
-      await ctx.add_reaction("<a:tickup:774207637184839680>")
+      y=ctx
+      await y.add_reaction("<a:tickup:774207637184839680>")
       channel = 778960593393549333
 
       suggestEmbed = discord.Embed(colour =0xfefec8)
