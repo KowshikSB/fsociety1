@@ -509,7 +509,7 @@ async def suggest(ctx,suggestion):
       suggestEmbed = discord.Embed(colour =0x2f3136)
       suggestEmbed.set_thumbnail(url=ctx.guild.icon_url)
       suggestEmbed.set_author(name=f'Suggested by {ctx.message.author}', icon_url = f'{ctx.author.avatar_url}')
-      suggestEmbed.add_field(name = 'F Society Suggestions', value = f'{suggestion}')
+      suggestEmbed.add_field(name = 'NEW SUGGESTION -', value = f'• {suggestion}')
 
       x=await channel.send(embed=suggestEmbed)
       await x.add_reaction("<a:yes:774149959846068244>")
