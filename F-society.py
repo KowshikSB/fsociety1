@@ -535,7 +535,7 @@ This Will Cancel Out in 30s'''
         em.set_footer(text='Dm me f confess to CONFESS')
         
         e=discord.Embed(color=0x2f3136,description=f'<@{ctx.author.id}>{msg.content}')
-        e.set_author(name=message.author, icon_url=message.author.avatar_url)
+        e.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
         await channel.send(embed=em)
         await log.send(embed=e)
         await demand.delete()
