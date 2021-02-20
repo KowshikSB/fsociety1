@@ -508,7 +508,7 @@ async def suggest(ctx,s):
 
 c=[]
 @client.command()
-@commands.has_role('STAFF')  
+@commands.has_role('STAFF TEAM')  
 async def cmute(ctx,id,*,reason):
   guild=client.get_guild(725302478823751702)
   log=guild.get_channel(802510538021011466)
@@ -519,7 +519,7 @@ async def cmute(ctx,id,*,reason):
   await log.send(f'<@{id}> is now blacklisted from confessions. Reason = {reason}')
   
 @client.command()
-@commands.has_role('STAFF')  
+@commands.has_role('STAFF TEAM')  
 async def cunmute(ctx,id):
   guild=client.get_guild(725302478823751702)
   log=guild.get_channel(802510538021011466)
