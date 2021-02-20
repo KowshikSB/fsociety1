@@ -529,10 +529,15 @@ This Will Cancel Out in 30s'''
       if msg:
         guild=client.get_guild(725302478823751702)
         channel=guild.get_channel(802502940606332948)
+        log=guild.get_channel(802510538021011466)
         em=discord.Embed(color=0x2f3136,description=f'{msg.content}')
         em.set_author(name="F Society Confessions", icon_url='https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024')
         em.set_footer(text='Dm me f confess to CONFESS')
+        
+        e=discord.Embed(color=0x2f3136,description=f'<@{message.author.id}>{msg.content}')
+        e.set_author(name=message.author, icon_url=message.author.avatar_url)
         await channel.send(embed=em)
+        await log.send(embed=e)
         await demand.delete()
     except asyncio.TimeoutError:
       await ctx.send('Cancelled',delete_after=10)
