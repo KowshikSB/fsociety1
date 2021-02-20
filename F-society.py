@@ -557,7 +557,7 @@ async def cmute(ctx,id,*,reason):
   await ctx.send("The User is not blacklisted")
   await log.send(f'<@{id}> is now blacklisted from confessions. Reason = {reason}')
 @client.command()
-@commands.has_role('+','STAFF')  
+@commands.has_role('STAFF')  
 async def cunmute(ctx,id):
   guild=client.get_guild(725302478823751702)
   log=guild.get_channel(802510538021011466)
