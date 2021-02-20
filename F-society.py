@@ -65,18 +65,18 @@ async def ping(ctx, arg=None):
 @client.command()
 async def help(ctx, arg=None):
   if arg is None:
-    embed=discord.Embed(title = "The F Society", description="**HELP**", colour=0x2c2f33)
+    embed=discord.Embed(title = "The F Society", description="**HELP**", colour=0xAEC6CF)
 
 
     
   
   
-    embed.add_field(name="• Ping",value=":placard: f pin",inline=False)
-    embed.add_field(name="• Info",value="f ping f avatar f membercount  f stats",inline=False)
+    embed.add_field(name=":placard: Ping",value="• **f pin**",inline=False)
+    embed.add_field(name=":placard: Info",value="• **f ping** • **f avatar** • **f membercount**  • **f stats**",inline=False)
   
-    embed.add_field(name="• Utility",value="f bam f snipe f eiball f editsnipe f confess (dm only command) f suggest",inline=False)
-    embed.add_field(name="• Fun",value="f howsimp f howgay f howorny f PP ",inline=False)
-    embed.add_field(name="• Reaction", value="kill slap kiss hug bonk pat",inline=False)
+    embed.add_field(name=":placard: Utility",value="• **f bam** •  **f snipe** • *f eiball** • **f editsnipe** • **f confess (dm only command)** • **f suggest**",inline=False)
+    embed.add_field(name=":placard: Fun",value="• **f howsimp** • f howgay** • **f howorny** • **f pp* ",inline=False)
+    embed.add_field(name=":placard: Reaction", value="**• f kill • f slap • f kiss** **• f hug** **• f bonk** **• f pat** **• f punch**",inline=False)
     embed.set_footer(text="Dig Bick Energy Gang")
     embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
     embed.add_field(name="F Society",value="[Server Invite](https://discord.gg/2tpP5RzWuX)" , inline=False)
