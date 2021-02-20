@@ -497,7 +497,7 @@ async def suggest(ctx,s):
 
       x=await channel.send(embed=suggestEmbed)
       await x.add_reaction("<a:yes:774149959846068244>")
-      await x.add_reaction("<:u_idk:794589039483289620>")
+      await x.add_reaction("<:neutral:812556400265527296>")
       await x.add_reaction("<a:no:774149903878062091>")
     else:
       await ctx.send("Give a suggestion to suggest")
