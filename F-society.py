@@ -65,18 +65,18 @@ async def ping(ctx, arg=None):
 @client.command()
 async def help(ctx, arg=None):
   if arg is None:
-    embed=discord.Embed(title = "The F Society", description="**HELP**")
+    embed=discord.Embed(title = "The F Society", description="**HELP**",color=0x2f3136)
 
 
     
   
   
     embed.set_thumbnail(url=ctx.guild.icon_url)
-    embed.add_field(name=":placard: Info",value="**• ping • avatar • membercount  • stats**",inline=False)
+    embed.add_field(name=":placard: Info",value="• **ping** • **avatar** • **membercount**  • **stats**",inline=False)
   
     embed.add_field(name=":placard: Utility",value="**• bam • snipe • eiball • editsnipe • confess • suggest**",inline=False)
-    embed.add_field(name=":placard: Fun",value="**• f howsimp** **• f howgay** **• f howorny** **• f pp** ",inline=False)
-    embed.add_field(name=":placard: Reaction", value="**•kill • slap •kiss** **• hug** **• bonk** **• pat** **• punch**",inline=False)
+    embed.add_field(name=":placard: Fun",value="• **howsimp** • **howgay** • **howorny** • **pp** ",inline=False)
+    embed.add_field(name=":placard: Reaction", value="• **kill** • **slap** • **kiss** **• hug** • **bonk** • **pat** • **punch**",inline=False)
     embed.set_footer(text="Dig Bick Energy Gang")
     embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
     embed.add_field(name="F Society",value="[Server Invite](https://discord.gg/2tpP5RzWuX)" , inline=False)
