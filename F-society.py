@@ -76,7 +76,7 @@ async def help(ctx, arg=None):
   
     embed.add_field(name=":placard: Utility",value="**• bam • snipe • eiball • editsnipe • confess • suggest**",inline=False)
     embed.add_field(name=":placard: Fun",value="**• f howsimp** **• f howgay** **• f howorny** **• f pp** ",inline=False)
-    embed.add_field(name=":placard: Reaction", value="**•kill • slap •kiss** • hug** **• bonk** **• pat** **• punch**",inline=False)
+    embed.add_field(name=":placard: Reaction", value="**•kill • slap •kiss** **• hug** **• bonk** **• pat** **• punch**",inline=False)
     embed.set_footer(text="Dig Bick Energy Gang")
     embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
     embed.add_field(name="F Society",value="[Server Invite](https://discord.gg/2tpP5RzWuX)" , inline=False)
