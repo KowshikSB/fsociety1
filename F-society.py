@@ -509,6 +509,7 @@ l=[]
 @client.command()
 async def confess(ctx):
   if ctx.channel.type==discord.ChannelType.private:
+    global l
     if ctx.author.id not in l:
     
       x='''<a:sleepingcat:799691148628852776> - *Do not send random, pointless messages*
@@ -553,6 +554,7 @@ async def confess(ctx):
 async def cmute(ctx,id,*,reason):
   guild=client.get_guild(725302478823751702)
   log=guild.get_channel(802510538021011466)
+  global l
   l+=[id]
   await ctx.send("The User is not blacklisted")
   await log.send(f'<@{id}> is now blacklisted from confessions. Reason = {reason}')
@@ -561,6 +563,7 @@ async def cmute(ctx,id,*,reason):
 async def cunmute(ctx,id):
   guild=client.get_guild(725302478823751702)
   log=guild.get_channel(802510538021011466)
+  global l
   l.pop(id)
   await ctx.send("The User is not blacklisted")
   await log.send(f'<@{id}> is removed from being blacklisted from confessions')
