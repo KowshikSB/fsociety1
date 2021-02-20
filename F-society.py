@@ -43,8 +43,7 @@ async def status():
 async def on_ready():
 
   print("BOT IS READY")
-  for guild in client.guilds:
-    await guild.leave()
+  
 
 #FE6450-Red
 #4C73FE-Blue
