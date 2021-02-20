@@ -522,7 +522,8 @@ async def cunmute(ctx,id):
   guild=client.get_guild(725302478823751702)
   log=guild.get_channel(802510538021011466)
   global l
-  l.pop(id)
+  i=int(id)
+  l.pop(i)
   await ctx.send("The User is now not blacklisted")
   await log.send(f'<@{id}> is removed from being blacklisted from confessions')
 @client.command()
