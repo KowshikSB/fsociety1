@@ -534,7 +534,7 @@ This Will Cancel Out in 30s'''
         em.set_author(name="F Society Confessions", icon_url='https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024')
         em.set_footer(text='Dm me f confess to CONFESS')
         
-        e=discord.Embed(color=0x2f3136,description=f'<@{message.author.id}>{msg.content}')
+        e=discord.Embed(color=0x2f3136,description=f'<@{ctx.author.id}>{msg.content}')
         e.set_author(name=message.author, icon_url=message.author.avatar_url)
         await channel.send(embed=em)
         await log.send(embed=e)
