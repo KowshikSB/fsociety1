@@ -65,66 +65,23 @@ async def ping(ctx, arg=None):
 @client.command()
 async def help(ctx, arg=None):
   if arg is None:
-    embed=discord.Embed(title = "The F Society", description="**HELP**", colour=0xFEE064)
+    embed=discord.Embed(title = "The F Society", description="**HELP**", colour=0x2c2f33)
 
 
     
   
   
-    embed.add_field(name="• Ping",value=":placard: **f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
-    embed.add_field(name="• Info",value="<a:Chat:804180442626261014> Info Commands like Avatar,Ping and much more coming soon!",inline=True)
+    embed.add_field(name="• Ping",value=":placard: f pin",inline=False)
+    embed.add_field(name="• Info",value="f ping f avatar f membercount  f stats",inline=False)
   
-    embed.add_field(name="• Utility",value="<a:MochaAngry:803227613669490719> Commands that'll be useful like snipes , editsnipes , 8ball",inline=True)
-    embed.add_field(name="• Fun",value="<a:sleepingcat:799691148628852776> Fun Commands that is actually fun <:wot:790094440387182604>",inline=True)
-    embed.add_field(name="• Reaction", value="<:SimpPills:774216550932545568> Non Simping Chill Reaction commands maybe ? the ones that are not cringy ofc",inline=True)
-    embed.set_footer(text="Dig Bick Energy Gang | To get more information into the command do f help <command> ")
+    embed.add_field(name="• Utility",value="f bam f snipe f eiball f editsnipe f confess (dm only command) f suggest",inline=False)
+    embed.add_field(name="• Fun",value="f howsimp f howgay f howorny f PP ",inline=False)
+    embed.add_field(name="• Reaction", value="kill slap kiss hug bonk pat",inline=False)
+    embed.set_footer(text="Dig Bick Energy Gang")
     embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
-    embed.add_field(name="F Society",value="[Support Server](https://discord.gg/2tpP5RzWuX)" , inline=False)
+    embed.add_field(name="F Society",value="[Server Invite](https://discord.gg/2tpP5RzWuX)" , inline=False)
     await ctx.send(embed=embed)
-  elif arg in ["fun","FUN","Fun"]:
-    em=discord.Embed(title="Fun Commands",color=0xFEE064)
-    em.add_field(name="• Simprate",value="**f howsimp** <a:simp:775732672793411605> Gives your Simp rate!")
-    em.add_field(name="• Gayrate",value="**f howgay** <a:disco_cat:799691432553873419> Gives your Gay rate!")
-    em.add_field(name="• Hornyrate",value="**f howhorny** <:hmmm:790829841679253525>  Gives your Horny rate!")
-    em.add_field(name="• PP",value="**f pp** <:pepe_peeping:790829664230309888>  Gives your PP Size even tho its smol! EZ")
-    
-    em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
-
-    await ctx.send(embed=em)
-  elif arg in ['info','INFO','Info']:
-    em=discord.Embed(title="Info Commands",description=":placard:",color=0xFEE064)
-    em.add_field(name="• Avatar",value="**f avatar** Gets the avatar of the person!",inline=True)
-    
-    em.add_field(name="• Ping",value="**f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
-    
-    em.add_field(name="• MemberCount",value="**f membercount** Gives the membercount of the server",inline=True)
-    em.add_field(name="• Stats",value="**f stats** Gives the stats of the bot!",inline=True)
-    em.add_field(name="Coming Soon",value="In Progress") 
-    em.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
-
-    await ctx.send(embed=em)
-  elif arg in ["utility","Utility","UTILITY"]:
-    embed=discord.Embed(title="Utility Commands",color=0xFEE064)
-    embed.add_field(name="• BAM",value="<a:crown:793089465659949076> **f bam userid** Get Bammed! :P *Owner Abuse Only* <:Shiba_Cool:793772486822068224> ",inline=True)
-    embed.add_field(name="• 8Ball",value=":8ball: **f eiball** Ask me a simple question predicting future I'll give my opinion!",inline=True)
-    embed.add_field(name="• Snipe",value="<:Sniper:803875843507748874> **f snipe** I'll snipe the deleted message cos why not! ;)",inline=True)
-    embed.add_field(name="• Edit Snipe",value="<:Target:803960603541635072> **f editsnipe** I'll snipe the edit message cos idk `;-;` ",inline=True)
-    embed.set_footer(text=f'Requested by {ctx.author.name}',icon_url=ctx.author.avatar_url)
-    await ctx.send(embed=embed)
-  elif arg in ["reaction","Reaction","REACTION"]:
-    embed=discord.Embed(title="Reaction Commands",color=0xFEE064)
-    embed.add_field(name="• Bonk", value="<:wot:790094440387182604> **f bonk** Bonksss",inline=True)
-    embed.add_field(name="• Punch", value="<:pepe_peeping:790829664230309888> **f punch** Punches with some beeef",inline=True)
-    embed.add_field(name="• Hug", value="<:EXTRASHY:788441412872962059> **f hug** hugs platonically :D",inline=True)
-    embed.add_field(name="• Kiss", value="<:oh:774246120846917633> **f kiss** kisses platonically :3",inline=True)
-    embed.add_field(name="• Kill", value="<a:MochaAngry:803227613669490719> **f kill** kills with some swag",inline=True)
-    embed.add_field(name="• slap", value="<:Shiba_thinking:793772530485297172> **f slaps** Slaps with some force!",inline=True)
-    embed.add_field(name="• Pat", value="<:sed:776635427372924958> **f pats** Patsss ",inline=True)
-    await ctx.send(embed=embed)
-  else:
-    embed=discord.Embed(title="Error!",description="Couldn't find the Command. The Command Does not exist",color=0xfefec8)
-    await ctx.send(embed=embed)
-
+ 
 
 @client.event
 async def on_member_join(member):
@@ -262,6 +219,17 @@ async def hug(ctx ,avamember : discord.Member=None):
     em.set_author(name=f"{ctx.author.name} hugs {avamember.name}", icon_url=ctx.author.avatar_url)
     em.set_footer(text='What a simp')
     em.set_image(url=random.choice(hugss)) 
+    await ctx.send(embed=em)
+@client.command()
+async def boop(ctx ,avamember : discord.Member=None):
+  if avamember is None:
+    await ctx.send("<a:rage_smash:799276770091859968> *You need to mention a person*")
+  else:
+
+    em = discord.Embed(color=0xFEE064)
+    em.set_author(name=f"{ctx.author.name} boops {avamember.name}", icon_url=ctx.author.avatar_url)
+    em.set_footer(text='huh')
+    em.set_image(url=random.choice(boopp)) 
     await ctx.send(embed=em)
 @client.command()
 async def kiss(ctx ,avamember : discord.Member=None):
