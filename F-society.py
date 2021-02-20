@@ -21,17 +21,16 @@ command_prefix =commands.when_mentioned_or('f ')
 
 async def status():
   while True:
-    await client.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.watching, name=f"{len(client.guilds)} Servers"))
+    await client.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.listening, name="Kaze"))
     await asyncio.sleep(1800)
     await client.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.playing , name="With your mama"))
     await asyncio.sleep(1800)
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="The Ded Chat ;-;"))
     await asyncio.sleep(1800)
-    await client.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name="f help"))
-    await asyncio.sleep(1800)
+    
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="You"))
     await asyncio.sleep(1800)
-    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="f vote"))
+    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="the rule breakers"))
     await asyncio.sleep(1800)
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="F Society"))
     await asyncio.sleep(1800)
@@ -92,11 +91,9 @@ async def help(ctx, arg=None):
   elif arg in ['info','INFO','Info']:
     em=discord.Embed(title="Info Commands",description=":placard:",color=0xFEE064)
     em.add_field(name="• Avatar",value="**f avatar** Gets the avatar of the person!",inline=True)
-    em.add_field(name="• Credits",value="**f credits** Gets the credits of making the bot",inline=True)
-    em.add_field(name="• Invite",value="**f invite** Gets the invite link of the bot",inline=True)
-    em.add_field(name="• Links",value="**f links** Gets all the links related to the bot",inline=True)
+    
     em.add_field(name="• Ping",value="**f ping** Poke me... I poke you back with the BOT's Ping!",inline=True)
-    em.add_field(name="• Support",value="**f support** Bot's Support Server + Chill Server Link!",inline=True)
+    
     em.add_field(name="• MemberCount",value="**f membercount** Gives the membercount of the server",inline=True)
     em.add_field(name="• Stats",value="**f stats** Gives the stats of the bot!",inline=True)
     em.add_field(name="Coming Soon",value="In Progress") 
@@ -124,13 +121,6 @@ async def help(ctx, arg=None):
   else:
     embed=discord.Embed(title="Error!",description="Couldn't find the Command. The Command Does not exist",color=0xfefec8)
     await ctx.send(embed=embed)
-@client.command()
-async def vote(ctx):
-  em=discord.Embed(title="Support by Votingg :D",description=" <:neko_takeL:808668244738834453> *Heyy I hope you're having a good day. But yesss if you guys want to support us  vote for me in* [Top.gg](https://top.gg/bot/774248018802114591/vote) *to support us Thanks :D We can vote every 12 hours!*",color=0xfefec8)
-  await ctx.send(embed=em)
-@client.command()
-async def support(ctx):
-  await ctx.send("The Bot's Support Server + Chill server  https://discord.gg/2tpP5RzWuX")
 
 
 @client.event
@@ -440,15 +430,7 @@ async def invite(ctx):
   embed=discord.Embed(title = "The F Society", description="<:AlienSign:797352295779270666> [Invite Link]({})".format(x), colour=0x2f3136)
   embed.set_thumbnail(url="https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024")
   await ctx.send(embed=embed)
-@client.command()
-async def links(ctx):
-  x="https://discord.com/oauth2/authorize?client_id=774248018802114591&scope=bot&permissions=1614146624"
-  embed=discord.Embed(title = "The F Society", colour=0x2f3136)
-  embed.add_field(name="Bot Invite Link",value="<a:Chat:804180442626261014> [Invite Link]({})".format(x),inline=False)
-  embed.add_field(name="Bot's Vote Link",value="<a:Chat:804180442626261014> [Top.gg](https://top.gg/bot/774248018802114591/vote),  [Bots for Discord](https://botsfordiscord.com/bot/774248018802114591/vote)",inline=False)
-  embed.add_field(name="F Society Link",value="<a:Chat:804180442626261014> [Support Server](https://discord.gg/2tpP5RzWuX)",inline=False)
-  embed.set_thumbnail(url="https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024")
-  await ctx.send(embed=embed)
+
 @client.command()
 async def credits(ctx):
   e=discord.Embed(title="The F Society",color=0x2f3136)
