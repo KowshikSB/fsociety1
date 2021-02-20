@@ -65,13 +65,13 @@ async def ping(ctx, arg=None):
 @client.command()
 async def help(ctx, arg=None):
   if arg is None:
-    embed=discord.Embed(title = "The F Society", description="**HELP**", colour=0xAEC6CF)
+    embed=discord.Embed(title = "The F Society", description="**HELP**", colour=0x89b9f7)
 
 
     
   
   
-    
+    embed.set_thumbnail(url=ctx.guild.icon_url)
     embed.add_field(name=":placard: Info",value="**• ping • avatar • membercount  • stats**",inline=False)
   
     embed.add_field(name=":placard: Utility",value="**• bam • snipe • eiball • editsnipe • confess • suggest**",inline=False)
