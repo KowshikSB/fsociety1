@@ -549,7 +549,7 @@ async def confess(ctx):
   else:
     await ctx.send("I only accept confession through dms")
 @client.command()
-@commands.has_role('+','STAFF')  
+@commands.has_role('STAFF')  
 async def cmute(ctx,id,*,reason):
   guild=client.get_guild(725302478823751702)
   log=guild.get_channel(802510538021011466)
