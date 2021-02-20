@@ -65,7 +65,7 @@ async def ping(ctx, arg=None):
 @client.command()
 async def help(ctx, arg=None):
   if arg is None:
-    embed=discord.Embed(title = "The F Society", description="**HELP**", colour=0x89b9f7)
+    embed=discord.Embed(title = "The F Society", description="**HELP**")
 
 
     
