@@ -530,7 +530,7 @@ This Will Cancel Out in 30s'''
         guild=client.get_guild(725302478823751702)
         channel=guild.get_channel(802502940606332948)
         em=discord.Embed(color=0x2f3136,description=f'{msg.content}')
-        em.set_author(name="F Society Confessions", icon_url=ctx.guild.icon_url)
+        em.set_author(name="F Society Confessions", icon_url='https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024')
         em.set_footer(text='Dm me f confess to CONFESS')
         await channel.send(embed=em)
         await demand.delete()
