@@ -505,15 +505,15 @@ async def suggest(ctx,s):
     else:
       await ctx.send("Give a suggestion to suggest")
 
-l=[]
+I=[]
 
 @client.command()
 @commands.has_role('STAFF')  
 async def cmute(ctx,id,*,reason):
   guild=client.get_guild(725302478823751702)
   log=guild.get_channel(802510538021011466)
-  global l
-  l+=[id]
+  global I
+  I+=[id]
   await ctx.send("The User is now blacklisted")
   await log.send(f'<@{id}> is now blacklisted from confessions. Reason = {reason}')
 @client.command()
@@ -523,14 +523,14 @@ async def cunmute(ctx,id):
   log=guild.get_channel(802510538021011466)
   global l
   i=int(id)
-  l-=[i]
+  I.remove(i)
   await ctx.send("The User is now not blacklisted")
   await log.send(f'<@{id}> is removed from being blacklisted from confessions')
 @client.command()
 async def confess(ctx):
   if ctx.channel.type==discord.ChannelType.private:
-    global l
-    if ctx.author.id in l:
+    global I
+    if ctx.author.id in I:
     
       x='''<a:sleepingcat:799691148628852776> - *Do not send random, pointless messages*
 
