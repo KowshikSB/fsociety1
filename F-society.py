@@ -518,7 +518,7 @@ async def confess(ctx):
 <a:sleepingcat:799691148628852776> - Send Your Confessions Here
 This Will Cancel Out in 30s'''
     mbed=discord.Embed(title='Type out your Confession',description=f'{x}',color=0x2f3136)
-    mbed.set_footer(test='Confessions are completely anonymous. Trolling may lead to getting blacklisted from confession.')
+    mbed.set_footer(text='Confessions are completely anonymous. Trolling may lead to getting blacklisted from confession.')
     demand=await ctx.send(embed=mbed)
     try:
       msg=await client.wait_for(
