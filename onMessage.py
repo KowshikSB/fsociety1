@@ -3,9 +3,11 @@ from discord import utils
 import discord
 import asyncio
 
+from discord.ext.commands.converter import clean_content
+
 class onMessage(commands.Cog):
 	def __init__(self, client):
-		self.bot = client
+		self.client = client
 
 	@commands.Cog.listener()
 	async def on_message(self, message):
