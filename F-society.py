@@ -501,6 +501,8 @@ async def cunmute(ctx,id):
     print(Mutes)
     await ctx.send("The User is now not blacklisted")
     await log.send(f'<@{id}> is removed from being blacklisted from confessions')
+  else:
+    await ctx.send('Does not work')
   
 @client.command()
 async def confess(ctx):
