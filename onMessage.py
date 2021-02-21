@@ -1,5 +1,5 @@
 from discord.ext import commands
-from discord import utils
+from discord import client, utils
 import discord
 import asyncio
 
@@ -8,7 +8,7 @@ from discord.ext.commands.converter import clean_content
 class onMessage(commands.Cog):
 	def __init__(self, bot):
 		self.client = bot
-
+	@client.command()
 	@commands.Cog.listener()
 	async def support(self, message):
 		if message.author.bot:
