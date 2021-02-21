@@ -535,7 +535,7 @@ async def confess(ctx):
           log=guild.get_channel(802510538021011466)
           em=discord.Embed(color=0x2f3136,description=f'{msg.content}')
           em.set_author(name="F Society Confessions", icon_url='https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024')
-          em.set_footer(text='Dm me f confess to CONFESS')
+          em.set_footer(text='Dig Bick Energy - Dm me f confess to CONFESS')
           
           e=discord.Embed(color=0x2f3136,description=f'<@{ctx.author.id}>{msg.content}')
           e.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
