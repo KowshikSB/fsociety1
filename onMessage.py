@@ -6,12 +6,12 @@ import asyncio
 from discord.ext.commands.converter import clean_content
 
 class onMessage(commands.Cog):
-	def __init__(self, client):
-		self.client = client
+	def __init__(self, bot):
+		self.client = bot
 
 	@commands.Cog.listener()
 	async def on_message(self, message):
-		if message.author.client:
+		if message.author.bot:
 			return
 
 		if isinstance(message.channel, discord.DMChannel):
