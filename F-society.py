@@ -471,73 +471,76 @@ async def suggest(ctx,s):
       await x.add_reaction("<:neutral:812556400265527296>")
       await x.add_reaction("<a:no:774149903878062091>")
     else:
-      await ctx.send("Give a suggestion to suggest")
+      await ctx.iend("Give a suggestion to suggest")
 
 
-c=[]
+Mutes=[]
 @client.command()
 @commands.has_role('STAFF TEAM')  
 async def cmute(ctx,id,*,reason):
-  guild=client.get_guild(725302478823751702)
-  log=guild.get_channel(802510538021011466)
-  global c
-  c+=[id]
-  print(c)
-  await ctx.send("The User is now blacklisted")
-  await log.send(f'<@{id}> is now blacklisted from confessions. Reason = {reason}')
-  
+  if id not in Mutes:
+    guild=client.get_guild(725302478823751702)
+    log=guild.get_channel(802510538021011466)
+    global Mutes
+    Mutes.add(id)
+    print(Mutes)
+    await ctx.send("The User is now blacklisted")
+    await log.send(f'<@{id}> is now blacklisted from confessions. Reason = {reason}')
+    
 @client.command()
 @commands.has_role('STAFF TEAM')  
 async def cunmute(ctx,id):
-  guild=client.get_guild(725302478823751702)
-  log=guild.get_channel(802510538021011466)
-  global c
-  i=int(id)
-  c.remove(i)
-  print(c)
-  await ctx.send("The User is now not blacklisted")
-  await log.send(f'<@{id}> is removed from being blacklisted from confessions')
+  if id in Mutes:
+    guild=client.get_guild(725302478823751702)
+    log=guild.get_channel(802510538021011466)
+    global Mutes
+    i=int(id)
+    Mutes.remove(i)
+    print(Mutes)
+    await ctx.send("The User is now not blacklisted")
+    await log.send(f'<@{id}> is removed from being blacklisted from confessions')
   
 @client.command()
 async def confess(ctx):
   if ctx.channel.type==discord.ChannelType.private:
+    if ctx.author.id not in Mutes:
     
     
-    
-    x='''<a:sleepingcat:799691148628852776> - *Do not send random, pointless messages*
+      x='''<a:sleepingcat:799691148628852776> - *Do not send random, pointless messages*
 
-<a:sleepingcat:799691148628852776> - *Do not harass anyone*
+  <a:sleepingcat:799691148628852776> - *Do not harass anyone*
 
-<a:sleepingcat:799691148628852776> - *Follow the  rules*  <#774143716042604545> 
+  <a:sleepingcat:799691148628852776> - *Follow the  rules*  <#774143716042604545> 
 
-<a:sleepingcat:799691148628852776> - Send Your Confessions Here
-This Will Cancel Out in 30s'''
-    mbed=discord.Embed(title='Type out your Confession',description=f'{x}',color=0x2f3136)
-    mbed.set_footer(text='Trolling may lead to getting blacklisted from confession.')
-    demand=await ctx.send(embed=mbed)
-    try:
-      msg=await client.wait_for(
-        'message',
-        timeout=30,
-        check=lambda message: message.author==ctx.author and message.channel==ctx.channel
-      )
-      if msg:
-        guild=client.get_guild(725302478823751702)
-        channel=guild.get_channel(802502940606332948)
-        log=guild.get_channel(802510538021011466)
-        em=discord.Embed(color=0x2f3136,description=f'{msg.content}')
-        em.set_author(name="F Society Confessions", icon_url='https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024')
-        em.set_footer(text='Dm me f confess to CONFESS')
-        
-        e=discord.Embed(color=0x2f3136,description=f'<@{ctx.author.id}>{msg.content}')
-        e.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
-        await channel.send(embed=em)
-        await log.send(embed=e)
+  <a:sleepingcat:799691148628852776> - Send Your Confessions Here
+  This Will Cancel Out in 30s'''
+      mbed=discord.Embed(title='Type out your Confession',description=f'{x}',color=0x2f3136)
+      mbed.set_footer(text='Trolling may lead to getting blacklisted from confession.')
+      demand=await ctx.send(embed=mbed)
+      try:
+        msg=await client.wait_for(
+          'message',
+          timeout=30,
+          check=lambda message: message.author==ctx.author and message.channel==ctx.channel
+        )
+        if msg:
+          guild=client.get_guild(725302478823751702)
+          channel=guild.get_channel(802502940606332948)
+          log=guild.get_channel(802510538021011466)
+          em=discord.Embed(color=0x2f3136,description=f'{msg.content}')
+          em.set_author(name="F Society Confessions", icon_url='https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024')
+          em.set_footer(text='Dm me f confess to CONFESS')
+          
+          e=discord.Embed(color=0x2f3136,description=f'<@{ctx.author.id}>{msg.content}')
+          e.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
+          await channel.send(embed=em)
+          await log.send(embed=e)
+          await demand.delete()
+      except asyncio.TimeoutError:
+        await ctx.send('Cancelled',delete_after=10)
         await demand.delete()
-    except asyncio.TimeoutError:
-      await ctx.send('Cancelled',delete_after=10)
-      await demand.delete()
-  
+    else:
+      await ctx.send("You are muted")
   else:
     await ctx.send("I only accept confession through dms")
 
