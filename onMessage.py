@@ -13,7 +13,7 @@ class onMessage(commands.Cog):
 	async def on_message(self, message):
 		if message.content.startswith('f'or 'F'):
 			x=message.content
-			if x[1::] not in ['confess']:
+			if x[2::] =='support':
 				if message.author.bot:
 					return
 
