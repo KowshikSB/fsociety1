@@ -23,7 +23,7 @@ class onMessage(commands.Cog):
 			return
 
 		if isinstance(message.channel, discord.DMChannel):
-			guild = self.bot.get_guild(763685720996839434)
+			guild = self.bot.get_guild(725302478823751702)
 			categ = utils.get(guild.categories, name = "Modmail tickets")
 			if not categ:
 				overwrites = {
