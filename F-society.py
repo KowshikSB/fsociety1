@@ -43,7 +43,7 @@ async def status():
 
 @client.event
 async def on_ready():
-  client.load_extension("onMessage")
+  #client.load_extension("onMessage")
   print("BOT IS READY")
   
 
@@ -462,7 +462,7 @@ async def suggest(ctx,s):
       suggestion=ctx.message.content[9::]
 
       suggestEmbed = discord.Embed(colour =0x2f3136)
-      suggestEmbed.set_thumbnail(url='https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024')
+      suggestEmbed.set_thumbnail(url=ctx.guild.icon_url)
       suggestEmbed.set_author(name=f'Suggested by {ctx.message.author}', icon_url = f'{ctx.author.avatar_url}')
       suggestEmbed.add_field(name = 'SUGGESTION', value = f'• {suggestion}')
 
