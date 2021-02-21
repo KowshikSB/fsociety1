@@ -478,11 +478,9 @@ Mutes=[]
 @client.command()
 @commands.has_role('STAFF TEAM')  
 async def cmute(ctx,id,*,reason):
-  if reason is None:
-    await ctx.send("Mention the reson please")
-  else:
+  if reason is not None: 
     global Mutes
-    if id not in Mutes:
+    if int(id) not in Mutes:
       guild=client.get_guild(725302478823751702)
       log=guild.get_channel(802510538021011466)
       i=int(id)
@@ -493,6 +491,8 @@ async def cmute(ctx,id,*,reason):
         await log.send(f'<@{id}> is now blacklisted from confessions. Reason = {reason}')
       else: 
         await ctx.send("What are you on ? You cant Blacklist Kaze dumbass")
+  else:
+    await ctx.send("Please mention the reason.")
 @client.command()
 @commands.has_role('STAFF TEAM')  
 async def cunmute(ctx,id):
