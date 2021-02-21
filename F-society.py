@@ -492,13 +492,14 @@ async def cmute(ctx,id,*,reason):
 @commands.has_role('STAFF TEAM')  
 async def cunmute(ctx,id):
   global Mutes
+  print(Mutes)
   if int(id) in Mutes:
     guild=client.get_guild(725302478823751702)
     log=guild.get_channel(802510538021011466)
     
     i=int(id)
     Mutes.remove(i)
-    print(Mutes)
+    
     await ctx.send("The User is now not blacklisted")
     await log.send(f'<@{id}> is removed from being blacklisted from confessions')
   else:
