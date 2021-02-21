@@ -483,7 +483,7 @@ async def cmute(ctx,id,*,reason):
     guild=client.get_guild(725302478823751702)
     log=guild.get_channel(802510538021011466)
     
-    Mutes.add(id)
+    Mutes.append(id)
     print(Mutes)
     await ctx.send("The User is now blacklisted")
     await log.send(f'<@{id}> is now blacklisted from confessions. Reason = {reason}')
