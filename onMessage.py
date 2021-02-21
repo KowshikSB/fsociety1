@@ -37,7 +37,7 @@ class onMessage(commands.Cog):
 					await channel.send(embed = embed)
 
 				elif isinstance(message.channel, discord.TextChannel):
-					if message.content.startswith(self.bot.command_prefix):
+					if message.content.startswith('f' or 'F'):
 						pass
 					else:
 						topic = message.channel.topic
