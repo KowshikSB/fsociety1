@@ -478,16 +478,21 @@ Mutes=[]
 @client.command()
 @commands.has_role('STAFF TEAM')  
 async def cmute(ctx,id,*,reason):
-  global Mutes
-  if id not in Mutes:
-    guild=client.get_guild(725302478823751702)
-    log=guild.get_channel(802510538021011466)
-    i=int(id)
-    Mutes.append(i)
-    print(Mutes)
-    await ctx.send("The User is now blacklisted")
-    await log.send(f'<@{id}> is now blacklisted from confessions. Reason = {reason}')
-    
+  if reason is None:
+    await ctx.send("Mention the reson please")
+  else:
+    global Mutes
+    if id not in Mutes:
+      guild=client.get_guild(725302478823751702)
+      log=guild.get_channel(802510538021011466)
+      i=int(id)
+      if i!=261742964441612298:
+        Mutes.append(i)
+        print(Mutes)
+        await ctx.send("The User is now blacklisted")
+        await log.send(f'<@{id}> is now blacklisted from confessions. Reason = {reason}')
+      else: 
+        await ctx.send("What are you on ? You cant Blacklist Kaze dumbass")
 @client.command()
 @commands.has_role('STAFF TEAM')  
 async def cunmute(ctx,id):
@@ -500,7 +505,7 @@ async def cunmute(ctx,id):
     i=int(id)
     Mutes.remove(i)
     
-    await ctx.send("The User is now not blacklisted")
+    await ctx.channel.send("The User is now not blacklisted")
     await log.send(f'<@{id}> is removed from being blacklisted from confessions')
   else:
     await ctx.send('Does not work')
