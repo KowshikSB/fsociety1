@@ -10,7 +10,7 @@ class onMessage(commands.Cog):
 		self.client = bot
 
 	@commands.Cog.listener()
-	async def on_message(self, message):
+	async def support(self, message):
 		if message.author.bot:
 			return
 
@@ -29,7 +29,7 @@ class onMessage(commands.Cog):
 				channel = await categ.create_text_channel(name = f"{message.author.name}#{message.author.discriminator}", topic = str(message.author.id))
 				await channel.send(f"New modmail created by {message.author.mention}")
 
-			embed = discord.Embed(description = message.content, colour = 0x696969)
+			embed = discord.Embed(description = message.content, colour = 0x2f3136)
 			embed.set_author(name = message.author, icon_url = message.author.avatar_url)
 			await channel.send(embed = embed)
 
