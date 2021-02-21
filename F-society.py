@@ -492,7 +492,7 @@ async def cmute(ctx,id,*,reason):
 @commands.has_role('STAFF TEAM')  
 async def cunmute(ctx,id):
   global Mutes
-  if id in Mutes:
+  if int(id) in Mutes:
     guild=client.get_guild(725302478823751702)
     log=guild.get_channel(802510538021011466)
     
