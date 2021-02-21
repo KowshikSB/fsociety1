@@ -502,6 +502,7 @@ async def cunmute(ctx,id):
   
 @client.command()
 async def confess(ctx):
+  global Mutes
   if ctx.channel.type==discord.ChannelType.private:
     if ctx.author.id not in Mutes:
     
