@@ -478,10 +478,11 @@ Mutes=[]
 @client.command()
 @commands.has_role('STAFF TEAM')  
 async def cmute(ctx,id,*,reason):
+  global Mutes
   if id not in Mutes:
     guild=client.get_guild(725302478823751702)
     log=guild.get_channel(802510538021011466)
-    global Mutes
+    
     Mutes.add(id)
     print(Mutes)
     await ctx.send("The User is now blacklisted")
@@ -490,10 +491,11 @@ async def cmute(ctx,id,*,reason):
 @client.command()
 @commands.has_role('STAFF TEAM')  
 async def cunmute(ctx,id):
+  global Mutes
   if id in Mutes:
     guild=client.get_guild(725302478823751702)
     log=guild.get_channel(802510538021011466)
-    global Mutes
+    
     i=int(id)
     Mutes.remove(i)
     print(Mutes)
