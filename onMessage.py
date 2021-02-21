@@ -11,7 +11,7 @@ class onMessage(commands.Cog):
 	
 	@commands.Cog.listener()
 	async def on_message(self, message):
-		if message.content.startswith( self.client.command_prefix(self.bot, message)):
+		if message.content.startswith(self.bot.command_prefix(self.bot, message)):
 			if message.author.bot:
 				return
 
