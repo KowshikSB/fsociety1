@@ -71,5 +71,5 @@ async def support(ctx):
 					await asyncio.sleep(10)
 					await ctx.channel.delete()
 
-		def setup(bot):
-			bot.add_cog(onMessage(bot))
+		def setup(client):
+			client.add_cog(onMessage(client))
