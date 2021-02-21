@@ -477,7 +477,7 @@ async def suggest(ctx,s):
 Mutes=[]
 @client.command()
 @commands.has_role('STAFF TEAM')  
-async def cmute(ctx,id,*,reason):
+async def cmute(ctx,id,*,reason=None):
   if reason is not None: 
     global Mutes
     if int(id) not in Mutes:
