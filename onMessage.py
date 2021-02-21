@@ -70,5 +70,5 @@ If you Opened the modmail accidently close the Modmail by **f close**'''
 				await asyncio.sleep(10)
 				await ctx.channel.delete()
 
-		def setup(bot):
-			bot.add_cog(onMessage(bot))
+	def setup(bot):
+		bot.add_cog(onMessage(bot))
