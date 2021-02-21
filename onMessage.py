@@ -34,7 +34,7 @@ async def support(ctx):
 					return
 
 				if isinstance(message.channel, discord.DMChannel):
-					guild = self.bot.get_guild(725302478823751702)
+					guild = self.bot.get_guild(763685720996839434)
 					categ = utils.get(guild.categories, name = "Modmail tickets")
 					if not categ:
 						overwrites = {
@@ -71,5 +71,5 @@ async def support(ctx):
 					await asyncio.sleep(10)
 					await ctx.channel.delete()
 
-		def setup(client):
-			client.add_cog(onMessage(client))
+		def setup(bot):
+			bot.add_cog(onMessage(bot))
