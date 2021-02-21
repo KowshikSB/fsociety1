@@ -7,7 +7,10 @@ from discord.ext import tasks
 from discord.utils import get 
 
 from discord.ext.commands.converter import clean_content
+client = commands.Bot(command_prefix =commands.when_mentioned_or('f ','F '),intents=discord.Intents.all())
 
+
+command_prefix =commands.when_mentioned_or('f ')
 
 @client.command()
 async def support(ctx):
