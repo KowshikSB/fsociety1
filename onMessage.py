@@ -28,7 +28,7 @@ If you want to contact Mod. Send your query now.
 Mods Will be notified. If you opened this by mistake 
 Use **f close** to Close the Ticket'''
 
-			em=discord.Embed(title=x,descrption=y,colour = 0x2f3136)
+			em=discord.Embed(title=x,description=y,colour = 0x2f3136)
 			em.set_thumbnail(url='https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024')
 			em.set_footer(text="The F Society")
 			await ctx.send(embed=em)
