@@ -16,11 +16,9 @@ command_prefix =commands.when_mentioned_or('f ')
 class onMessage(commands.Cog):
 	def __init__(self, bot):
 		self.client = bot
-	@client.command()
-	async def support(self,ctx):
-		if ctx.channel.type==discord.ChannelType.private:
-			x='<:h_:788652894227267584><:e_:788652806235488256><:l_:788653083005157396><:p_:788654650374225930> <:d_:788651820054609930><:e_:788652806235488256><:s_:788653491492880414> <:k_:788653044950237194>'
-			y='''*You can use modmail for any of the following reasons*
+	
+		x='<:h_:788652894227267584><:e_:788652806235488256><:l_:788653083005157396><:p_:788654650374225930> <:d_:788651820054609930><:e_:788652806235488256><:s_:788653491492880414> <:k_:788653044950237194>'
+		y='''*You can use modmail for any of the following reasons*
 <a:tickup:774207637184839680> *Question your moderation infraction*
 <a:tickup:774207637184839680> *Reporting any user in the server*
 <a:tickup:774207637184839680> *Just ask a general question!*
@@ -28,15 +26,17 @@ If you want to contact Mod. Send your query now.
 Mods Will be notified. If you opened this by mistake 
 Use **f close** to Close the Ticket'''
 
-			em=discord.Embed(title=x,description=y,colour = 0x2f3136)
-			em.set_thumbnail(url='https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024')
-			em.set_footer(text="The F Society")
-			await ctx.send(embed=em)
-			@commands.Cog.listener()
-			async def on_message(self, message):
-				if message.author.bot:
-					return
-
+		em=discord.Embed(title=x,description=y,colour = 0x2f3136)
+		em.set_thumbnail(url='https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024')
+		em.set_footer(text="The F Society")
+		
+		@commands.Cog.listener()
+		async def on_message(self, message):
+			if message.author.bot:
+				return
+			if message.content!='f confess' or 'F confess' and message.content=='f support' or 'F support':
+				await message.send(embed=em)
+				
 				if isinstance(message.channel, discord.DMChannel):
 					guild = self.client.get_guild(725302478823751702)
 					categ = utils.get(guild.categories, name = "Modmail tickets")
@@ -68,12 +68,12 @@ Use **f close** to Close the Ticket'''
 								embed.set_author(name = message.author, icon_url = message.author.avatar_url)
 								await member.send(embed = embed)
 
-			@commands.command()
-			async def close(self, ctx):
-				if ctx.channel.category.name == "Modmail tickets":
-					await ctx.send("Deleting the channel in 10 seconds!")
-					await asyncio.sleep(10)
-					await ctx.channel.delete()
+		@commands.command()
+		async def close(self, ctx):
+			if ctx.channel.category.name == "Modmail tickets":
+				await ctx.send("Deleting the channel in 10 seconds!")
+				await asyncio.sleep(10)
+				await ctx.channel.delete()
 
 def setup(bot):
 	bot.add_cog(onMessage(bot))
