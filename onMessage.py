@@ -17,8 +17,8 @@ class onMessage(commands.Cog):
 	def __init__(self, bot):
 		self.client = bot
 	@client.command()
-	async def support(ctx):
-		if ctx.channel.type==discord.ChannelType.private:
+	async def support(self):
+		if self.channel.type==discord.ChannelType.private:
 			x='<:h_:788652894227267584><:e_:788652806235488256><:l_:788653083005157396><:p_:788654650374225930> <:d_:788651820054609930><:e_:788652806235488256><:s_:788653491492880414> <:k_:788653044950237194>'
 			y='''*You can use modmail for any of the following reasons*
 <a:tickup:774207637184839680> *Question your moderation infraction*
@@ -29,9 +29,9 @@ Mods Will be notified. If you opened this by mistake
 Use **f close** to Close the Ticket'''
 
 			em=discord.Embed(title=x,descrption=y,colour = 0x2f3136)
-			em.set_thumbnail(url=ctx.guild.icon_url)
+			em.set_thumbnail(url='https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024')
 			em.set_footer(text="The F Society")
-			await ctx.send(embed=em)
+			await self.send(embed=em)
 			@commands.Cog.listener()
 			async def on_message(self, message):
 				if message.author.bot:
