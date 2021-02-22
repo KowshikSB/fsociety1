@@ -24,18 +24,20 @@ command_prefix =commands.when_mentioned_or('f ')
 
 async def status():
   while True:
-    await client.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.listening, name="Kaze"))
-    await asyncio.sleep(1800)
     await client.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.playing , name="With your mama"))
     await asyncio.sleep(1800)
+    await client.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.listening, name="Kaze"))
+    await asyncio.sleep(1800)
+   
+    await client.change_presence(status=discord.Status.online,activity=discord.Activity(type=discord.ActivityType.watching, name="the rule breakers"))
+    await asyncio.sleep(1800)
+    await client.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.watching, name="F Society"))
+    await asyncio.sleep(1800)
+    
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="The Ded Chat ;-;"))
     await asyncio.sleep(1800)
     
     await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="You"))
-    await asyncio.sleep(1800)
-    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="the rule breakers"))
-    await asyncio.sleep(1800)
-    await client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="F Society"))
     await asyncio.sleep(1800)
     
     await client.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.listening, name="SIMPS"))
@@ -440,7 +442,7 @@ async def stats(ctx):
 @client.command()
 async def membercount(ctx):
   x=ctx.guild.member_count
-  em=discord.Embed(title=ctx.guild.name,description=f"**Member Count** - {x}",color=0xfefec8)
+  em=discord.Embed(title=ctx.guild.name,description=f"**Member Count** - {x}",color=0x2f3136)
   em.set_thumbnail(url=ctx.guild.icon_url)
   em.set_footer(text="Dig Bick Energy")
   await ctx.send(embed=em)
@@ -555,6 +557,7 @@ async def confess(ctx):
   else:
     await ctx.send("I only accept confession through dms")
 
+d={}
 
 
 
