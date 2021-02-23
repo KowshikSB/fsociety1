@@ -2,6 +2,7 @@ import os
 import discord
 from discord import message
 from discord import channel
+from discord.colour import Color
 from discord.enums import Status
 from discord.ext import commands
 import asyncio
@@ -554,10 +555,28 @@ async def confess(ctx):
   else:
     await ctx.send("I only accept confession through dms")
 
-d={}
+@client.event
+async def on_message(message): 
+  if message in ['boost','Boost','BOOST']:
+    x='''<a:boost_us:813756354166128660> 1 Boost  - 
+• *Custom Color Role of your Choice*
+• *Unlocks a private chat room* <#799319127515988029>
+•  *Leveling System Perks Bypass*
+•  *Unlocks* <#778843597528891392>
+•  *Unlocks Cute Secret Emojis Packs*
 
+ <a:boost_us:813756354166128660> 2 Boosts -
+ • *Gets a Custom hoisted role until the Boost lasts*
 
+ <a:boost_us:813756354166128660> More Than 2 Boosts -
+• *Custom Private VC*
 
+Dm <@261742964441612298> To get the perks.'''
+    em=discord.Embed(title='Boost Us <a:b_capoo_heartlove:813626091159027742>',description=x,color=0x2f3136)
+    em.set_thumbnail(url=message.guild.icon_url)
+    await message.channel.trigger_typing()
+    await asyncio.sleep(2)
+    await message.send(embed=em)
 
 
 
