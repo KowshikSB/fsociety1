@@ -76,12 +76,12 @@ async def help(ctx, arg=None):
     embed.set_thumbnail(url=ctx.guild.icon_url)
     embed.add_field(name=":placard: Info",value="• **ping** • **avatar** • **membercount**  • **stats**",inline=False)
   
-    embed.add_field(name=":placard: Utility",value="**• bam • snipe • eiball • editsnipe • confess • suggest**",inline=False)
+    embed.add_field(name=":placard: Utility",value="• **bam** • **snipe** • **eiball** • **editsnipe** • **confess** • **suggest**",inline=False)
     embed.add_field(name=":placard: Fun",value="• **howsimp** • **howgay** • **howorny** • **pp** ",inline=False)
-    embed.add_field(name=":placard: Reaction", value="• **kill** • **slap** • **kiss** **• hug** • **bonk** • **pat** • **punch**",inline=False)
+    embed.add_field(name=":placard: Reaction", value="• **kill** • **slap** • **kiss** • **boop** • **hug** • **bonk** • **pat** • **punch**",inline=False)
     embed.set_footer(text="Dig Bick Energy Gang")
     embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
-    embed.add_field(name="F Society",value="[Server Invite](https://discord.gg/2tpP5RzWuX)" , inline=False)
+    embed.add_field(name="The F Society",value="Prefixes `f ` ,`F `, <@774248018802114591>" , inline=False)
     await ctx.send(embed=embed)
  
 
@@ -399,10 +399,7 @@ async def punch(ctx ,avamember : discord.Member=None):
       await ctx.send(embed=em)
 @client.command()
 async def invite(ctx):
-  x="https://discord.com/oauth2/authorize?client_id=774248018802114591&scope=bot&permissions=1614146624"
-  embed=discord.Embed(title = "The F Society", description="<:AlienSign:797352295779270666> [Invite Link]({})".format(x), colour=0x2f3136)
-  embed.set_thumbnail(url="https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024")
-  await ctx.send(embed=embed)
+  await ctx.send('<a:Chat:790568691888029726> *F Society Invite link* - https://discord.gg/2tpP5RzWuX')
 
 @client.command()
 async def credits(ctx):
