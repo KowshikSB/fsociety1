@@ -77,7 +77,7 @@ async def help(ctx, arg=None):
     embed.set_thumbnail(url=ctx.guild.icon_url)
     embed.add_field(name=":placard: Info",value="• **ping** • **avatar** • **membercount**  • **stats**",inline=False)
   
-    embed.add_field(name=":placard: Utility",value="• **bam** • **snipe** • **eiball** • **editsnipe** • **confess** • **suggest**",inline=False)
+    embed.add_field(name=":placard: Utility",value="• **bam** • **snipe** • **clear**• **eiball** • **editsnipe** • **confess** • **suggest**",inline=False)
     embed.add_field(name=":placard: Fun",value="• **howsimp** • **howgay** • **howorny** • **pp** ",inline=False)
     embed.add_field(name=":placard: Reaction", value="• **kill** • **slap** • **kiss** • **boop** • **hug** • **bonk** • **pat** • **punch**",inline=False)
     embed.set_footer(text="Dig Bick Energy Gang")
@@ -103,6 +103,7 @@ async def on_member_join(member):
     guild=client.get_guild(725302478823751702)
     channel=guild.get_channel(774155081922773022)
     await channel.send(f'<:Shiba_thinking:793772530485297172> {member.mention} <@&802760617769041990>',embed=em)
+    
 
 
 
@@ -554,6 +555,14 @@ async def confess(ctx):
       await ctx.send("You are muted")
   else:
     await ctx.send("I only accept confession through dms")
+@client.command()
+@commands.has_permissions(manage_messages=True)
+async def clear(ctx,amount=3):
+  await ctx.channel.purge(limit=amount+1)
+  await ctx.send(f'I have deleted {amount} messages!')
+  await asyncio.sleep(2)
+  await ctx.channel.purge(limit=amount)
+
 
 
 
