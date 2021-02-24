@@ -559,7 +559,7 @@ async def confess(ctx):
 @commands.has_permissions(manage_messages=True)
 async def clear(ctx,amount=3):
   await ctx.channel.purge(limit=amount+1)
-  await ctx.send(f'I have deleted {amount} messages!')
+  await ctx.send(f'<a:Chat:804180442626261014> *I have deleted* {amount} *messages!*')
   await asyncio.sleep(2)
   await ctx.channel.purge(limit=amount)
 
