@@ -465,6 +465,8 @@ async def suggest(ctx,s):
       suggestEmbed = discord.Embed(colour =0x2f3136)
       suggestEmbed.set_thumbnail(url=ctx.guild.icon_url)
       suggestEmbed.set_author(name=f'Suggested by {ctx.message.author}', icon_url = f'{ctx.author.avatar_url}')
+    
+      suggestEmbed.set_footer(text=f'ID - {ctx.message.author.id}')
       suggestEmbed.add_field(name = 'SUGGESTION', value = f'• {suggestion}')
 
       x=await channel.send(embed=suggestEmbed)
