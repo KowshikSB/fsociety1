@@ -113,7 +113,7 @@ async def on_member_join(member):
 
 
 
-@client.command()
+@client.command(name='eiball',aliases=['8ball','8b'])
 async def eiball(ctx, arg=None):
   ba=["Ask Me If I Care","Dumb Question Ask Another", "Forget About It" , "In Your Dreams" , "Not A Chance" , "ofc"," yeasss","I'd say yes but you have to get me some crack B)","You may rely on it","Obviously" , "What Do You Think?" ,  "Who Cares?" , "You've Got To Be Kidding","Yeah Right"," You Wish","Absolutely", "Unclear Ask Later","Chances Aren't Good", f"Ask <@{ctx.guild.owner_id}> the Wisest Person here", "Indications Say Yes" , "No Doubt About It","The Stars Say No","You Can Count On It"]
     
@@ -186,8 +186,8 @@ async def editsnipe(ctx):
       await ctx.channel.send(embed=embed,delete_after=60)
     except:
       await ctx.channel.send("<a:potato_rage:788063034701906001> *Who pays for the ammo? `;-;` Nothing to snipe!*",delete_after=10)
-@client.command()
-async def avatar(ctx ,avamember : discord.Member=None,aliases=['av','Avatar']):
+@client.command(name='avatar',aliases=["av"])
+async def avatar(ctx ,avamember : discord.Member=None):
   if avamember is None:
     avamember=ctx.message.author 
     
@@ -565,7 +565,16 @@ async def clear(ctx,amount=3):
   await asyncio.sleep(2)
   await ctx.channel.purge(limit=amount)
 
-
-
-
+@client.command(name='userinfo',aliases=['ui','UI'])
+async def userinfo(ctx,member:discord.Member):
+  roles=[role for role in member.roles]
+  embed=discord.Embed(color=0x2f3136,timestamp=ctx.message.created_at)
+  embed.set_author(name=f'User Info - <@{member.id}>')
+  embed.set_thumbnail(url=member.avatar_url)
+  embed.set_footer(f'Requested by{ctx.author}',icon_url=ctx.author.avatar_url)
+  embed.add_field(name='ID',value=member.id)
+  embed.add_field(name='Name in the Guild',value=member.display_name)
+  embed.add_field(name="Created at:",value=member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"))
+  embed.add_field(name="Created at:",value=member.joined_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"))
+  embed.add_field(name=f'Roles ({len(roles)})')
 client.run(os.environ['DISCORD_TOKEN'])
