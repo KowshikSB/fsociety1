@@ -571,7 +571,7 @@ async def userinfo(ctx,member:discord.Member):
   embed=discord.Embed(color=0x2f3136,timestamp=ctx.message.created_at)
   embed.set_author(name=f'User Info - <@{member.id}>')
   embed.set_thumbnail(url=member.avatar_url)
-  embed.set_footer(f'Requested by{ctx.author}',icon_url=ctx.author.avatar_url)
+  embed.set_footer(text=f'Requested by{ctx.author}',icon_url=ctx.author.avatar_url)
   embed.add_field(name='ID',value=member.id)
   embed.add_field(name='Name in the Guild',value=member.display_name)
   embed.add_field(name="Created at:",value=member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"))
