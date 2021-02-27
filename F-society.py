@@ -565,11 +565,7 @@ async def clear(ctx,amount=3):
   await ctx.send(f'<a:Chat:804180442626261014> *I have deleted* {amount} *messages!*')
   await asyncio.sleep(2)
   await ctx.channel.purge(limit=amount)
-def isempty(qu):
-    if qu==[]:
-        return True
-    else:
-        return False
+
 
 @client.command(name='userinfo',aliases=['ui','UI'])
 async def userinfo(ctx,member:discord.Member=None):
@@ -600,9 +596,9 @@ async def userinfo(ctx,member:discord.Member=None):
   
   embed.add_field(name="• Joined at:",value=f'`{member.joined_at.strftime("%a,%#d %B %Y,%I:%M %p UTC")}`',inline=False)
   embed.add_field(name="• Created at:",value=f'`{member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC")}`',inline=False)
-  if isempty(badges)==False:
+  if badges!=[]:
     embed.add_field(name='• Badges: ',value=s)
-  #testing
+  #testingd
     
   
   
