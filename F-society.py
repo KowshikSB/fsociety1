@@ -591,4 +591,5 @@ async def userinfo(ctx,member:discord.Member=None):
     
     
     await ctx.send(embed=embed)
+    s=''
 client.run(os.environ['DISCORD_TOKEN'])
