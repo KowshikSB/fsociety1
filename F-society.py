@@ -1,5 +1,5 @@
 import os
-from p14 import isempty
+
 import discord
 from discord import message
 from discord import channel
