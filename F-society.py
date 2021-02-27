@@ -602,7 +602,7 @@ async def userinfo(ctx,member:discord.Member=None):
   embed.add_field(name="• Created at:",value=f'`{member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC")}`',inline=False)
   if isempty(badges)==False:
     embed.add_field(name='• Badges: ',value=s)
-  
+  #testing
     
   
   
