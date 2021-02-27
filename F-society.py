@@ -576,9 +576,9 @@ async def userinfo(ctx,member:discord.Member=None):
   s=''
   for b in badges:
     s=''
-    if b[1] is True:
+    if b[1]=='True':
       s+=d[b[0]]
-  print(s)
+
   embed=discord.Embed(color=0x2f3136,timestamp=ctx.message.created_at,description=f'Badges - {s} ')
   embed.set_author(name=f'User Info - {member}')
   embed.set_thumbnail(url=member.avatar_url)
