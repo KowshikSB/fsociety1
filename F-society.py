@@ -576,7 +576,7 @@ async def userinfo(ctx,member:discord.Member=None):
   s=''
   for a in badges:
     if a[1] is True:
-      print(d[a[0]])
+      
       s+=d[a[0]]
       
 
