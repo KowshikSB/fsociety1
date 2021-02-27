@@ -579,17 +579,17 @@ async def userinfo(ctx,member:discord.Member=None):
     if b[1] is True:
       s+=d[b[0]]
   
-    embed=discord.Embed(color=0x2f3136,timestamp=ctx.message.created_at,description=f'Badges - {s} ')
-    embed.set_author(name=f'User Info - {member}')
-    embed.set_thumbnail(url=member.avatar_url)
-    embed.set_footer(text=f'Requested by{ctx.author}',icon_url=ctx.author.avatar_url)
-    embed.add_field(name='ID',value=member.id)
-    embed.add_field(name='Name in the Guild',value=member.display_name)
-    embed.add_field(name="Created at:",value=member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"),inline=False)
-    embed.add_field(name="Joined at:",value=member.joined_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"),inline=False)
+  embed=discord.Embed(color=0x2f3136,timestamp=ctx.message.created_at,description=f'Badges - {s} ')
+  embed.set_author(name=f'User Info - {member}')
+  embed.set_thumbnail(url=member.avatar_url)
+  embed.set_footer(text=f'Requested by{ctx.author}',icon_url=ctx.author.avatar_url)
+  embed.add_field(name='ID',value=member.id)
+  embed.add_field(name='Name in the Guild',value=member.display_name)
+  embed.add_field(name="Created at:",value=member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"),inline=False)
+  embed.add_field(name="Joined at:",value=member.joined_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"),inline=False)
     
-    
-    
-    await ctx.send(embed=embed)
-    s=''
+  
+  
+  await ctx.send(embed=embed)
+      
 client.run(os.environ['DISCORD_TOKEN'])
