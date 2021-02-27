@@ -577,4 +577,5 @@ async def userinfo(ctx,member:discord.Member):
   embed.add_field(name="Created at:",value=member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"))
   embed.add_field(name="Created at:",value=member.joined_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"))
   embed.add_field(name=f'Roles',value=({len(roles)}))
+  await ctx.send(embed=embed)
 client.run(os.environ['DISCORD_TOKEN'])
