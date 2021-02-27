@@ -576,5 +576,5 @@ async def userinfo(ctx,member:discord.Member):
   embed.add_field(name='Name in the Guild',value=member.display_name)
   embed.add_field(name="Created at:",value=member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"))
   embed.add_field(name="Created at:",value=member.joined_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"))
-  embed.add_field(name=f'Roles ({len(roles)})')
+  embed.add_field(name=f'Roles',value=({len(roles)}))
 client.run(os.environ['DISCORD_TOKEN'])
