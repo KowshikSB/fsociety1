@@ -578,8 +578,8 @@ async def userinfo(ctx,member:discord.Member=None):
     if a[1] is True:
       
       s+=d[a[0]]
-  Member=member.id
-  if Member.premuim_since != None:
+  b=ctx.guild.premium_subscribers
+  if member in b:
     s+=d['nitro']
     s+=d['boost_badges']    
 
