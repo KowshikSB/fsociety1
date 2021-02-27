@@ -566,7 +566,7 @@ async def clear(ctx,amount=3):
   await ctx.channel.purge(limit=amount)
 
 @client.command(name='userinfo',aliases=['ui','UI'])
-async def userinfo(ctx,member:discord.Member):
+async def userinfo(ctx,member:discord.Member=None):
   if member is None:
     member=ctx.message.author 
   
