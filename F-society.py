@@ -577,8 +577,8 @@ async def userinfo(ctx,member:discord.Member=None):
   embed.set_footer(text=f'Requested by{ctx.author}',icon_url=ctx.author.avatar_url)
   embed.add_field(name='ID',value=member.id)
   embed.add_field(name='Name in the Guild',value=member.display_name)
-  embed.add_field(name="Created at:",value=member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"))
-  embed.add_field(name="Joined at:",value=member.joined_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"))
+  embed.add_field(name="Created at:",value=member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"),inline=False)
+  embed.add_field(name="Joined at:",value=member.joined_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"),inline=False)
   
   await ctx.send(embed=embed)
 client.run(os.environ['DISCORD_TOKEN'])
