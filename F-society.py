@@ -573,10 +573,13 @@ async def userinfo(ctx,member:discord.Member=None):
   roles=[role for role in member.roles]
   badges = [public_flags for public_flags in member.public_flags]
   d={'staff':'<:staff:815232627694632980>','partner':'<:partner:815232427777720340>','bug_hunter':'<:bughunter:815188215878123530>','hypesquad_bravery':'<:HypeaSquadBravery:815187983652225064>','hypesquad_brilliance':'<:HypeSquadBalance:815187919823175721>','hypeaquad_balance':'<:HypeSquadBrilliance:815187944675475466>','early_supporter':'<:BadgeEarlySupporter:815188034655092757>','bug_hunter_level_2':'<:GoldBugHunter:815188244744372234>','verified_bot_developer':'<:EarlyVerifiedBotDeveloper:815188301707345921>','nitro':'<:nitro:815188982819848225>','boost_badges':"<a:BoostBadges:815188839487897621>"}
-  
+  s=''
+  for a in badges:
+    if a[1] is True:
+      s+=d[a[0]]
       
 
-  embed=discord.Embed(color=0x2f3136,timestamp=ctx.message.created_at,description='')
+  embed=discord.Embed(color=0x2f3136,timestamp=ctx.message.created_at)
   embed.set_author(name=f'User Info - {member}')
   embed.set_thumbnail(url=member.avatar_url)
   embed.set_footer(text=f'Requested by{ctx.author}',icon_url=ctx.author.avatar_url)
@@ -584,6 +587,7 @@ async def userinfo(ctx,member:discord.Member=None):
   embed.add_field(name='Name in the Guild',value=member.display_name)
   embed.add_field(name="Created at:",value=member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"),inline=False)
   embed.add_field(name="Joined at:",value=member.joined_at.strftime("%a,%#d %B %Y,%I:%M %p UTC"),inline=False)
+  embed.add_field(name='Badges - ',value=s)
     
   
   
