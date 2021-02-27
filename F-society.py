@@ -565,6 +565,11 @@ async def clear(ctx,amount=3):
   await ctx.send(f'<a:Chat:804180442626261014> *I have deleted* {amount} *messages!*')
   await asyncio.sleep(2)
   await ctx.channel.purge(limit=amount)
+def isempty(qu):
+    if qu==[]:
+        return True
+    else:
+        return False
 
 @client.command(name='userinfo',aliases=['ui','UI'])
 async def userinfo(ctx,member:discord.Member=None):
