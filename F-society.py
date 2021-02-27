@@ -77,8 +77,8 @@ async def help(ctx, arg=None):
     embed.set_thumbnail(url=ctx.guild.icon_url)
     embed.add_field(name=":placard: Info",value="• **ping** • **avatar** • **membercount**  • **stats**",inline=False)
   
-    embed.add_field(name=":placard: Utility",value="• **bam** • **snipe** • **clear**• **eiball** • **editsnipe** • **confess** • **suggest**",inline=False)
-    embed.add_field(name=":placard: Fun",value="• **howsimp** • **howgay** • **howorny** • **pp** ",inline=False)
+    embed.add_field(name=":placard: Utility",value="• **snipe** • **clear** • **editsnipe** • **confess** • **suggest** • **userinfo**",inline=False)
+    embed.add_field(name=":placard: Fun",value="• **howsimp** • **howgay** • **howorny** • **pp** • **eiball** • **bam** ",inline=False)
     embed.add_field(name=":placard: Reaction", value="• **kill** • **slap** • **kiss** • **boop** • **hug** • **bonk** • **pat** • **punch**",inline=False)
     embed.set_footer(text="Dig Bick Energy Gang")
     embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
@@ -567,6 +567,9 @@ async def clear(ctx,amount=3):
 
 @client.command(name='userinfo',aliases=['ui','UI'])
 async def userinfo(ctx,member:discord.Member):
+  if member is None:
+    member=ctx.message.author 
+  
   roles=[role for role in member.roles]
   embed=discord.Embed(color=0x2f3136,timestamp=ctx.message.created_at)
   embed.set_author(name=f'User Info - {member}')
