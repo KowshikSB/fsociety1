@@ -581,6 +581,7 @@ async def userinfo(ctx,member:discord.Member=None):
   embed.add_field(name='• ID',value=f'`{member.id}`<@{member.id}>')
   embed.add_field(name='• Nickname',value=member.display_name,inline=False)
   for a in badges:
+
     if a[1] is True:
       
       s+=d[a[0]]
@@ -593,8 +594,9 @@ async def userinfo(ctx,member:discord.Member=None):
   
   embed.add_field(name="• Joined at:",value=f'`{member.joined_at.strftime("%a,%#d %B %Y,%I:%M %p UTC")}`',inline=False)
   embed.add_field(name="• Created at:",value=f'`{member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC")}`',inline=False)
+  if badges !=None:
+    embed.add_field(name='• Badges: ',value=s)
   
-  embed.add_field(name='• Badges: ',value=s)
     
   
   
