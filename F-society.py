@@ -584,10 +584,11 @@ async def userinfo(ctx,member:discord.Member=None):
   embed.set_footer(text=f'Requested by{ctx.author}',icon_url=ctx.author.avatar_url)
   embed.add_field(name='• ID',value=f'`{member.id}` <@{member.id}>')
   embed.add_field(name='• Nickname',value=member.display_name,inline=False)
+  embed.add_field (name = f"User roles: ({len(roles)})", value = " ".join([role.mention for role in roles]), inline=True)
   print(roles)
   yz=''
   for xyz in roles:
-    if xyz.hoist:
+    if xyz in []:
       yz+=f'<@{xyz}>'
   print(yz)
 
