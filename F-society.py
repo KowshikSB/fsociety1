@@ -607,7 +607,7 @@ async def userinfo(ctx,member:discord.Member=None):
   embed.add_field(name="• Created at:",value=f'`{member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC")}`',inline=False)
   x='<a:u_Chat:790568691888029726>'
   if 788392538888601601 in roles:
-    embed.add_field(name=f'• {x} Staff Team',value='',inline=False)
+    embed.add_field(name=f'• {x} Staff Team',value='<:u_blank:778230379663851565>',inline=False)
   
   if s!='':
     embed.add_field(name='• Badges: ',value=s)
