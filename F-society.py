@@ -589,9 +589,9 @@ async def userinfo(ctx,member:discord.Member=None):
   yz=''
   for xyz in roles:
     if xyz in [727404814836957236,789890292575895582,776749627248082944,803289122047393822,801780169580871690,812184488339701791,812184783496544267,812184998378602528,775985774536687636,775985579997003778,786104246051405854,799134338938699836,777459196919545856,807253618390466631,792059710589239326,803272125875617853,788392538888601601,777459196919545856]:
-      yz+=f'<@{xyz}>'
+      yz+=f'<@&{xyz}>'
   print(yz)
-  embed.add_field(name="• Main roles:",value=yz)
+  
   for a in badges:
 
     if a[1] is True:
@@ -608,6 +608,7 @@ async def userinfo(ctx,member:discord.Member=None):
   
   embed.add_field(name="• Joined at:",value=f'`{member.joined_at.strftime("%a,%#d %B %Y,%I:%M %p UTC")}`',inline=False)
   embed.add_field(name="• Created at:",value=f'`{member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC")}`',inline=False)
+  embed.add_field(name="• Main roles:",value=yz)
   
   if s!='':
     embed.add_field(name='• Badges: ',value=s)
