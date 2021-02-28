@@ -587,7 +587,7 @@ async def userinfo(ctx,member:discord.Member=None):
   print(roles)
   yz=''
   for xyz in roles:
-    if xyz.hoisted:
+    if xyz.hoist:
       yz+=f'<@{xyz}>'
   print(yz)
 
