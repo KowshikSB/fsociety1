@@ -585,6 +585,12 @@ async def userinfo(ctx,member:discord.Member=None):
   embed.add_field(name='• ID',value=f'`{member.id}` <@{member.id}>')
   embed.add_field(name='• Nickname',value=member.display_name,inline=False)
   print(roles)
+  yz=''
+  for xyz in roles:
+    if xyz.hoisted:
+      yz+=f'<@{xyz}>'
+  print(yz)
+
   for a in badges:
 
     if a[1] is True:
