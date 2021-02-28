@@ -606,8 +606,8 @@ async def userinfo(ctx,member:discord.Member=None):
   embed.add_field(name="• Joined at:",value=f'`{member.joined_at.strftime("%a,%#d %B %Y,%I:%M %p UTC")}`',inline=False)
   embed.add_field(name="• Created at:",value=f'`{member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC")}`',inline=False)
   x='<a:u_Chat:790568691888029726>'
-  if roles in [788392538888601601,774493042475663370,777459196919545856,807126197652946956]:
-    embed.add_field(name=f'• {x} Staff Team',value='Kul People',inline=False)
+  if 788392538888601601 in roles:
+    embed.add_field(name=f'• {x} Staff Team',value='Kul Peoples',inline=False)
   
   if s!='':
     embed.add_field(name='• Badges: ',value=s)
