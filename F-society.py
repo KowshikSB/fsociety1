@@ -584,14 +584,14 @@ async def userinfo(ctx,member:discord.Member=None):
   embed.set_footer(text=f'Requested by{ctx.author}',icon_url=ctx.author.avatar_url)
   embed.add_field(name='• ID',value=f'`{member.id}` <@{member.id}>')
   embed.add_field(name='• Nickname',value=member.display_name,inline=False)
-  embed.add_field (name = f"User roles: ({len(roles)})", value = " ".join([role.mention for role in roles]), inline=True)
+  
   print(roles)
   yz=''
   for xyz in roles:
-    if xyz in []:
+    if xyz in [727404814836957236,789890292575895582,776749627248082944,803289122047393822,801780169580871690,812184488339701791,812184783496544267,812184998378602528,775985774536687636,775985579997003778,786104246051405854,799134338938699836,777459196919545856,807253618390466631,792059710589239326,803272125875617853,788392538888601601,777459196919545856]:
       yz+=f'<@{xyz}>'
   print(yz)
-
+  embed.add_field(name="• Main roles:",value=yz)
   for a in badges:
 
     if a[1] is True:
@@ -618,5 +618,12 @@ async def userinfo(ctx,member:discord.Member=None):
   
   
   await ctx.send(embed=embed)
-      
+@client.command()
+async def roles(ctx):
+  x=[727404814836957236,789890292575895582,776749627248082944,803289122047393822,801780169580871690,812184488339701791,812184783496544267,812184998378602528,775985774536687636,775985579997003778,786104246051405854,799134338938699836,777459196919545856,807253618390466631,792059710589239326,803272125875617853,788392538888601601,777459196919545856]
+  y=''
+  for z in x:
+    y+=f'<@&{z}>'
+  em=discord.Embed(title="Server Hoisted Role",description=y,color=0x2f3136)   
+  await ctx.send(embed=em)
 client.run(os.environ['DISCORD_TOKEN'])
