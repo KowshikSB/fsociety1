@@ -582,11 +582,14 @@ async def userinfo(ctx,member:discord.Member=None):
   embed.set_footer(text=f'Requested by{ctx.author}',icon_url=ctx.author.avatar_url)
   embed.add_field(name='• ID',value=f'`{member.id}`<@{member.id}>')
   embed.add_field(name='• Nickname',value=member.display_name,inline=False)
+  b=[]
   for a in badges:
 
     if a[1] is True:
       
       s+=d[a[0]]
+    
+
   b=ctx.guild.premium_subscribers
   if member in b:
     s+=d['nitro']
@@ -596,10 +599,12 @@ async def userinfo(ctx,member:discord.Member=None):
   
   embed.add_field(name="• Joined at:",value=f'`{member.joined_at.strftime("%a,%#d %B %Y,%I:%M %p UTC")}`',inline=False)
   embed.add_field(name="• Created at:",value=f'`{member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC")}`',inline=False)
-  print(badges)
-  if badges!=[]:
+  
+  if s!='':
     embed.add_field(name='• Badges: ',value=s)
   #testingd
+  else:
+    embed.add_field(name='• Badges: ',value='None')
     
   
   
