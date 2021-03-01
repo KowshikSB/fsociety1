@@ -574,7 +574,7 @@ async def userinfo(ctx,member:discord.Member=None):
   roles= [ role.id for role in member.roles ]
   
   badges = [public_flags for public_flags in member.public_flags]
-  d={'staff':'<:staff:815232627694632980>','partner':'<:partner:815232427777720340>','bug_hunter':'<:bughunter:815188215878123530>','hypesquad_bravery':'<:HypeaSquadBravery:815187983652225064>','hypesquad_brilliance':'<:HypeSquadBrilliance:815187944675475466>','hypeaquad_balance':'<:HypeSquadBalance:815187919823175721> ','early_supporter':'<:BadgeEarlySupporter:815188034655092757>','bug_hunter_level_2':'<:GoldBugHunter:815188244744372234>','verified_bot_developer':'<:EarlyVerifiedBotDeveloper:815188301707345921>','nitro':'<:nitro:815188982819848225>','boost_badges':"<a:BoostBadges:815188839487897621>"}
+  d={'staff':'<:staff:815232627694632980>','partner':'<:partner:815232427777720340>','bug_hunter':'<:bughunter:815188215878123530>','hypesquad_bravery':'<:HypeaSquadBravery:815187983652225064>','hypesquad_brilliance':'<:HypeSquadBrilliance:815187944675475466>','hypesquad_balance':'<:HypeSquadBalance:815187919823175721> ','early_supporter':'<:BadgeEarlySupporter:815188034655092757>','bug_hunter_level_2':'<:GoldBugHunter:815188244744372234>','verified_bot_developer':'<:EarlyVerifiedBotDeveloper:815188301707345921>','nitro':'<:nitro:815188982819848225>','boost_badges':"<a:BoostBadges:815188839487897621>"}
   s=''
   
     
