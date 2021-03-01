@@ -634,7 +634,7 @@ async def warn(ctx,member:discord.Member,*,reason="No Reason Provided"):
   
   icon=ctx.guild.icon_url
   em.set_footer(text="The F Society",icon_url=icon)
-  em.add_field(name="Reason -",value=f"{reason}",inline=False)
+  em.add_field(name="Reason:",value=f"{reason}",inline=False)
   await member.send(embed=em)
   guild=client.get_guild(725302478823751702)
   await ctx.message.add_reaction("<:tickYes:815926941453385738>")
