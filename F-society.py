@@ -627,4 +627,21 @@ async def roles(ctx):
     y+=f'<@&{z}>'
   em=discord.Embed(title="Server Hoisted Role",description=y,color=0x2f3136)   
   await ctx.send(embed=em)
+@client.command()
+@commands.has_permissions(kick_members=True)
+async def warn(ctx,member:discord.Member,*,reason="No Reason Provided"):
+  em=discord.Embed(title = ctx.guild.name, description= "**You have been Warned in {}!**".format(ctx.guild.name), colour=0x2f3136)
+  
+  icon=ctx.guild.icon_url
+  em.set_footer(text="The F Society",icon_url=icon)
+  em.add_field(name="Reason -",value=f"{reason}",inline=False)
+  await member.send(embed=em)
+  guild=client.get_guild(725302478823751702)
+  await ctx.message.add_reaction("<:tickYes:815926941453385738>")
+  log=guild.get_channel(774161325442072596)
+  embed=discord.Embed(title='Warn log',description=f'{member} was warned by {ctx.message.author}',color=0x2f3136)
+  embed.add_field(name="Reason -",value=reason)
+  await log.send(embed=em)
+  
+
 client.run(os.environ['DISCORD_TOKEN'])
