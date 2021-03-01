@@ -595,19 +595,21 @@ async def userinfo(ctx,member:discord.Member=None):
       
       s+=d[a[0]]
     
-
+  
   b=ctx.guild.premium_subscribers
   if member in b:
     s+=d['nitro']
     s+=d['boost_badges']    
-
-    embed.add_field(name='• Swaggy Server Booster',value='<@&778915337541386241> <a:nexin_pop:815257177982894091>',inline=False)
   
+    embed.add_field(name='• Swaggy Server Booster',value='<@&778915337541386241> <a:nexin_pop:815257177982894091>',inline=False)
+  else:
+    if member.is_avatar_animated():
+      s+=d['nitro']
   embed.add_field(name="• Joined at:",value=f'`{member.joined_at.strftime("%a,%#d %B %Y,%I:%M %p UTC")}`',inline=False)
   embed.add_field(name="• Created at:",value=f'`{member.created_at.strftime("%a,%#d %B %Y,%I:%M %p UTC")}`',inline=False)
   x='<a:u_Chat:790568691888029726>'
   if 788392538888601601 in roles:
-    embed.add_field(name=f'• Staff Team',value=f'{x} *Kul People Only*',inline=False)
+    s+='<:fsociety_kul_staff:815958724329472010>'
   
   if s!='':
     embed.add_field(name='• Badges: ',value=s)
