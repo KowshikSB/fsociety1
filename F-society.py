@@ -79,7 +79,7 @@ async def help(ctx, arg=None):
     embed.add_field(name=":placard: Info",value="• **ping** • **avatar** • **membercount**  • **stats**",inline=False)
   
     embed.add_field(name=":placard: Utility",value="• **snipe** • **clear** • **editsnipe** • **confess** • **suggest** • **userinfo**",inline=False)
-    embed.add_field(name=":placard: Fun",value="• **howsimp** • **howgay** • **howorny** • **pp** • **eiball** • **bam** ",inline=False)
+    embed.add_field(name=":placard: Fun",value="• **howsimp** • **howgay** • **howorny** • **pp** • **8ball** • **bam** ",inline=False)
     embed.add_field(name=":placard: Reaction", value="• **kill** • **slap** • **kiss** • **boop** • **hug** • **bonk** • **pat** • **punch**",inline=False)
     embed.set_footer(text="Dig Bick Energy Gang")
     embed.add_field(name="Making in Progress",value="*So far I only have few commands! ;-;*" , inline=False)
