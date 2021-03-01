@@ -640,8 +640,8 @@ async def warn(ctx,member:discord.Member,*,reason="No Reason Provided"):
   await ctx.message.add_reaction("<:tickYes:815926941453385738>")
   log=guild.get_channel(774161325442072596)
   embed=discord.Embed(title='Warn log',description=f'{member} was warned by {ctx.message.author}',color=0x2f3136)
-  embed.add_field(name="Reason -",value=reason)
-  await log.send(embed=em)
+  embed.add_field(name="Reason:",value=reason)
+  await log.send(embed=embed)
   
 
 client.run(os.environ['DISCORD_TOKEN'])
