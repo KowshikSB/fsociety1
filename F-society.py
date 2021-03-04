@@ -412,7 +412,7 @@ async def credits(ctx):
 
   e.add_field(name="<:bot_dev:804257409388249098> BOT DEV",value=f"{x}",inline=False)
   e.add_field(name="Lazy Supporter",value="Rude#3073",inline=False)
-  e.add_field(name="Artist",valu="[Nexin](https://twitter.com/nexinwah)")
+  e.add_field(name="Artist",value="[Nexin](https://twitter.com/nexinwah)")
   
   e.set_thumbnail(url="https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024")
   e.set_footer(text="F SOCIETY")
