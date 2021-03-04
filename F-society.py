@@ -407,9 +407,9 @@ async def invite(ctx):
 @client.command()
 async def credits(ctx):
   e=discord.Embed(title="The F Society",color=0x2f3136)
-  x='''Creator - **KaZE#0002**'''
 
-  e.add_field(name="<:bot_dev:804257409388249098> BOT DEV",value=f"{x}",inline=False)
+
+  e.add_field(name="<:bot_dev:804257409388249098> Dev",value='Kaze#0002',inline=False)
   
   e.add_field(name="Artist",value="[Nexin](https://twitter.com/nexinwah)",inline=False)
   
