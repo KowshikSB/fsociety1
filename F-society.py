@@ -643,8 +643,8 @@ async def warn(ctx,member:discord.Member,*,reason="No Reason Provided"):
   log=guild.get_channel(774161325442072596)
   embed=discord.Embed(title='Moderation Log',timestamp=ctx.message.created_at,color=0x2f3136)
   
-  embed.add_field(name="Action: Warn",value=f'By <@{ctx.message.author.id}>',inline=False)
-  embed.add_field(name="User:",value=f"<@{member.id}>")
+  embed.add_field(name="Action: Warn",value=f'By <@{ctx.message.author.id}>',inline=True)
+  embed.add_field(name="User:",value=f"<@{member.id}>",inline=True)
   embed.add_field(name="Reason:",value=reason,inline=False)
   await log.send(embed=embed)
 
