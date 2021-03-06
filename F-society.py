@@ -649,6 +649,51 @@ async def warn(ctx,member:discord.Member,*,reason="No Reason Provided"):
   embed.add_field(name="User:",value=f"<@{member.id}>",inline=True)
   embed.add_field(name="Reason:",value=reason,inline=False)
   await log.send(embed=embed)
+@client.command()
+@commands.group(aliases=['server', 'sinfo', 'si'], pass_context=True, invoke_without_command=True)
+async def serverinfo(ctx):
+  server = ctx.message.guild
+  channel_count = len([x for x in server.channels if type(x) == discord.channel.TextChannel])
+
+  role_count = len(server.roles)
+  emoji_count = len(server.emojis)
+
+  
+  em = discord.Embed(color=0x2f3136)
+  em.add_field(name='Name', value=server.name)
+  em.add_field(name='Owner', value=server.owner, inline=False)
+  em.add_field(name='Members', value=server.member_count)
+  em.add_field(name='Text Channels', value=str(channel_count))
+  em.add_field(name='Region', value=server.region)
+  em.add_field(name='Verification Level', value=str(server.verification_level))
+  
+  em.add_field(name='Number of roles', value=str(role_count))
+  em.add_field(name='Number of emotes', value=str(emoji_count))
+  
+  
+  
+  em.add_field(name='Created At', value=server.created_at.__format__('%A, %d. %B %Y @ %H:%M:%S'))
+  em.set_thumbnail(url=server.icon_url)
+  em.set_author(name='Server Info', icon_url=ctx.guild.icon_url)
+  em.set_footer(text='Server ID: %s' % server.id)
+  await ctx.send(embed=em)
+@client.command()
+async def emojis(self, ctx, msg: str = None):
+    """List all emojis in this server. Ex: [p]server emojis"""
+    if msg:
+        server, found = self.find_server(msg)
+        if not found:
+            return await ctx.send(server)
+    else:
+        server = ctx.message.guild
+    emojis = [str(x) for x in server.emojis]
+    b=""
+    for x in emojis:
+        b+=x
+    em=discord.Embed(title="Emoji List",description=x,Color=0x2f3136)
+    await ctx.send(embed=em)
+    await ctx.message.delete()
+           
 
 
 client.run(os.environ['DISCORD_TOKEN'])
