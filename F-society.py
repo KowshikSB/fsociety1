@@ -649,8 +649,7 @@ async def warn(ctx,member:discord.Member,*,reason="No Reason Provided"):
   embed.add_field(name="User:",value=f"<@{member.id}>",inline=True)
   embed.add_field(name="Reason:",value=reason,inline=False)
   await log.send(embed=embed)
-@client.command()
-@commands.group(aliases=['server', 'sinfo', 'si'], pass_context=True, invoke_without_command=True)
+@client.command(name='serverinfo',aliases=['si','SI'])
 async def serverinfo(ctx):
   server = ctx.message.guild
   channel_count = len([x for x in server.channels if type(x) == discord.channel.TextChannel])
