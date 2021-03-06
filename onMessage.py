@@ -1,6 +1,9 @@
 import discord
 import os
 import re
+import cogs
+import discord.utils
+
 from urllib.parse import urlparse
 from discord.colour import Color
 from discord.ext import commands
