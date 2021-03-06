@@ -588,7 +588,7 @@ async def userinfo(ctx,member:discord.Member=None):
   embed.add_field(name='• ID',value=f'`{member.id}` <@{member.id}>')
   embed.add_field(name='• Nickname',value=member.display_name,inline=False)
   
-
+  
   
   
   for a in badges:
@@ -612,6 +612,8 @@ async def userinfo(ctx,member:discord.Member=None):
   x='<a:u_Chat:790568691888029726>'
   if 788392538888601601 in roles:
     s+='<:fsociety_kul_staff:815958724329472010>'
+  if member.id==261742964441612298:
+    s+='<a:u_crown:793089465659949076>'
   
   if s!='':
     embed.add_field(name='• Badges: ',value=s)
@@ -681,9 +683,9 @@ async def emojis(ctx):
     server = ctx.message.guild
     emojis = [str(x) for x in server.emojis]
     b=""
-    for x in emojis:
-        b+=x
-    em=discord.Embed(title="Emoji List",description=x,Color=0x2f3136)
+    for a in emojis:
+        b+=a
+    em=discord.Embed(title="Emoji List",description=a,Color=0x2f3136)
     await ctx.send(embed=em)
     await ctx.message.delete()
            
