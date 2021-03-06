@@ -559,7 +559,7 @@ async def confess(ctx):
         await demand.delete()
     else:
       
-      await ctx.send(f"You are muted Reason: {Mutes[ctx.author.id]}")
+      await ctx.send(f"You are muted Reason: {Mutes[str(ctx.author.id)]}")
   else:
     await ctx.send("I only accept confession through dms")
 @client.command()
