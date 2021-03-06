@@ -678,17 +678,7 @@ async def serverinfo(ctx):
   em.set_author(name='Server Info', icon_url=ctx.guild.icon_url)
   em.set_footer(text='Server ID: %s' % server.id)
   await ctx.send(embed=em)
-@client.command()
-async def emojis(ctx):
-    server = ctx.message.guild
-    emojis = [str(x) for x in server.emojis]
-    b=""
-    for a in emojis:
-        b+=a
-    em=discord.Embed(title="Emoji List",description=a,Color=0x2f3136)
-    await ctx.send(embed=em)
-    await ctx.message.delete()
-           
+
 
 
 client.run(os.environ['DISCORD_TOKEN'])
