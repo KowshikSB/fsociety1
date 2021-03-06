@@ -677,7 +677,7 @@ async def serverinfo(ctx):
   em.set_footer(text='Server ID: %s' % server.id)
   await ctx.send(embed=em)
 @client.command()
-async def emojis(self, ctx, msg: str = None):
+async def emojis(ctx, msg: str = None):
     """List all emojis in this server. Ex: [p]server emojis"""
     if msg:
         server, found = self.find_server(msg)
