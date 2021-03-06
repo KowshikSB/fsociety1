@@ -521,7 +521,7 @@ async def cunmute(ctx,id):
 async def confess(ctx):
   global Mutes
   if ctx.channel.type==discord.ChannelType.private:
-    if ctx.author.id not in Mutes.keys():
+    if str(ctx.author.id) not in Mutes.keys():
     
     
       x='''<a:sleepingcat:799691148628852776> - *Do not send random, pointless messages*
@@ -568,7 +568,7 @@ async def clear(ctx,amount=3):
   await ctx.channel.purge(limit=amount+1)
   await ctx.send(f'<a:Chat:804180442626261014> *I have deleted* {amount} *messages!*')
   await asyncio.sleep(2)
-  await ctx.channel.purge(limit=amount)
+  await ctx.channel.purge(limit=amount) 
 
 
 @client.command(name='userinfo',aliases=['ui','UI'])
