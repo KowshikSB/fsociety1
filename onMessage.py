@@ -1,103 +1,301 @@
+import discord
+import os
+import re
+from urllib.parse import urlparse
 from discord.colour import Color
 from discord.ext import commands
-from discord import client, utils
-import discord
-import asyncio
-from discord.ext import tasks
-from discord.ext.commands.core import check
-from discord.utils import get 
 
-from discord.ext.commands.converter import clean_content
-client = commands.Bot(command_prefix =commands.when_mentioned_or('f ','F '),intents=discord.Intents.all())
+from cogs.utils.checks import embed_perms, cmd_prefix_len, hastebin
+
+'''Module for server commands.'''
 
 
-command_prefix =commands.when_mentioned_or('f ')
+class Server:
 
+    def __init__(self, bot):
+        self.bot = bot
+        self.invites = ['discord.gg/', 'discordapp.com/invite/']
+        self.invite_domains = ['discord.gg', 'discordapp.com']
 
-class onMessage(commands.Cog):
-	def __init__(self, bot):
-		self.client = bot
-	
-		x='<:h_:788652894227267584><:e_:788652806235488256><:l_:788653083005157396><:p_:788654650374225930> <:d_:788651820054609930><:e_:788652806235488256><:s_:788653491492880414> <:k_:788653044950237194>'
-		y='''*You can use modmail for any of the following reasons*
-<a:tickup:774207637184839680> *Question your moderation infraction*
-<a:tickup:774207637184839680> *Reporting any user in the server*
-<a:tickup:774207637184839680> *Just ask a general question!*
-If you want to contact Mod. Send your query now. 
-Mods Will be notified. If you opened this by mistake 
-Use **f close** to Close the Ticket'''
+    def find_server(self, msg):
+        server = None
+        if msg:
+            try:
+                float(msg)
+                server = self.bot.get_guild(int(msg))
+                if not server:
+                    return self.bot.bot_prefix + 'Server not found.', False
+            except:
+                for i in self.bot.guilds:
+                    if i.name.lower() == msg.lower().strip():
+                        server = i
+                        break
+                if not server:
+                    return self.bot.bot_prefix + 'Could not find server. Note: You must be a member of the server you are trying to search.', False
 
-		em=discord.Embed(title=x,description=y,colour = 0x2f3136)
-		em.set_thumbnail(url='https://cdn.discordapp.com/icons/725302478823751702/a_98429fc81380f70cbb78548bccf3d70e.gif?size=1024')
-		em.set_footer(text="The F Society")
-		
-		@commands.Cog.listener()
-		async def on_message(self, message):
-			if message.author.bot:
-				return
-			
-				
-			await client.wait_for('f support',timeout=60,check=check)
-			if isinstance(message.channel, discord.DMChannel):
-				await message.send(embed=em)
-				guild = self.client.get_guild(725302478823751702)
-				categ = utils.get(guild.categories, name = "Modmail tickets")
-				if not categ:
-					overwrites = {
-						guild.default_role : discord.PermissionOverwrite(read_messages = False),
-						guild.me : discord.PermissionOverwrite(read_messages = True)
-					}
-					categ = await guild.create_category(name = "Modmail tickets", overwrites = overwrites)
+        return server, True
 
-				channel = utils.get(categ.channels, topic = str(message.author.id))
-				if not channel:
-					channel = await categ.create_text_channel(name = f"{message.author.name}#{message.author.discriminator}", topic = str(message.author.id))
-					await channel.send(f"New modmail created by {message.author.mention}")
+    # Stats about server
+    @commands.group(aliases=['server', 'sinfo', 'si'], pass_context=True, invoke_without_command=True)
+    async def serverinfo(self, ctx, *, msg=""):
+        """Various info about the server. [p]help server for more info."""
+        if ctx.invoked_subcommand is None:
+            if msg:
+                server = None
+                try:
+                    float(msg)
+                    server = self.bot.get_guild(int(msg))
+                    if not server:
+                        return await ctx.send(
+                                              self.bot.bot_prefix + 'Server not found.')
+                except:
+                    for i in self.bot.guilds:
+                        if i.name.lower() == msg.lower():
+                            server = i
+                            break
+                    if not server:
+                        return await ctx.send(self.bot.bot_prefix + 'Could not find server. Note: You must be a member of the server you are trying to search.')
+            else:
+                server = ctx.message.guild
 
-				embed = discord.Embed(description = message.content, colour = 0x2f3136)
-				embed.set_author(name = message.author, icon_url = message.author.avatar_url)
-				await channel.send(embed = embed)
+            online = 0
+            for i in server.members:
+                if str(i.status) == 'online' or str(i.status) == 'idle' or str(i.status) == 'dnd':
+                    online += 1
+            all_users = []
+            for user in server.members:
+                all_users.append('{}#{}'.format(user.name, user.discriminator))
+            all_users.sort()
+            all = '\n'.join(all_users)
 
-			elif isinstance(message.channel, discord.TextChannel):
-				if message.content.startswith(self.client.command_prefix):
-					pass
-				else:
-					topic = message.channel.topic
-					if topic:
-						member = message.guild.get_member(int(topic))
-						if member:
-							embed = discord.Embed(description = message.content, colour = 0x2f3136)
-							embed.set_author(name = message.author, icon_url = message.author.avatar_url)
-							await member.send(embed = embed)
+            channel_count = len([x for x in server.channels if type(x) == discord.channel.TextChannel])
 
-		@commands.command()
-		async def close(self, ctx):
-			if ctx.channel.category.name == "Modmail tickets":
-				await ctx.send("Deleting the channel in 10 seconds!")
-				await asyncio.sleep(10)
-				await ctx.channel.delete()
+            role_count = len(server.roles)
+            emoji_count = len(server.emojis)
+
+            if embed_perms(ctx.message):
+                em = discord.Embed(color=0xea7938)
+                em.add_field(name='Name', value=server.name)
+                em.add_field(name='Owner', value=server.owner, inline=False)
+                em.add_field(name='Members', value=server.member_count)
+                em.add_field(name='Currently Online', value=online)
+                em.add_field(name='Text Channels', value=str(channel_count))
+                em.add_field(name='Region', value=server.region)
+                em.add_field(name='Verification Level', value=str(server.verification_level))
+                
+                em.add_field(name='Number of roles', value=str(role_count))
+                em.add_field(name='Number of emotes', value=str(emoji_count))
+                url = await hastebin(str(all), self.bot.session)
+                
+                
+                em.add_field(name='Created At', value=server.created_at.__format__('%A, %d. %B %Y @ %H:%M:%S'))
+                em.set_thumbnail(url=server.icon_url)
+                em.set_author(name='Server Info', icon_url='https://i.imgur.com/RHagTDg.png')
+                em.set_footer(text='Server ID: %s' % server.id)
+                await ctx.send(embed=em)
+            else:
+                msg = '**Server Info:** ```Name: %s\nOwner: %s\nMembers: %s\nCurrently Online: %s\nRegion: %s\nVerification Level: %s\nHighest Role: %s\nCreated At: %s\nServer avatar: : %s```' % (
+                    server.name, server.owner, server.member_count, online, server.region, str(server.verification_level), server.role_hierarchy[0], server.created_at.__format__('%A, %d. %B %Y @ %H:%M:%S'), server.icon_url)
+                await ctx.send(self.bot.bot_prefix + msg)
+            await ctx.message.delete()
+
+    @serverinfo.command(pass_context=True)
+    async def emojis(self, ctx, msg: str = None):
+        """List all emojis in this server. Ex: [p]server emojis"""
+        if msg:
+            server, found = self.find_server(msg)
+            if not found:
+                return await ctx.send(server)
+        else:
+            server = ctx.message.guild
+        emojis = [str(x) for x in server.emojis]
+        b=""
+        for x in emojis:
+            b+=x
+        em=discord.Embed(title="Emoji List",description=x,Color=0x2f3136)
+        await ctx.send(embed=em)
+        await ctx.message.delete()
+
+    @serverinfo.command(pass_context=True)
+    async def avi(self, ctx, msg: str = None):
+        """Get server avatar image link."""
+        if msg:
+            server, found = self.find_server(msg)
+            if not found:
+                return await ctx.send(server)
+        else:
+            server = ctx.message.guild
+        if embed_perms(ctx.message):
+            em = discord.Embed()
+            em.set_image(url=server.icon_url)
+            await ctx.send(embed=em)
+        else:
+            await ctx.send(self.bot.bot_prefix + server.icon_url)
+        await ctx.message.delete()
+
+    @serverinfo.command()
+    async def role(self, ctx, msg, guild=None):
+        """Get more info about a specific role. Ex: [p]server role Admins
+        You need to quote roles with spaces. You may also specify a server to check the role for. Ex. [p]server role "Dev" 299293492645986307"""
+        if guild:
+            guild, found = self.find_server(guild)
+            if not found:
+                return await ctx.send(guild)
+            guild_roles = guild.roles
+        else:
+            guild = ctx.message.guild
+            guild_roles = ctx.message.guild.roles
+        for role in guild_roles:
+            if msg.lower() == role.name.lower() or msg == role.id:
+                all_users = [str(x) for x in role.members]
+                all_users.sort()
+                all_users = ', '.join(all_users)
+                em = discord.Embed(title='Role Info', color=role.color)
+                em.add_field(name='Name', value=role.name)
+                em.add_field(name='ID', value=role.id, inline=False)
+                em.add_field(name='Users in this role', value=str(len(role.members)))
+                em.add_field(name='Role color hex value', value=str(role.color))
+                em.add_field(name='Role color RGB value', value=role.color.to_rgb())
+                em.add_field(name='Mentionable', value=role.mentionable)
+                if len(role.members) > 10:
+                    all_users = all_users.replace(', ', '\n')
+                    url = await hastebin(str(all_users), self.bot.session)
+                    em.add_field(name='All users', value='{} users. [List of users posted to Hastebin.]({})'.format(len(role.members), url), inline=False)
+                elif len(role.members) >= 1:
+                    em.add_field(name='All users', value=all_users, inline=False)
+                else:
+                    em.add_field(name='All users', value='There are no users in this role!', inline=False)
+                em.add_field(name='Created at', value=role.created_at.__format__('%x at %X'))
+                em.set_thumbnail(url='http://www.colorhexa.com/{}.png'.format(str(role.color).strip("#")))
+                await ctx.message.delete()
+                return await ctx.send(content=None, embed=em)
+        await ctx.message.delete()
+        await ctx.send(self.bot.bot_prefix + 'Could not find role ``{}``'.format(msg))
+
+    @commands.command(aliases=['channel', 'cinfo', 'ci'], pass_context=True, no_pm=True)
+    async def channelinfo(self, ctx, *, channel: int = None):
+        """Shows channel information"""
+        if not channel:
+            channel = ctx.message.channel
+        else:
+            channel = self.bot.get_channel(channel)
+        data = discord.Embed()
+        if hasattr(channel, 'mention'):
+            data.description = "**Information about Channel:** " + channel.mention
+        if hasattr(channel, 'changed_roles'):
+            if len(channel.changed_roles) > 0:
+                data.color = discord.Colour.green() if channel.changed_roles[0].permissions.read_messages else discord.Colour.red()
+        if isinstance(channel, discord.TextChannel): 
+            _type = "Text"
+        elif isinstance(channel, discord.VoiceChannel): 
+            _type = "Voice"
+        else: 
+            _type = "Unknown"
+        data.add_field(name="Type", value=_type)
+        data.add_field(name="ID", value=channel.id, inline=False)
+        if hasattr(channel, 'position'):
+            data.add_field(name="Position", value=channel.position)
+        if isinstance(channel, discord.VoiceChannel):
+            if channel.user_limit != 0:
+                data.add_field(name="User Number", value="{}/{}".format(len(channel.voice_members), channel.user_limit))
+            else:
+                data.add_field(name="User Number", value="{}".format(len(channel.voice_members)))
+            userlist = [r.display_name for r in channel.members]
+            if not userlist:
+                userlist = "None"
+            else:
+                userlist = "\n".join(userlist)
+            data.add_field(name="Users", value=userlist)
+            data.add_field(name="Bitrate", value=channel.bitrate)
+        elif isinstance(channel, discord.TextChannel):
+            try:
+                pins = await channel.pins()
+                data.add_field(name="Pins", value=len(pins), inline=True)
+            except discord.Forbidden:
+                pass
+            data.add_field(name="Members", value="%s"%len(channel.members))
+            if channel.topic:
+                data.add_field(name="Topic", value=channel.topic, inline=False)
+            hidden = []
+            allowed = []
+            for role in channel.changed_roles:
+                if role.permissions.read_messages is True:
+                    if role.name != "@everyone":
+                        allowed.append(role.mention)
+                elif role.permissions.read_messages is False:
+                    if role.name != "@everyone":
+                        hidden.append(role.mention)
+            if len(allowed) > 0: 
+                data.add_field(name='Allowed Roles ({})'.format(len(allowed)), value=', '.join(allowed), inline=False)
+            if len(hidden) > 0:
+                data.add_field(name='Restricted Roles ({})'.format(len(hidden)), value=', '.join(hidden), inline=False)
+        if channel.created_at:
+            data.set_footer(text=("Created on {} ({} days ago)".format(channel.created_at.strftime("%d %b %Y %H:%M"), (ctx.message.created_at - channel.created_at).days)))
+        await ctx.send(embed=data)
+
+    @commands.command(aliases=['invitei', 'ii'], pass_context=True)
+    async def inviteinfo(self, ctx, *, invite: str = None):
+        """Shows invite information."""
+        if invite:
+            for url in re.findall(r'(https?://\S+)', invite):
+                try:
+                    invite = await self.bot.get_invite(urlparse(url).path.replace('/', '').replace('<', '').replace('>', ''))
+                except discord.NotFound:
+                    return await ctx.send(self.bot.bot_prefix + "Couldn't find valid invite, please double check the link.")
+                break
+        else:
+            async for msg in ctx.message.channel.history():
+                if any(x in msg.content for x in self.invites):
+                    for url in re.findall(r'(https?://\S+)', msg.content):
+                        url = urlparse(url)
+                        if any(x in url for x in self.invite_domains):
+                            print(url)
+                            url = url.path.replace('/', '').replace('<', '').replace('>', '').replace('\'', '').replace(')', '')
+                            print(url)
+                            try:
+                                invite = await self.bot.get_invite(url)
+                            except discord.NotFound:
+                                return await ctx.send(self.bot.bot_prefix + "Couldn't find valid invite, please double check the link.")
+                            break
+                
+        if not invite:
+            return await ctx.send(self.bot.bot_prefix + "Couldn't find an invite in the last 100 messages. Please specify an invite.")
+        
+        data = discord.Embed()
+        content = None
+        if invite.id is not None:
+            content = self.bot.bot_prefix + "**Information about Invite:** %s" % invite.id
+        if invite.revoked is not None:
+            data.colour = discord.Colour.red() if invite.revoked else discord.Colour.green()
+        if invite.created_at is not None:
+            data.set_footer(text="Created on {} ({} days ago)".format(invite.created_at.strftime("%d %b %Y %H:%M"), (invite.created_at - invite.created_at).days))
+        if invite.max_age is not None:
+            if invite.max_age > 0:
+                expires = '%s s' % invite.max_age
+            else:
+                expires = "Never"
+            data.add_field(name="Expires in", value=expires)
+        if invite.temporary is not None:
+            data.add_field(name="Temp membership", value="Yes" if invite.temporary else "No")
+        if invite.uses is not None:
+            data.add_field(name="Uses", value="%s / %s" % (invite.uses, invite.max_uses))
+        if invite.inviter.name is not None:
+            data.set_author(name=invite.inviter.name + '#' + invite.inviter.discriminator + " (%s)" % invite.inviter.id, icon_url=invite.inviter.avatar_url)
+
+        if invite.guild.name is not None:
+            data.add_field(name="Guild", value="Name: " + invite.guild.name + "\nID: %s" % invite.guild.id, inline=False)
+        if invite.guild.icon_url is not None:
+            data.set_thumbnail(url=invite.guild.icon_url)
+
+        if invite.channel.name is not None:
+            channel = "%s\n#%s" % (invite.channel.mention, invite.channel.name) if isinstance(invite.channel, discord.TextChannel) else invite.channel.name
+            data.add_field(name="Channel", value="Name: " + channel + "\nID: %s" % invite.channel.id, inline=False)
+
+        try:
+            await ctx.send(content=content, embed=data)
+        except:
+            await ctx.send(content="I need the `Embed links` permission to send this")
+
 
 def setup(bot):
-	bot.add_cog(onMessage(bot))
-@client.event
-async def on_message(message): 
-  if message in ['boost','Boost','BOOST']:
-    x='''<a:boost_us:813756354166128660> 1 Boost  - 
-• *Custom Color Role of your Choice*
-• *Unlocks a private chat room* <#799319127515988029>
-•  *Leveling System Perks Bypass*
-•  *Unlocks* <#778843597528891392>
-•  *Unlocks Cute Secret Emojis Packs*
-
- <a:boost_us:813756354166128660> 2 Boosts -
- • *Gets a Custom hoisted role until the Boost lasts*
-
- <a:boost_us:813756354166128660> More Than 2 Boosts -
-• *Custom Private VC*
-
-Dm <@261742964441612298> To get the perks.'''
-    em=discord.Embed(title='Boost Us <a:b_capoo_heartlove:813626091159027742>',description=x,color=0x2f3136)
-    em.set_thumbnail(url=message.guild.icon_url)
-    await message.channel.trigger_typing()
-    await asyncio.sleep(2)
-    await message.send(embed=em)
+    bot.add_cog(Server(bot))
