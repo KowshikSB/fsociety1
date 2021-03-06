@@ -675,7 +675,7 @@ async def serverinfo(ctx):
   
   em.add_field(name='Created At', value=server.created_at.__format__('%A, %d. %B %Y @ %H:%M:%S'))
   em.set_thumbnail(url=server.icon_url)
-  em.set_author(name='Server Info', icon_url=ctx.guild.icon_url)
+  em.set_author(name='The F Society', icon_url=ctx.guild.icon_url)
   em.set_footer(text='Server ID: %s' % server.id)
   await ctx.send(embed=em)
 
