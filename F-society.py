@@ -28,6 +28,8 @@ async def status():
   while True:
     await client.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.playing , name="With your mama"))
     await asyncio.sleep(900)
+    await client.change_presence(status=discord.Status.dnd)
+    await asyncio.sleep(900)
     await client.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.listening, name="Kaze"))
     await asyncio.sleep(900)
    
@@ -47,7 +49,7 @@ async def status():
 
 @client.event
 async def on_ready():
-  #client.load_extension("onMessage")
+  client.load_extension("onMessage")
   print("BOT IS READY")
   
 
