@@ -480,18 +480,19 @@ async def suggest(ctx,s):
       await ctx.iend("Give a suggestion to suggest")
 
 
-Mutes=[]
+Mutes={}
 @client.command()
 @commands.has_role('STAFF TEAM')  
 async def cmute(ctx,id,*,reason=None):
   if reason is not None: 
     global Mutes
-    if int(id) not in Mutes:
+    if id not in Mutes.keys():
       guild=client.get_guild(725302478823751702)
       log=guild.get_channel(802510538021011466)
       i=int(id)
       if i!=261742964441612298:
-        Mutes.append(i)
+        Mutes[id]=reason
+        
         print(Mutes)
         await ctx.send("The User is now blacklisted")
         await log.send(f'<@{id}> is now blacklisted from confessions. Reason = {reason}')
@@ -504,12 +505,12 @@ async def cmute(ctx,id,*,reason=None):
 async def cunmute(ctx,id):
   global Mutes
   print(Mutes)
-  if int(id) in Mutes:
+  if id in Mutes.keys():
     guild=client.get_guild(725302478823751702)
     log=guild.get_channel(802510538021011466)
     
     i=int(id)
-    Mutes.remove(i)
+    Mutes.pop(id)
     
     await ctx.channel.send("The User is now not blacklisted")
     await log.send(f'<@{id}> is removed from being blacklisted from confessions')
@@ -520,7 +521,7 @@ async def cunmute(ctx,id):
 async def confess(ctx):
   global Mutes
   if ctx.channel.type==discord.ChannelType.private:
-    if ctx.author.id not in Mutes:
+    if ctx.author.id not in Mutes.keys():
     
     
       x='''<a:sleepingcat:799691148628852776> - *Do not send random, pointless messages*
@@ -557,7 +558,8 @@ async def confess(ctx):
         await ctx.send('Cancelled',delete_after=10)
         await demand.delete()
     else:
-      await ctx.send("You are muted")
+      
+      await ctx.send(f"You are muted Reason: {Mutes[ctx.author.id]}")
   else:
     await ctx.send("I only accept confession through dms")
 @client.command()
