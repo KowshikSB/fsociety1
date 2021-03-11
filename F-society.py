@@ -666,8 +666,8 @@ async def serverinfo(ctx):
   em.add_field(name='Owner:', value=f'```{server.owner}```',inline=True)
   em.add_field(name='Members:', value=f'```{server.member_count}```',inline=True)
   em.add_field(name='Text Channels:', value=f'```{str(channel_count)}```',inline=True)
-  em.add_field(name='Region', value=f'`{server.region}`',inline=True)
-  em.add_field(name='Verification Level', value=f'`{str(server.verification_level)}`',inline=False)
+  em.add_field(name='Region', value=f'```{server.region}```',inline=True)
+  em.add_field(name='Verification Level', value=f'```{str(server.verification_level)}```',inline=False)
   
   em.add_field(name='Roles Count:', value=f'```{str(role_count)}```',inline=True)
   em.add_field(name='Emojis Count:', value=f'```{str(emoji_count)}```',inline=True)
