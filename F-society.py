@@ -663,19 +663,19 @@ async def serverinfo(ctx):
 
   
   em = discord.Embed(color=0x2f3136)
-  em.add_field(name='Name', value=server.name)
-  em.add_field(name='Owner', value=server.owner, inline=False)
-  em.add_field(name='Members', value=server.member_count)
-  em.add_field(name='Text Channels', value=str(channel_count))
-  em.add_field(name='Region', value=server.region)
+  em.add_field(name='Name', value=f'```{server.name}```')
+  em.add_field(name='Owner', value=f'```{server.owner}```', inline=False)
+  em.add_field(name='Members', value=f'```{server.member_count}```')
+  em.add_field(name='Text Channels', value=f'{str(channel_count)}```')
+  em.add_field(name='Region', value=f'``{server.region}```')
   em.add_field(name='Verification Level', value=str(server.verification_level))
   
-  em.add_field(name='Number of roles', value=str(role_count))
-  em.add_field(name='Number of emotes', value=str(emoji_count))
+  em.add_field(name='Number of roles', value=f'```{str(role_count)}```')
+  em.add_field(name='Number of emotes', value=f'```{str(emoji_count)}```')
   
   
   
-  em.add_field(name='Created At', value=server.created_at.__format__('%A, %d. %B %Y @ %H:%M:%S'))
+  em.add_field(name='Created At', value=server.created_at.__format__('%A, %d. %B %Y at %H:%M:%S'))
   em.set_thumbnail(url=server.icon_url)
   em.set_author(name='The F Society', icon_url=ctx.guild.icon_url)
   em.set_footer(text='Server ID: %s' % server.id)
