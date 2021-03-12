@@ -193,6 +193,7 @@ async def editsnipe(ctx):
 async def avatar(ctx ,avamember : discord.Member=None):
   if avamember is None:
     avamember=ctx.message.author 
+  await ctx.message.add_reaction('<:av:819921496020353034>')
     
   userAvatarUrl = avamember.avatar_url
   em = discord.Embed(title=f"Avatar of {avamember}", color=0x2f3136)
@@ -222,7 +223,7 @@ async def hug(ctx ,avamember : discord.Member=None):
     await ctx.send("<a:rage_smash:799276770091859968> *You need to mention a person*")
   else:
 
-    em = discord.Embed(color=0xFEE064)
+    em = discord.Embed(color=0xd8c292)
     em.set_author(name=f"{ctx.author.name} hugs {avamember.name}", icon_url=ctx.author.avatar_url)
     em.set_footer(text='What a simp')
     em.set_image(url=random.choice(hugss)) 
@@ -233,7 +234,7 @@ async def boop(ctx ,avamember : discord.Member=None):
     await ctx.send("<a:rage_smash:799276770091859968> *You need to mention a person*")
   else:
 
-    em = discord.Embed(color=0xFEE064)
+    em = discord.Embed(color=0xd8c292)
     em.set_author(name=f"{ctx.author.name} boops {avamember.name}", icon_url=ctx.author.avatar_url)
     em.set_footer(text='huh')
     em.set_image(url=random.choice(boopp)) 
@@ -245,7 +246,7 @@ async def kiss(ctx ,avamember : discord.Member=None):
     
     else:
 
-      em = discord.Embed(color=0xFEE064)
+      em = discord.Embed(color=0xd8c292)
       em.set_author(name=f"{ctx.author.name} kisses {avamember.name}", icon_url=ctx.author.avatar_url)
       em.set_footer(text='What a simp smh')
       em.set_image(url=random.choice(kisses)) 
@@ -348,7 +349,7 @@ async def kill(ctx ,avamember : discord.Member=None):
     
     else:
 
-      em = discord.Embed(color=0xfefec8)
+      em = discord.Embed(color=0xd8c292)
       em.set_author(name=f"{ctx.author.name} kills {avamember.name}", icon_url=ctx.author.avatar_url)
       em.set_footer(text='I-')
       em.set_image(url=random.choice(killl)) 
@@ -360,7 +361,7 @@ async def pat(ctx ,avamember : discord.Member=None):
     
     else:
 
-      em = discord.Embed(color=0xfefec8)
+      em = discord.Embed(color=0xd8c292)
       em.set_author(name=f"{ctx.author.name} pats {avamember.name}", icon_url=ctx.author.avatar_url)
       
       em.set_image(url=random.choice(patt)) 
@@ -373,7 +374,7 @@ async def slap(ctx ,avamember : discord.Member=None):
     
     else:
 
-      em = discord.Embed(color=0xFEE064)
+      em = discord.Embed(color=0xd8c292)
       em.set_author(name=f"{ctx.author.name} slaps {avamember.name}", icon_url=ctx.author.avatar_url)
       em.set_footer(text='Good slap ngl')
       em.set_image(url=random.choice(slapp)) 
@@ -385,7 +386,7 @@ async def bonk(ctx ,avamember : discord.Member=None):
     
     else:
 
-      em = discord.Embed(color=0xFEE064)
+      em = discord.Embed(color=0xd8c292)
       em.set_author(name=f"{ctx.author.name} bonks {avamember.name}", icon_url=ctx.author.avatar_url)
       em.set_footer(text=';-;')
       em.set_image(url=random.choice(bonkk)) 
@@ -397,7 +398,7 @@ async def punch(ctx ,avamember : discord.Member=None):
     
     else:
 
-      em = discord.Embed(color=0xFEE064)
+      em = discord.Embed(color=0xd8c292)
       em.set_author(name=f"{ctx.author.name} punches {avamember.name}", icon_url=ctx.author.avatar_url)
       em.set_footer(text='We got some beef here!')
       em.set_image(url=random.choice(punchh)) 
@@ -482,7 +483,7 @@ async def suggest(ctx,s):
 
 Mutes={}
 @client.command()
-@commands.has_role('STAFF TEAM')  
+@commands.has_role('Staff Team')  
 async def cmute(ctx,id,*,reason=None):
   if reason is not None: 
     global Mutes
