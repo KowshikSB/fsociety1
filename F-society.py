@@ -681,20 +681,7 @@ async def serverinfo(ctx):
   em.set_author(name='The F Society')
   em.set_footer(text='Server ID: %s' % server.id)
   await ctx.send(embed=em)
-count=0
-@client.event
 
-async def on_message(message):
-  guild=client.get_guild(725302478823751702)
-  lounge=guild.get_channel(774155081922773022)
-  global count  
-  if message.channel.id==774155081922773022:
-    
-    count+=1
-
-  if count==10:
-    await lounge.send("10Messages Sent")
-    count=0
 
 
 client.run(os.environ['DISCORD_TOKEN'])
