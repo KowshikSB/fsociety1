@@ -25,7 +25,7 @@ class actmsg(commands.Cog):
     async def on_message(self, message):
         
         global count
-        if message.guild.id == 774155081922773022:
+        if message.channel.id == 774155081922773022:
            count+=1
         elif count==10:
             await message.channel.send("10 messages sent!")
