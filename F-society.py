@@ -687,8 +687,9 @@ count=0
 async def on_message(message):
   guild=client.get_guild(725302478823751702)
   lounge=guild.get_channel(774155081922773022)
-  
+  global count  
   if message.channel.id==774155081922773022:
+    
     count+=1
 
   if count==10:
