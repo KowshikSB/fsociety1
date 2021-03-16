@@ -51,6 +51,7 @@ async def status():
 @client.event
 async def on_ready():
   client.load_extension("onMessage")
+  
   print("BOT IS READY")
   
 
