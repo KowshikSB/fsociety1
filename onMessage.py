@@ -29,8 +29,8 @@ class actmsg(commands.Cog):
            count+=1
         elif count==10:
             await message.channel.send("10 messages sent!")
-        count=0
-           
+            count=0
+
 def setup(bot):
     bot.add_cog(BoostPlugin(bot))
 def setup(bot):
