@@ -571,6 +571,8 @@ async def clear(ctx,amount=3):
   await ctx.channel.purge(limit=amount+1)
   await ctx.send(f'<a:Chat:804180442626261014> *I have deleted* {amount} *messages!*')
   
+  await asyncio.sleep(2)
+  await ctx.channel.purge(limit=1)
 
 
 @client.command(name='userinfo',aliases=['ui','UI'])
