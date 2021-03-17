@@ -14,7 +14,7 @@ class BoostPlugin(commands.Cog):
 
         
         if message.type == discord.MessageType.premium_guild_subscription:
-            await message.channel.send('<:Boost:815188862111842334> We just Got Boosted!')
+            await message.channel.send('<:Boost:815188862111842334> We just Got Boosted! Buh bye booster crisis' )
             await message.add_reaction("<a:u_crown:793089465659949076>")
 
 def setup(bot):
