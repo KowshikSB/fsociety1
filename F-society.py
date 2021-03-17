@@ -589,7 +589,7 @@ async def userinfo(ctx,member:discord.Member=None):
   embed=discord.Embed(color=0x2f3136,timestamp=ctx.message.created_at)
   embed.set_author(name=f'User Info - {member}')
   embed.set_thumbnail(url=member.avatar_url)
-  embed.set_footer(text=f'Requested by{ctx.author}',icon_url=ctx.author.avatar_url)
+  embed.set_footer(text=f'Requested by {ctx.author}',icon_url=ctx.author.avatar_url)
   embed.add_field(name='• ID',value=f'`{member.id}` <@{member.id}>')
   embed.add_field(name='• Nickname',value=member.display_name,inline=False)
   
